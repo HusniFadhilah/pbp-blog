@@ -46,8 +46,8 @@ class Post extends Migration
 			],
 		]);
 		$this->forge->addKey('idpost', true);
-		$this->forge->addForeignKey('idkategori', 'kategori', 'idkategori', 'RESTRICT', 'RESTRICT');
-		$this->forge->addForeignKey('idpenulis', 'penulis', 'idpenulis', 'RESTRICT', 'RESTRICT');
+		// $this->forge->addForeignKey('idkategori', 'kategori', 'idkategori', 'RESTRICT', 'RESTRICT');
+		// $this->forge->addForeignKey('idpenulis', 'penulis', 'idpenulis', 'RESTRICT', 'RESTRICT');
 		$this->forge->createTable('post');
 	}
 
