@@ -27,11 +27,11 @@ class Admin extends Migration
 				'type'           => 'VARCHAR',
 				'constraint'     => '128',
 			],
-			'created_at' => [
+			'tgl_insert' => [
 				'type'           => 'DATETIME',
 				'null'     		 => true,
 			],
-			'updated_at' => [
+			'tgl_update' => [
 				'type'           => 'DATETIME',
 				'null'     		 => true,
 			],
