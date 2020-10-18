@@ -29,6 +29,10 @@ class Post extends Migration
 				'type'           => 'VARCHAR',
 				'constraint'     => '128',
 			],
+			'slug'       => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '128',
+			],
 			'isi_post'       => [
 				'type'           => 'text',
 			],
