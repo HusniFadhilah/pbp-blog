@@ -9,7 +9,7 @@ class KategoriSeeder extends \CodeIgniter\Database\Seeder
     public function run()
     {
         $data = [
-            'nama' => 'penulis',
+            'nama' => 'berita',
             'tgl_insert' => Time::now(),
             'tgl_update' => Time::now(),
         ];
