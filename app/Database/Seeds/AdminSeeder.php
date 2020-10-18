@@ -16,12 +16,6 @@ class AdminSeeder extends \CodeIgniter\Database\Seeder
             'tgl_update' => Time::now(),
         ];
 
-        // Simple Queries
-        $this->db->query(
-            "INSERT INTO admin (nama, email, password, tgl_insert, tgl_update) VALUES(:nama:, :email:, :password:, :tgl_insert:, :tgl_update:)",
-            $data
-        );
-
         // Using Query Builder
         $this->db->table('admin')->insert($data);
     }
