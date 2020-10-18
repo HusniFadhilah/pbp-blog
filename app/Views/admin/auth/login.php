@@ -6,9 +6,7 @@
 <h1>Halaman Login (Admin)</h1>
 
 <div class="container mt-5">
-    <?php if ((session()->getFlashdata('text'))) : ?>
-        <div class="alert alert-danger"><?= session()->getFlashdata('text'); ?></div>
-    <?php endif ?>
+    <div class="flash-data" data-text="<?= session()->getFlashdata('text'); ?>" data-title="<?= session()->getFlashdata('title'); ?>" data-icon="<?= session()->getFlashdata('icon'); ?>"></div>
     <div class="card shadow">
         <div class="card-header">Login</div>
         <div class="card-body">
