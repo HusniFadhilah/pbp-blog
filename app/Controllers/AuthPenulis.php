@@ -130,16 +130,16 @@ class AuthPenulis extends BaseController
         }
         $this->penulisModel->save([
             'nama' => $this->request->getVar('nama'),
-            'password' => $this->request->getVar('password'),
+            'password' => md5($this->request->getVar('password')),
             'email' => $this->request->getVar('email'),
             'no_telp' => $this->request->getVar('no_telp'),
             'kota' => $this->request->getVar('kota'),
             'alamat' => $this->request->getVar('alamat')
         ]);
 
-        sweetalert('Pendaftaran berhasil, silahkan login untuk melanjutkan', 'success', 'Berhasil!');
+        sweetalert('Pendaftaran berhasil, silahkan login untuk melanjutkan', 'success', 'Berhasil!', '/authpenulis');
 
-        return redirect()->to('/penulis');
+        return redirect()->to('/authpenulis/register');
     }
 
     public function logout()

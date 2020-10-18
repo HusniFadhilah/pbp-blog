@@ -5,9 +5,7 @@
 <!-- Taruh konten di bawah sini -->
 <h1>Halaman Register (Penulis)</h1>
 <div class="container mt-5 mb-5">
-    <?php if ((session()->getFlashdata('text'))) : ?>
-        <div class="alert alert-danger"><?= session()->getFlashdata('text'); ?></div>
-    <?php endif ?>
+    <div class="flash-data" data-text="<?= session()->getFlashdata('text'); ?>" data-title="<?= session()->getFlashdata('title'); ?>" data-icon="<?= session()->getFlashdata('icon'); ?>" data-href="<?= session()->getFlashdata('href'); ?>"></div>
     <div class="card shadow">
         <div class="card-header">Daftar Akun</div>
         <div class="card-body">
@@ -51,14 +49,14 @@
                 <div class="form-group row">
                     <label for="password" class="col-lg-4 col-form-label">Password <span class="text-danger">*</span></label>
                     <div class="col-lg-8">
-                        <input type="text" class="form-control <?= $validation->hasError('password') ? 'is-invalid' : '' ?>" id="password" name="password" value="<?= old('password') ?>">
+                        <input type="password" class="form-control <?= $validation->hasError('password') ? 'is-invalid' : '' ?>" id="password" name="password" value="<?= old('password') ?>">
                         <span class="invalid-feedback"><?= $validation->getError('password') ?></span>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="konfpassword" class="col-lg-4 col-form-label">Konfirmasi Password <span class="text-danger">*</span></label>
                     <div class="col-lg-8">
-                        <input type="text" class="form-control <?= $validation->hasError('konfpassword') ? 'is-invalid' : '' ?>" id="konfpassword" name="konfpassword" value="<?= old('konfpassword') ?>">
+                        <input type="password" class="form-control <?= $validation->hasError('konfpassword') ? 'is-invalid' : '' ?>" id="konfpassword" name="konfpassword" value="<?= old('konfpassword') ?>">
                         <span class="invalid-feedback"><?= $validation->getError('konfpassword') ?></span>
                     </div>
                 </div>
