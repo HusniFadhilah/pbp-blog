@@ -12,13 +12,14 @@
         <div class="card-header">Login</div>
         <div class="card-body">
             <form action="/authpenulis/login" method="post">
+                <?= csrf_field() ?>
                 <div class="form-group">
                     <label for="email">Email address</label>
                     <input type="email" class="form-control <?= $validation->hasError('email') ? 'is-invalid' : '' ?>" id="email" placeholder="Your email" name="email" value="<?= old('email') ?>">
                     <span class="invalid-feedback ml-2"><?= $validation->getError('email') ?></span>
                 </div>
                 <div class="form-group">
-                    <label for="password">password</label>
+                    <label for="password">Password</label>
                     <input type="password" class="form-control <?= $validation->hasError('password') ? 'is-invalid' : '' ?>" id="password" placeholder="Your password" name="password">
                     <span class="invalid-feedback ml-2"><?= $validation->getError('password') ?></span>
                 </div>

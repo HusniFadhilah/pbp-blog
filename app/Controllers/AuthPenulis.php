@@ -66,6 +66,82 @@ class AuthPenulis extends BaseController
         }
     }
 
+    public function register()
+    {
+        if (session()->has('idpenulis')) {
+            return redirect()->to('/penulis');
+        }
+        $data = [
+            'validation' => \Config\Services::validation()
+        ];
+        return view('penulis/auth/register', $data);
+    }
+
+    public function processRegister()
+    {
+        if (!$this->validate([
+            'nama' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi.'
+                ]
+            ],
+            'password' => [
+                'rules' => 'required|min_length[5]',
+                'errors' => [
+                    'required' => '{field} harus diisi.',
+                    'min_length' => 'panjang password minimal 5 karakter'
+                ]
+            ],
+            'konfpassword' => [
+                'rules' => 'required|matches[password]',
+                'errors' => [
+                    'required' => 'konfirmasi password harus diisi.',
+                    'matches' => 'konfirmasi password harus sama dengan password'
+                ]
+            ],
+            'email' => [
+                'rules' => 'required|valid_email',
+                'errors' => [
+                    'required' => '{field} harus diisi.',
+                    'valid_email' => 'harus diisi dengan email valid'
+                ]
+            ],
+            'no_telp' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'no. hp harus diisi.'
+                ]
+            ],
+            'kota' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi.'
+                ]
+            ],
+            'alamat' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi.'
+                ]
+            ],
+        ])) {
+            return redirect()->to('/authpenulis/register')->withInput();
+        }
+        $this->penulisModel->save([
+            'nama' => $this->request->getVar('nama'),
+            'password' => $this->request->getVar('password'),
+            'email' => $this->request->getVar('email'),
+            'no_telp' => $this->request->getVar('no_telp'),
+            'kota' => $this->request->getVar('kota'),
+            'alamat' => $this->request->getVar('alamat')
+        ]);
+
+        sweetalert('Pendaftaran berhasil, silahkan login untuk melanjutkan', 'success', 'Berhasil!');
+
+        return redirect()->to('/penulis');
+    }
+
     public function logout()
     {
         session()->remove('emailPenulis');
