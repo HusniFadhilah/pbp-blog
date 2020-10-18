@@ -68,9 +68,9 @@ class AuthAdmin extends BaseController
 
     public function logout()
     {
-        session()->remove('email');
+        session()->remove('emailAdmin');
         session()->remove('idadmin');
-        session()->remove('isLoggedIn');
+        session()->remove('isLoggedInAdmin');
         sweetalert('Sesi berakhir. Kamu telah berhasil logout!', 'info', 'Info!');
         return redirect()->to('/authadmin');
     }

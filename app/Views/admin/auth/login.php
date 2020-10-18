@@ -15,7 +15,7 @@
             <form action="/authadmin/login" method="post">
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control <?= $validation->hasError('email') ? 'is-invalid' : '' ?>" id="email" placeholder="Your email" name="email">
+                    <input type="email" class="form-control <?= $validation->hasError('email') ? 'is-invalid' : '' ?>" id="email" placeholder="Your email" name="email" value="<?= old('email') ?>">
                     <span class="invalid-feedback ml-2"><?= $validation->getError('email') ?></span>
                 </div>
                 <div class="form-group">
