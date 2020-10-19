@@ -4,12 +4,27 @@
 
 
 <!-- OPTIONAL SCRIPT -->
+<!-- SweetAlert -->
 <script src="/assets/js/sweetalert2.all.min.js" type="text/javascript"></script>
+
+<!-- Adapter jquery ckeditor -->
+<script src="/assets/vendor/ckeditor4/ckeditor.js" type="text/javascript"></script>
+<script src="/assets/vendor/ckeditor4/adapters/jquery.js" type="text/javascript"></script>
+
+<!-- DataTable -->
+<script src="/assets/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="/assets/vendor/datatables/media/js/dataTables.bootstrap4.min.js"></script>
+
 <!-- IMPLEMENTATION OF JAVASCRIPT -->
 <script type="text/javascript">
     const textflashData = $('.flash-data').data('text');
     const titleflashData = $('.flash-data').data('title');
     const iconflashData = $('.flash-data').data('icon');
+
+    $(document).ready(function() {
+        $('#post').DataTable({});
+        $('#komentar').DataTable({});
+    });
 
     if (textflashData && titleflashData && iconflashData) {
         Swal.fire({
