@@ -26,4 +26,28 @@ class PostModel extends Model
 
         return $this->postModel->where(['idpost' => $id])->first();
     }
+
+    public function postTerbaru($limit = null)
+    {
+        if ($limit === false) {
+            return $this->join('penulis', 'post.idpenulis = penulis.idpenulis')
+                ->join('kategori', 'post.idkategori = kategori.idkategori')
+                ->orderBy('post.tgl_insert', 'DESC')
+                ->find();
+        } else {
+            return $this->join('penulis', 'post.idpenulis = penulis.idpenulis')
+                ->join('kategori', 'post.idkategori = kategori.idkategori')
+                ->limit($limit)
+                ->orderBy('post.tgl_insert', 'DESC')
+                ->find();
+        }
+    }
+
+    public function pencarianPost($keyword)
+    {
+        return $this->join('penulis', 'post.idpenulis = penulis.idpenulis')
+            ->join('kategori', 'post.idkategori = kategori.idkategori')
+            ->like('isi_post', $keyword)
+            ->orLike('judul', $keyword);
+    }
 }
