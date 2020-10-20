@@ -24,6 +24,7 @@
     $(document).ready(function() {
         $('#post').DataTable({});
         $('#komentar').DataTable({});
+        $('#texteditor').ckeditor();
     });
 
     if (textflashData && titleflashData && iconflashData) {
@@ -32,6 +33,39 @@
             text: textflashData,
             icon: iconflashData
         });
+    }
+    $('.tombol-hapus').on('click', function(e) {
+        e.preventDefault();
+        const textflashData = $(this).data('text');
+        const href = $(this).attr('href');
+
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: 'Data ' + textflashData + ' ini akan dihapus',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, hapus data!'
+        }).then((result) => {
+            if (result.value) {
+                document.location.href = href;
+            }
+        });
+    });
+
+    function previewImg() {
+        const gambar = document.querySelector('#file_gambar');
+        const label_gambar = document.querySelector('.custom-file-label');
+        const preview_gambar = document.querySelector('.img-preview');
+
+        label_gambar.textContent = gambar.files[0].name;
+        const file_gambar = new FileReader();
+        file_gambar.readAsDataURL(gambar.files[0]);
+
+        file_gambar.onload = function(e) {
+            preview_gambar.src = e.target.result;
+        }
     }
 </script>
 

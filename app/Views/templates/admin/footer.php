@@ -27,6 +27,25 @@
             icon: iconflashData
         });
     }
+    $('.tombol-hapus').on('click', function(e) {
+        e.preventDefault();
+        const textflashData = $(this).data('text');
+        const href = $(this).attr('href');
+
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: 'Data ' + textflashData + ' ini akan dihapus',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, hapus data!'
+        }).then((result) => {
+            if (result.value) {
+                document.location.href = href;
+            }
+        });
+    });
 </script>
 
 
