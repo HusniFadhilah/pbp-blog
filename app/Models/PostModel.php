@@ -11,7 +11,7 @@ class PostModel extends Model
 
     protected $returnType     = 'array';
 
-    protected $allowedFields = ['idkategori', 'idpenulis', 'judul', 'isi_post', 'file_gambar'];
+    protected $allowedFields = ['idkategori', 'idpenulis', 'judul', 'slug', 'isi_post', 'file_gambar'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'tgl_insert';
@@ -25,6 +25,16 @@ class PostModel extends Model
         }
 
         return $this->postModel->where(['idpost' => $id])->first();
+    }
+
+    public function getDataPostByPenulis($idpenulis)
+    {
+        return $this->postModel->where(['idpost' => $idpenulis])->first();
+    }
+
+    public function getOnePostByPenulis($idpost, $idpenulis)
+    {
+        return $this->postModel->where(['idpenulis' => $idpenulis, 'idpost' => $idpost]);
     }
 
     public function postTerbaru($limit = null)

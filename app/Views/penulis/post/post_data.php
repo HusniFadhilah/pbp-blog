@@ -5,6 +5,7 @@
 <!-- Taruh konten di bawah sini -->
 <h1>Halaman Post Data (Penulis)</h1>
 <div class="container">
+    <div class="flash-data" data-text="<?= session()->getFlashdata('text'); ?>" data-title="<?= session()->getFlashdata('title'); ?>" data-icon="<?= session()->getFlashdata('icon'); ?>"></div>
     <div class="row">
         <div class="col">
             <a href="<?= site_url('post/add') ?>" class="btn btn-primary mb-3"><i class="fa fa-plus mr-2"></i>Tambah Post</a>
@@ -31,11 +32,12 @@
                                         <td scope="row"><?= $i++ ?></td>
                                         <td><?= $p["judul"] ?></td>
                                         <td><?= $p["isi_post"] ?></td>
-                                        <td><?= $p["file_gambar"] ?></td>
+                                        <td><img src="/assets/img/post/<?= $p["file_gambar"] ?>" class="img-fluid img-thumbnail" style="max-width:100px"></td>
                                         <td><?= $p["tgl_insert"] ?></td>
                                         <td>
-                                            <a href="" class="btn btn-warning btn-sm mt-1" title="Edit post"><i class="fa fa-edit"></i></a>
+                                            <a href="/post/edit/<?= $p["idpost"] ?>" class="btn btn-warning btn-sm mt-1" title="Edit post"><i class="fa fa-edit"></i></a>
                                             <a href="/post/delete/<?= $p["idpost"] ?>" class="btn btn-danger btn-sm mt-1 tombol-hapus" data-text="<?= $title ?>" title="Hapus post"><i class="fa fa-trash"></i></a>
+                                            <a href="/post/detail/<?= $p["slug"] ?>" class="btn btn-info btn-sm mt-1" title="Lihat di web"><i class="fa fa-eye"></i></a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
