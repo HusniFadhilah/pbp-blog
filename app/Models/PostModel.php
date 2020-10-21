@@ -60,4 +60,16 @@ class PostModel extends Model
             ->like('isi_post', $keyword)
             ->orLike('judul', $keyword);
     }
+
+    // public function prevPost($id)
+    // {
+    //     // return $this->db->query("SELECT * FROM divisi WHERE id_divisi = (SELECT max(id_divisi) FROM divisi WHERE id_divisi < $id)");
+    //     // return $this->where(['idpost' => $this->selectMax('idpost')->where('idpost' < $id)])->find();
+    // }
+
+    // public function nextPost($id)
+    // {
+    //     // return $this->db->query("SELECT * FROM divisi WHERE id_divisi = (SELECT max(id_divisi) FROM divisi WHERE id_divisi < $id)");
+    //     // return $this->where('idpost', $this->selectMax('idpost')->where('idpost' > $id))->find();
+    // }
 }

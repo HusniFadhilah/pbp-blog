@@ -35,8 +35,15 @@ class Post extends BaseController
 
     public function detail($slug)
     {
+        $post = $this->postModel->where(['slug' => $slug])->first();
         $data = [
-            'slug' => $slug
+            'post' => $post,
+            'penulis' => $this->penulisModel->where(['idpenulis' => $post["idpenulis"]])->first(),
+            'kategori' => $this->kategoriModel->where(['idkategori' => $post["idkategori"]])->first(),
+            'allkategori' => $this->kategoriModel->findAll(),
+            'postterbaru' => $this->postModel->postTerbaru(4)
+            // 'prev' => $this->postModel->prevPost($post["idpost"]),
+            // 'next' => $this->postModel->nextPost($post["idpost"]),
         ];
         return view('public/post/post_detail', $data);
     }
