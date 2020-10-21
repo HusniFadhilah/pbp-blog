@@ -28,6 +28,10 @@ class Komentar extends Migration
 			'isi' => [
 				'type'           => 'TEXT',
 			],
+			'tgl_insert' => [
+				'type'           => 'DATETIME',
+				'null'     		 => true,
+			],
 			'tgl_update' => [
 				'type'           => 'DATETIME',
 				'null'     		 => true,
