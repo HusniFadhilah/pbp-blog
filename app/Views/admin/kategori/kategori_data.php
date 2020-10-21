@@ -21,7 +21,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="tableKategori" cellspacing="0">
+                        <table class="table table-hover" id="kategori" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th scope="col" style="width: 15%;">Category ID</th>
@@ -42,13 +42,15 @@
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
-
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
 
-            <!-- AKHIR ISI KONTEN -->
+<!-- AKHIR ISI KONTEN -->
 
-            <?= $this->endSection() ?>
+<?= $this->endSection() ?>

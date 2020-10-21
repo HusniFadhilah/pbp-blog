@@ -3,8 +3,13 @@
 
 <!-- ISI KONTEN -->
 <!-- Taruh konten di bawah sini -->
-<h1>Halaman Dashboard Penulis</h1>
-<a href="/authpenulis/logout"><button type="submit" class="btn btn-warning">LOGOUT</button></a>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="h3 mb-2 text-gray-800">Halaman Dashboard Penulis</h1>
+        </div>
+    </div>
+</div>
 
 <!-- AKHIR ISI KONTEN -->
 

@@ -3,11 +3,11 @@
 
 <!-- ISI KONTEN -->
 <!-- Taruh konten di bawah sini -->
-<h1>Halaman Post Data (Penulis)</h1>
 <div class="container">
     <div class="flash-data" data-text="<?= session()->getFlashdata('text'); ?>" data-title="<?= session()->getFlashdata('title'); ?>" data-icon="<?= session()->getFlashdata('icon'); ?>"></div>
     <div class="row">
         <div class="col">
+            <h1 class="h3 mb-2 text-gray-800">Halaman Data Post</h1>
             <a href="<?= site_url('post/add') ?>" class="btn btn-primary mb-3"><i class="fa fa-plus mr-2"></i>Tambah Post</a>
             <!-- DataTales Example -->
             <div class="card shadow mb-4">

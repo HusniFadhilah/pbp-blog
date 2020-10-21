@@ -15,7 +15,7 @@
                         <div class="col-lg col-sm col-md">
                             <div class="p-lg-5 p-4 p-md-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Login <span class="text-info"><b>Admin</b></span></h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Login <span class="text-primary"><b>Admin</b></span></h1>
                                 </div>
 
                                 <form action="/authadmin/login" method="post" class="user">
@@ -27,7 +27,7 @@
                                         <input type="password" class="form-control form-control-user <?= $validation->hasError('password') ? 'is-invalid' : '' ?>" id="password" placeholder="Password" name="password" />
                                         <span class="invalid-feedback ml-2"><?= $validation->getError('password') ?></span>
                                     </div>
-                                    <button type="submit" class="btn btn-info btn-user btn-block">
+                                    <button type="submit" class="btn btn-primary btn-user btn-block">
                                         Login
                                     </button>
                                 </form>

@@ -1,5 +1,5 @@
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
@@ -59,7 +59,7 @@
 
         <!-- Artikel -->
         <li class="nav-item">
-            <a class="nav-link" href="/penulis/data">
+            <a class="nav-link" href="/admin/reset_penulis">
                 <i class="fas fa-fw fa-user"></i>
                 <span>Penulis</span></a>
         </li>

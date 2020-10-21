@@ -3,7 +3,13 @@
 
 <!-- ISI KONTEN -->
 <!-- Taruh konten di bawah sini -->
-<h1>Halaman Reset Password Akun Penulis (Admin)</h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="h3 mb-2 text-gray-800">Halaman Reset Password Akun Penulis</h1>
+        </div>
+    </div>
+</div>
 
 
 <!-- AKHIR ISI KONTEN -->

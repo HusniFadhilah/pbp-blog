@@ -3,14 +3,15 @@
 namespace App\Controllers;
 
 use App\Models\AdminModel;
+use App\Models\PenulisModel;
 
 class Admin extends BaseController
 {
-    protected $adminModel;
 
     public function __construct()
     {
         $this->adminModel = new AdminModel();
+        $this->penulisModel = new PenulisModel();
     }
 
     public function index()
@@ -22,7 +23,8 @@ class Admin extends BaseController
         return view('admin/dashboard/dashboard');
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $data = [
             'judul' => 'Form Ubah Profile Admin',
             'validation' => \Config\Services::validation(),
@@ -32,7 +34,8 @@ class Admin extends BaseController
         return view('admin/profile/edit_profile', $data);
     }
 
-    public function update($id){
+    public function update($id)
+    {
         if (!$this->validate([
             'nama' => [
                 'rules' => 'required',
@@ -54,8 +57,7 @@ class Admin extends BaseController
                     'min_length' => '{field} minimal 8 karakter'
                 ]
             ]
-        ]))
-        {
+        ])) {
             $validation = \Config\Services::validation();
 
             return redirect()->back()->withInput()->with('validation', $validation);
@@ -65,7 +67,7 @@ class Admin extends BaseController
         $npassword = md5($this->request->getVar('password'));
         $oldpassword = $admin['password'];
 
-        if ($npassword == $oldpassword){
+        if ($npassword == $oldpassword) {
             $this->adminModel->save([
                 'idadmin' => $id,
                 'nama' => $this->request->getVar('nama'),
@@ -75,11 +77,25 @@ class Admin extends BaseController
             sweetalert('Data berhasil diubah', 'success', 'Berhasil!');
 
             return redirect()->back();
-        } else{
+        } else {
             sweetalert('Masukkan password dengan benar', 'error', 'Password salah!');
 
             return redirect()->back()->withInput();
         }
     }
 
+    public function reset_penulis()
+    {
+        $user_session = session()->get('idadmin');
+        if (!($user_session)) {
+            return redirect()->to('/authadmin');
+        }
+        $data = [
+            'title' => 'Reset Password Penulis',
+            'validation' => \Config\Services::validation(),
+            'penulis' => $this->penulisModel->getDataPenulis(),
+            'user' => $this->adminModel->where(['idadmin' => $user_session])->first()
+        ];
+        return view('admin/reset_penulis/penulis_data');
+    }
 }
