@@ -1,5 +1,6 @@
 <?= $this->include('templates/penulis/header') ?>
-<?= $this->include('templates/penulis/navbar') ?>
+<?= $this->include('templates/penulis/sidebar') ?>
+<?= $this->include('templates/penulis/topbar') ?>
 
 <!-- Isi Konten -->
 <?= $this->renderSection('contentpenulis') ?>
