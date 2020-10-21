@@ -15,6 +15,11 @@ class Kategori extends BaseController
 
     public function index()
     {
+        $user_session = session()->has('idadmin');
+        if (!($user_session)) {
+            return redirect()->to('/authadmin');
+        }
+
         $kategori = $this->kategoriModel->findAll();
 
         $data = [
@@ -26,7 +31,11 @@ class Kategori extends BaseController
 
     public function create()
     {
-//        session();
+        $user_session = session()->has('idadmin');
+        if (!($user_session)) {
+            return redirect()->to('/authadmin');
+        }
+
         $data = [
             'judul' => 'Form Tambah Kategori',
             'validation' => \Config\Services::validation()
@@ -37,38 +46,53 @@ class Kategori extends BaseController
 
     public function save()
     {
+        $user_session = session()->has('idadmin');
+        if (!($user_session)) {
+            return redirect()->to('/authadmin');
+        }
+
         if (!$this->validate([
             'nama' => [
                 'rules' => 'required|is_unique[kategori.nama]',
                 'errors' => [
                     'required' => '{field} kategori harus diisi.',
-                    'is_unique' => '{field} kateori sudah ada.'
+                    'is_unique' => '{field} kategori sudah ada.'
                 ]
             ]
         ])){
             $validation = \Config\Services::validation();
 
-            return redirect()->to('create')->withInput()->with('validation', $validation);
+            return redirect()->back()->withInput()->with('validation', $validation);
         }
 
         $this->kategoriModel->save([
             'nama' => $this->request->getVar('nama')
         ]);
 
-        session()->setFlashdata('pesan', 'Data berhasil ditambahkan');
+        sweetalert('Data berhasil ditambahkan', 'success', 'Berhasil!');
         
         return redirect()->to('/kategori');
     }
 
     public function delete($id){
+        $user_session = session()->has('idadmin');
+        if (!($user_session)) {
+            return redirect()->to('/authadmin');
+        }
+
         $this->kategoriModel->delete($id);
 
-        session()->setFlashdata('pesan', 'Data berhasil dihapus');
+        sweetalert('Data berhasil dihapus', 'success', 'Berhasil!');
 
         return redirect()->to('/kategori');
     }
 
     public function edit($id){
+        $user_session = session()->has('idadmin');
+        if (!($user_session)) {
+            return redirect()->to('/authadmin');
+        }
+
         $data = [
             'judul' => 'Form Ubah Kategori',
             'validation' => \Config\Services::validation(),
@@ -79,6 +103,11 @@ class Kategori extends BaseController
     }
 
     public function update($id){
+        $user_session = session()->has('idadmin');
+        if (!($user_session)) {
+            return redirect()->to('/authadmin');
+        }
+
         if (!$this->validate([
             'nama' => [
                 'rules' => 'required|is_unique[kategori.nama]',
@@ -91,7 +120,7 @@ class Kategori extends BaseController
         {
             $validation = \Config\Services::validation();
 
-            return redirect()->to('/kategori/edit/'.$id)->withInput()->with('validation', $validation);
+            return redirect()->back()->withInput()->with('validation', $validation);
         }
 
         $this->kategoriModel->save([
@@ -99,7 +128,7 @@ class Kategori extends BaseController
             'nama' => $this->request->getVar('nama')
         ]);
 
-        session()->setFlashdata('pesan', 'Data berhasil diubah.');
+        sweetalert('Data berhasil diubah', 'success', 'Berhasil!');
 
         return redirect()->to('/kategori');
     }
