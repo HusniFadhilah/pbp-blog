@@ -3,29 +3,43 @@
 
 <!-- ISI KONTEN -->
 <!-- Taruh konten di bawah sini -->
-<h1>Halaman Login (Admin)</h1>
+<div class="flash-data" data-text="<?= session()->getFlashdata('text'); ?>" data-title="<?= session()->getFlashdata('title'); ?>" data-icon="<?= session()->getFlashdata('icon'); ?>"></div>
+<div class="container">
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+                        <div class="col-lg col-sm col-md">
+                            <div class="p-lg-5 p-4 p-md-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Login <span class="text-info"><b>Admin</b></span></h1>
+                                </div>
 
-<div class="container mt-5">
-    <div class="flash-data" data-text="<?= session()->getFlashdata('text'); ?>" data-title="<?= session()->getFlashdata('title'); ?>" data-icon="<?= session()->getFlashdata('icon'); ?>"></div>
-    <div class="card shadow">
-        <div class="card-header">Login</div>
-        <div class="card-body">
-            <form action="/authadmin/login" method="post">
-                <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control <?= $validation->hasError('email') ? 'is-invalid' : '' ?>" id="email" placeholder="Your email" name="email" value="<?= old('email') ?>">
-                    <span class="invalid-feedback ml-2"><?= $validation->getError('email') ?></span>
+                                <form action="/authadmin/login" method="post" class="user">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user <?= $validation->hasError('email') ? 'is-invalid' : '' ?>" id="email" placeholder="Email" name="email" value="<?= old('email') ?>" />
+                                        <span class="invalid-feedback ml-2"><?= $validation->getError('email') ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control form-control-user <?= $validation->hasError('password') ? 'is-invalid' : '' ?>" id="password" placeholder="Password" name="password" />
+                                        <span class="invalid-feedback ml-2"><?= $validation->getError('password') ?></span>
+                                    </div>
+                                    <button type="submit" class="btn btn-info btn-user btn-block">
+                                        Login
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="password">password</label>
-                    <input type="password" class="form-control <?= $validation->hasError('password') ? 'is-invalid' : '' ?>" id="password" placeholder="Your password" name="password">
-                    <span class="invalid-feedback ml-2"><?= $validation->getError('password') ?></span>
-                </div>
-                <button type="submit" class="btn btn-block btn-success">LOGIN</button>
-            </form>
+            </div>
         </div>
     </div>
 </div>
+
 
 <!-- AKHIR ISI KONTEN -->
 

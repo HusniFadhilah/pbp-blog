@@ -27,6 +27,22 @@
     <link rel="stylesheet" href="/assets/plugin/pace/pace.min.css">
 
     <!-- Custom styles for this template -->
+    <style>
+        .bg-gradient-nero {
+            background-color: #152c3D;
+            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #152c3D), to(#152c3D));
+            background-image: linear-gradient(180deg, #152c3D 10%, #152c3D 100%);
+            background-size: cover
+        }
+
+        .bg-nero {
+            background-color: #E9B528
+        }
+
+        .btn-nero:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 
 <body id="page-top">
