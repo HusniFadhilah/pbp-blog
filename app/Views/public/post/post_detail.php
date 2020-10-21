@@ -157,11 +157,12 @@
                                         <h5>Cari Artikel</h5>
                                         <hr>
                                     </div>
-                                    <form>
+                                    <form action="/post" method="get">
                                         <div class="input-group mb-2">
-                                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Type keyword and hit enter">
+                                            <input type="text" class="form-control" id="keyword" placeholder="Type keyword and hit enter" name="keyword">
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text"><i class="fa fa-search"></i></div>
+                                                <input type="submit" name="submit" class="d-none">
                                             </div>
                                         </div>
                                     </form>

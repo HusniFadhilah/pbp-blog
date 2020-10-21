@@ -27,7 +27,8 @@ class Post extends BaseController
         $data = [
             'title' => 'Post',
             'post' => $post->paginate(1, 'post'),
-            'pager' => $post->pager
+            'pager' => $post->pager,
+            'keyword' => $keyword
         ];
 
         return view('public/dashboard/dashboard', $data);

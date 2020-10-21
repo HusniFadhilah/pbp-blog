@@ -6,6 +6,7 @@
 <h1>Halaman Dashboard Public</h1>
 <div class="container mt-5">
     <div class="row">
+        <?= $keyword ? '<strong class="mr-2">Keyword: </strong>' . $keyword : '' ?>
         <div class="col-12">
             <div class="input-group mb-3">
                 <form action="" method="get">
