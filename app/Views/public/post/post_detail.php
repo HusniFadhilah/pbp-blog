@@ -166,7 +166,7 @@
                                     </div>
 
                                     <div class="col-sm-6 mb-30">
-                                        <input type="text" placeholder="Email" name="email" value="<?= session()->get('idpenulis') ?>" readonly>
+                                        <input type="text" placeholder="Email" name="email" value="<?= session()->get('emailPenulis') ?>" readonly>
                                     </div>
 
                                     <div class="col-sm-12 mb-30">

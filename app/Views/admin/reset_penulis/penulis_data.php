@@ -3,6 +3,7 @@
 
 <!-- ISI KONTEN -->
 <!-- Taruh konten di bawah sini -->
+<div class="flash-data" data-text="<?= session()->getFlashdata('text'); ?>" data-title="<?= session()->getFlashdata('title'); ?>" data-icon="<?= session()->getFlashdata('icon'); ?>"></div>
 <div class="container">
     <div class="row">
         <div class="col">
@@ -30,7 +31,9 @@
                                         <td><?= $p["email"] ?></td>
                                         <td><?= $p["tgl_insert"] ?></td>
                                         <td>
-                                            <a href="" class="btn btn-danger btn-sm mt-1 tombol-reset" data-text="<?= $title ?>" title="Reset Password">Reset Password</a>
+                                            <form action="/admin/process_reset/<?= $p["idpenulis"] ?>" method="post">
+                                                <button type="submit" onclick="return confirm('Apakah Anda yakin akan mereset password penulis ini?')" class="btn btn-danger btn-sm mt-1" data-text="<?= $title ?>" title="Reset Password">Reset Password</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>

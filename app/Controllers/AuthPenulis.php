@@ -195,11 +195,9 @@ class AuthPenulis extends BaseController
                 session()->set($sessData);
                 $agent = $this->request->getUserAgent();
                 if ($agent->isReferral()) {
-                    // dd($agent->getReferrer());
-                    return redirect()->to($agent->getReferrer());
+                    return redirect()->to('/authpenulis');
                 } else {
                     return redirect()->to($agent->getReferrer());
-                    return redirect()->to('/authpenulis');
                 }
             }
         } else {

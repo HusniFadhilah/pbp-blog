@@ -99,7 +99,23 @@ class Admin extends BaseController
         return view('admin/reset_penulis/penulis_data', $data);
     }
 
-    public function ubahPassword($id){
+    public function process_reset($id)
+    {
+        $user_session = session()->get('idadmin');
+        if (!($user_session)) {
+            return redirect()->to('/authadmin');
+        }
+
+        $this->penulisModel->save([
+            'idpenulis' => $id,
+            'password' => md5($this->penulisModel->find($id)["email"])
+        ]);
+        sweetalert('Password penulis berhasil direset', 'success', 'Berhasil!');
+        return redirect()->to('/admin/reset_penulis')->withInput();
+    }
+
+    public function ubahPassword($id)
+    {
         $user_session = session()->has('idadmin');
         if (!($user_session)) {
             return redirect()->to('/authadmin');
@@ -114,7 +130,8 @@ class Admin extends BaseController
         return view('admin/profile/change_password', $data);
     }
 
-    public function updatePassword($id){
+    public function updatePassword($id)
+    {
         $user_session = session()->has('idadmin');
         if (!($user_session)) {
             return redirect()->to('/authadmin');
@@ -143,8 +160,7 @@ class Admin extends BaseController
                     'matches' => 'Konfirmasi password salah, silahkan ulangi.'
                 ]
             ]
-        ]))
-        {
+        ])) {
             $validation = \Config\Services::validation();
 
             return redirect()->back()->withInput()->with('validation', $validation);
@@ -154,7 +170,7 @@ class Admin extends BaseController
         $npassword = md5($this->request->getVar('password'));
         $oldpassword = $admin['password'];
 
-        if ($npassword == $oldpassword){
+        if ($npassword == $oldpassword) {
             $this->adminModel->save([
                 'idadmin' => $id,
                 'password' => md5($this->request->getVar('newpassword'))
@@ -163,7 +179,7 @@ class Admin extends BaseController
             sweetalert('Password berhasil diubah', 'success', 'Berhasil!');
 
             return redirect()->back();
-        } else{
+        } else {
             sweetalert('Masukkan password dengan benar', 'error', 'Password salah!');
 
             return redirect()->back()->withInput();
