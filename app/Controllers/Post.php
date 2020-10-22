@@ -34,7 +34,7 @@ class Post extends BaseController
             'postterbaru1' => $this->postModel->postTerbaru(1),
             'postterbaru3' => $this->postModel->postTerbaru(3),
             'postterbaru5' => $this->postModel->postTerbaru(5),
-            'kategori' => $this->kategoriModel->findAll()
+            'allkategori' => $this->kategoriModel->findAll()
         ];
 
         return view('public/dashboard/dashboard', $data);
@@ -273,7 +273,8 @@ class Post extends BaseController
         $data = [
             'title' => 'Group Post Berdasarkan Kategori',
             'post' => $post->paginate(10, 'post'),
-            'pager' => $post->pager
+            'pager' => $post->pager,
+            'allkategori' => $this->kategoriModel->findAll()
         ];
 
         return view('public/post/post_group', $data);

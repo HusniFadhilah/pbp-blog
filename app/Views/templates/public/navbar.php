@@ -20,7 +20,7 @@
                 <li><a href="#">Peringkat Nasional</a></li>
             </ul>
         </li> -->
-        <?php foreach ($kategori as $k) : ?>
+        <?php foreach ($allkategori as $k) : ?>
             <li><a href="/post/groupcategory/<?= $k["idkategori"] ?>"><?= ucfirst($k["nama"]) ?></a></li>
         <?php endforeach ?>
         <li><a href="/authpenulis"><button class="btn btn-primary">Masuk</button></a></li>
