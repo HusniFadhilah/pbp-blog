@@ -10,15 +10,11 @@
             <div>
                 <a class="btn btn-primary my-3" href="/kategori/create">+ Add Category</a>
             </div>
-            <?php if (session()->getFlashdata('pesan')) : ?>
-                <div class="alert alert-success" role="alert">
-                    <?= session()->getFlashdata('pesan'); ?>
-                </div>
-            <?php endif; ?>
+            <div class="flash-data" data-text="<?= session()->getFlashdata('text'); ?>"
+                 data-title="<?= session()->getFlashdata('title'); ?>"
+                 data-icon="<?= session()->getFlashdata('icon'); ?>">
+            </div>
             <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Kategori</h6>
-                </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-hover" id="kategori" cellspacing="0">
