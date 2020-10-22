@@ -47,7 +47,9 @@ class Komentar extends BaseController
         ]);
 
         sweetalert('Komentar berhasil ditambahkan', 'success', 'Berhasil!');
-
+        session()->remove('emailPenulis');
+        session()->remove('idpenulis');
+        session()->remove('isLoggedInPenulis');
         return redirect()->back();
     }
 
