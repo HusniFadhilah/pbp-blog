@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\PostModel;
 use App\Models\KategoriModel;
 use App\Models\PenulisModel;
+use App\Models\KomentarModel;
 
 class Post extends BaseController
 {
@@ -13,6 +14,7 @@ class Post extends BaseController
         $this->postModel = new PostModel();
         $this->kategoriModel = new KategoriModel();
         $this->penulisModel = new PenulisModel();
+        $this->komentarModel = new KomentarModel();
     }
 
     public function index()
@@ -47,7 +49,8 @@ class Post extends BaseController
             'allkategori' => $this->kategoriModel->findAll(),
             'validation' => \Config\Services::validation(),
             'postterbaru4' => $this->postModel->postTerbaru(4),
-            'postterbaru3' => $this->postModel->postTerbaru(3)
+            'postterbaru3' => $this->postModel->postTerbaru(3),
+            'komentar' => $this->komentarModel->getKomentarByPost($post["idpost"])
         ];
         return view('public/post/post_detail', $data);
     }

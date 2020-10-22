@@ -3,6 +3,7 @@
 
 <!-- ISI KONTEN -->
 <!-- Taruh konten di bawah sini -->
+<div class="flash-data" data-text="<?= session()->getFlashdata('text'); ?>" data-title="<?= session()->getFlashdata('title'); ?>" data-icon="<?= session()->getFlashdata('icon'); ?>"></div>
 <div class="slider-main h-800x h-sm-auto pos-relative pt-95 pb-25">
     <div class="img-bg bg-1 bg-layer-4"></div>
     <div class="container-fluid h-100 mt-xs-50">
@@ -108,7 +109,7 @@
 
                                                     <h5 class="color-ash"><b><?= ucfirst($pt3["nama"]) ?></b></h5>
                                                     <h4 class="mtb-10">
-                                                        <a href="#"><b><?= ucfirst($pt3["judul"]) ?></b></a></h4>
+                                                        <a href="/post/detail/<?= $pt3["slug"] ?>"><b><?= ucfirst($pt3["judul"]) ?></b></a></h4>
                                                     <ul class="list-li-mr-10 color-lt-black">
                                                         <li><i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= tgl_indo($pt3["tgl_insert"]) ?></li>
                                                         <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
@@ -125,52 +126,54 @@
                     </div><!-- row-->
                 </div><!-- mt-50 mb-20-->
 
-                <h4 class="mb-30 mt-20 clearfix"><b>Comments(12)</b></h4>
+                <h4 class="mb-30 mt-20 clearfix"><b>Comments(<?= count($komentar) ?>)</b></h4>
 
-                <div class="row">
-                    <div class="colsm-12 col-md-12 col-lg-12 col-xl-8">
-                        <div class="p-30 bg-white">
-                            <div class="row">
-                                <div class="col-9 col-lg-9 col-xl-6">
+                <?php foreach ($komentar as $k) : ?>
+                    <div class="row">
+                        <div class="colsm-12 col-md-12 col-lg-12 col-xl-8">
+                            <div class="p-30 bg-white">
+                                <div class="row">
+                                    <div class="col-9 col-lg-9 col-xl-6">
 
-                                    <div class="sided-70x">
-                                        <div class="s-left">
-                                            <img src="/assets/img/user/default.jpg" alt="">
-                                        </div><!-- s-left-->
+                                        <div class="sided-70x">
+                                            <div class="s-left">
+                                                <img src="/assets/img/user/default.jpg" alt="">
+                                            </div><!-- s-left-->
 
-                                        <div class="s-right">
-                                            <p class="ptb-5 color-ash"><b><?= ucfirst($post["nama"]) ?> on <?= month($post["tgl_insert"]) ?> <?= tanggal($post["tgl_insert"]) ?>, <?= tahun($post["tgl_insert"]) ?> at <?= pukul($post["tgl_insert"]) ?></b></p>
-                                        </div>
-                                    </div><!-- sided-80x-->
-                                </div><!-- col-md-6-->
+                                            <div class="s-right">
+                                                <p class="ptb-5 color-ash"><b><?= ucfirst($k["nama"]) ?> on <?= month($k["tgl_insert"]) ?> <?= tanggal($k["tgl_insert"]) ?>, <?= tahun($k["tgl_insert"]) ?> at <?= pukul($k["tgl_insert"]) ?></b></p>
+                                            </div>
+                                        </div><!-- sided-80x-->
+                                    </div><!-- col-md-6-->
 
-                                <div class="col-3 col-lg-3 col-xl-6 text-right">
-                                    <a class="color-ash" href="#"><b>REPLY</b></a>
-                                </div><!-- col-md-6-->
-                            </div><!-- row-->
+                                </div><!-- row-->
 
-                            <p class="mt-30">At that event and the ones that followed, plenty of senior citizens — among them librarians, property developers</p>
-                        </div><!-- p-30-->
-                    </div><!-- col-sm-6-->
-                </div><!-- row-->
+                                <p class="mt-30"><?= $k["isi"] ?></p>
+                            </div><!-- p-30-->
+                        </div><!-- col-sm-6-->
+                    </div><!-- row-->
+                <?php endforeach ?>
 
                 <h4 class="mb-30 mt-50 clearfix"><b>Post Comment</b></h4>
 
                 <?php if (session()->get('idpenulis')) : ?>
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
-                            <form class="form-block form-h-55 form-plr-20 form-bg-white" action="" method="post">
+                            <form class="form-block form-h-55 form-plr-20 form-bg-white" action="/komentar/save" method="post">
                                 <div class="row">
+                                    <input type="hidden" value="<?= $post["idpost"] ?>" name="idpost">
+                                    <input type="hidden" value="<?= $post["idpenulis"] ?>" name="idpenulis">
                                     <div class="col-sm-6 mb-30">
-                                        <input type="text" placeholder="Nama" name="nama" value="<?= session()->get('idpenulis') ?>" readonly>
+                                        <input type="text" placeholder="Nama" value="<?= session()->get('idpenulis') ?>" readonly>
                                     </div>
 
                                     <div class="col-sm-6 mb-30">
-                                        <input type="text" placeholder="Email" name="email" value="<?= session()->get('emailPenulis') ?>" readonly>
+                                        <input type="text" placeholder="Email" value="<?= session()->get('emailPenulis') ?>" readonly>
                                     </div>
 
                                     <div class="col-sm-12 mb-30">
-                                        <textarea class="ptb-20 min-h-200x" placeholder="Isi komentar"></textarea>
+                                        <textarea class="ptb-20 min-h-200x <?= $validation->hasError('isi') ? 'is-invalid' : '' ?>" placeholder="Isi komentar" name="isi"><?= old('isi') ?></textarea>
+                                        <span class="invalid-feedback"><?= $validation->getError('isi') ?></span>
                                     </div>
 
                                 </div>

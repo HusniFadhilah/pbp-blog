@@ -9,25 +9,26 @@ class KomentarModel extends Model
     protected $table = 'komentar';
     protected $primaryKey = 'idkomentar';
 
+    protected $returnType     = 'array';
+
     protected $allowedFields = ['idpost', 'idpenulis', 'isi'];
     protected $useTimestamps = true;
     protected $createdField  = 'tgl_insert';
     protected $updatedField  = 'tgl_update';
 
-    protected $validationRules    = [
-        'nama'     => 'required',
-        'idpenulis'     => 'required',
-        'idpost'     => 'required'
-    ];
-    protected $validationMessages = [
-        'nama'        => [
-            'required' => 'Nama kategori harus diisi'
-        ],
-        'idpenulis'        => [
-            'required' => 'Penulis harus diisi'
-        ],
-        'idpost'        => [
-            'required' => 'Post harus diisi'
-        ]
-    ];
+    // FUNCTION & METHOD //
+    public function getDataKomentar($id = false)
+    {
+        if ($id === false) {
+            return $this->findAll();
+        }
+
+        return $this->komentarModel->where(['idkomentar' => $id])->first();
+    }
+
+    public function getKomentarByPost($idpost)
+    {
+        return $this->join('penulis', 'komentar.idpenulis = penulis.idpenulis')
+            ->where(['idpost' => $idpost])->find();
+    }
 }
