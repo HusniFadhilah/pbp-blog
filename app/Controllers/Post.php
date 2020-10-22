@@ -34,6 +34,7 @@ class Post extends BaseController
             'postterbaru1' => $this->postModel->postTerbaru(1),
             'postterbaru3' => $this->postModel->postTerbaru(3),
             'postterbaru5' => $this->postModel->postTerbaru(5),
+            'kategori' => $this->kategoriModel->findAll()
         ];
 
         return view('public/dashboard/dashboard', $data);
@@ -265,7 +266,8 @@ class Post extends BaseController
         return redirect()->to('/post/data');
     }
 
-    public function groupCategory($id){
+    public function groupCategory($id)
+    {
         $post = $this->postModel->groupPost($id);
 
         $data = [
@@ -275,6 +277,5 @@ class Post extends BaseController
         ];
 
         return view('public/post/post_group', $data);
-
     }
 }
