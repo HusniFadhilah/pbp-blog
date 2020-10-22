@@ -4,7 +4,7 @@
 <!-- ISI KONTEN -->
 <!-- Taruh konten di bawah sini -->
 <div class="flash-data" data-text="<?= session()->getFlashdata('text'); ?>" data-title="<?= session()->getFlashdata('title'); ?>" data-icon="<?= session()->getFlashdata('icon'); ?>"></div>
-<div class="slider-main h-800x h-sm-auto pos-relative pt-95 pb-25">
+<div class="slider-main h-500x h-sm-auto pos-relative pt-95 pb-25">
     <div class="img-bg bg-1 bg-layer-4"></div>
     <div class="container-fluid h-100 mt-xs-50">
         <div class="dplay-tbl">

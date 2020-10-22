@@ -3,7 +3,7 @@
 
 <!-- ISI KONTEN -->
 <!-- Taruh konten di bawah sini -->
-<div class="slider-main h-<?= $keyword ? '300' : '800' ?>x h-sm-auto pos-relative pt-95 pb-25">
+<div class="slider-main h-<?= $keyword ? '300' : '500' ?>x h-sm-auto pos-relative pt-95 pb-25">
     <div class="img-bg bg-1 bg-layer-4"></div>
     <div class="container-fluid h-100 mt-xs-50">
 
