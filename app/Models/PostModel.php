@@ -71,6 +71,13 @@ class PostModel extends Model
             ->orLike('judul', $keyword);
     }
 
+    public function groupPost($id)
+    {
+        return $this->join('kategori', 'post.idkategori = kategori.idkategori')
+            ->where(['kategori.idkategori' => $id])
+            ->orderBy('post.tgl_insert', 'DESC');
+    }
+
     // public function prevPost($id)
     // {
     //     // return $this->db->query("SELECT * FROM divisi WHERE id_divisi = (SELECT max(id_divisi) FROM divisi WHERE id_divisi < $id)");

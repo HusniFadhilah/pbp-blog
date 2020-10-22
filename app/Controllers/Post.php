@@ -264,4 +264,17 @@ class Post extends BaseController
         sweetalert('Post berhasil dihapus', 'success', 'Berhasil!');
         return redirect()->to('/post/data');
     }
+
+    public function groupCategory($id){
+        $post = $this->postModel->groupPost($id);
+
+        $data = [
+            'title' => 'Group Post Berdasarkan Kategori',
+            'post' => $post->paginate(10, 'post'),
+            'pager' => $post->pager
+        ];
+
+        return view('public/post/post_group', $data);
+
+    }
 }
