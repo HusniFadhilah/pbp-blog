@@ -11,8 +11,8 @@ class KategoriModel extends Model
 
     protected $allowedFields = ['nama'];
     protected $useTimestamps = true;
-    protected $createdField  = 'tgl_insert';
-    protected $updatedField  = 'tgl_update';
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
 
     protected $validationRules    = [
         'nama'     => 'required'
