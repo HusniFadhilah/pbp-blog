@@ -39,17 +39,17 @@
 
                                 <div class="swiper-wrapper">
                                     <!-- data-swiper-autoplay="1000"  -->
-                                    <?php foreach ($postterbaru4 as $pt4) : ?>
+                                    <?php foreach ($postterbaru5 as $pt5) : ?>
                                         <div class="swiper-slide">
                                             <div class="bg-white">
-                                                <img src="/assets/img/post/<?= $pt4["file_gambar"] ?>" alt="<?= $pt4["judul"] ?>">
+                                                <img src="/assets/img/post/<?= $pt5["file_gambar"] ?>" alt="<?= $pt5["judul"] ?>">
 
                                                 <div class="plr-25 ptb-15">
                                                     <h5 class="color-ash"><b>ART</b></h5>
                                                     <h4 class="mtb-10">
-                                                        <a href="#"><b><?= $pt4["judul"] ?></b></a></h4>
+                                                        <a href="#"><b><?= $pt5["judul"] ?></b></a></h4>
                                                     <ul class="list-li-mr-10 color-lt-black">
-                                                        <li><i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= time_ago($pt4["tgl_insert"]) ?></li>
+                                                        <li><i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= time_ago($pt5["tgl_insert"]) ?></li>
                                                         <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
                                                     </ul>
                                                 </div><!-- hot-news -->
@@ -72,56 +72,28 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-1"></div>
-            <div class="col-md-12 col-lg-8 ptb-50 pr-30 pr-md-15">
+            <div class="col-md-12 col-lg-10 ptb-50 pr-30 pr-md-15">
                 <div class="row">
 
-                    <!-- START OF FIRST PARA -->
-                    <div class="col-md-6 col-lg-6 col-xl-4 mb-30">
-                        <div class="card h-100 bg-white">
-                            <div class="plr-25 ptb-15">
+                    <?php foreach ($postterbaru3 as $pt3) : ?>
+                        <!-- START OF FIRST PARA -->
+                        <div class="col-md-6 col-lg-6 col-xl-4 mb-30">
+                            <div class="card h-100 bg-white">
+                                <div class="plr-25 ptb-15">
 
-                                <h5 class="color-ash"><b>ART</b></h5>
-                                <h4 class="mtb-10"><a href="#"><b>I Got off Addrall and Xanax Using Psilocybon</b></a></h4>
-                                <ul class="list-li-mr-10 color-lt-black">
-                                    <li><i class="mr-5 font-12 ion-android-favorite-outline"></i>15</li>
-                                    <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
-                                </ul>
+                                    <h5 class="color-ash"><b><?= $pt3["idkategori"] ?></b></h5>
+                                    <h4 class="mtb-10"><a href="/post/detail/<?= $pt3["slug"] ?>"><b><?= $pt3["judul"] ?></b></a></h4>
+                                    <ul class="list-li-mr-10 color-lt-black">
+                                        <li><i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= indo_date($pt3["tgl_insert"]) ?></li>
+                                        <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
+                                    </ul>
 
-                            </div><!-- hot-news -->
-                        </div><!-- card -->
-                    </div><!-- col-lg-4 col-md-6 -->
+                                </div><!-- hot-news -->
+                            </div><!-- card -->
+                        </div><!-- col-lg-4 col-md-6 -->
 
-                    <div class="col-md-6 col-lg-6 col-xl-4 mb-30">
-                        <div class="card h-100 bg-white">
-                            <div class="plr-25 ptb-15">
-
-                                <h5 class="color-ash"><b>ART</b></h5>
-                                <h4 class="mtb-10"><a href="#"><b>I Got off Addrall and Xanax Using Psilocybon</b></a></h4>
-                                <ul class="list-li-mr-10 color-lt-black">
-                                    <li><i class="mr-5 font-12 ion-android-favorite-outline"></i>15</li>
-                                    <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
-                                </ul>
-
-                            </div><!-- hot-news -->
-                        </div><!-- card -->
-                    </div><!-- col-lg-4 col-md-6 -->
-
-                    <div class="col-md-6 col-lg-6 col-xl-4 mb-30">
-                        <div class="card h-100 bg-white">
-                            <div class="plr-25 ptb-15">
-
-                                <h5 class="color-ash"><b>ART</b></h5>
-                                <h4 class="mtb-10"><a href="#"><b>I Got off Addrall and Xanax Using Psilocybon</b></a></h4>
-                                <ul class="list-li-mr-10 color-lt-black">
-                                    <li><i class="mr-5 font-12 ion-android-favorite-outline"></i>15</li>
-                                    <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
-                                </ul>
-
-                            </div><!-- hot-news -->
-                        </div><!-- card -->
-                    </div><!-- col-lg-4 col-md-6 -->
-
-                    <!-- END OF FIRST PARA -->
+                        <!-- END OF FIRST PARA -->
+                    <?php endforeach ?>
                 </div><!-- row -->
 
                 <h4 class="mb-30 mt-20 clearfix"><b>Whats trending</b></h4>
@@ -129,7 +101,7 @@
                 <div class="row">
                     <?php foreach ($post as $p) : ?>
                         <!-- START OF SECOND PARA -->
-                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-30">
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-30">
                             <div class="card h-100 h-xs-500x">
                                 <div class="sided-half sided-xs-half h-100 bg-white">
 
@@ -144,8 +116,8 @@
                                                 <div class="dplay-tbl-cell">
 
                                                     <h5 class="color-ash"><b><?= $p["idkategori"] ?></b></h5>
-                                                    <h2 class="mtb-10"><a href="/post/detail/<?= $p["slug"] ?>">
-                                                            <b><?= $p["judul"] ?></b></a></h2>
+                                                    <h4 class="mtb-10"><a href="/post/detail/<?= $p["slug"] ?>">
+                                                            <b><?= $p["judul"] ?></b></a></h4>
                                                     <ul class="list-li-mr-10 color-lt-black">
                                                         <li><i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= indo_date($p["tgl_insert"]) ?></li>
                                                         <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>

@@ -26,11 +26,11 @@ class Post extends BaseController
 
         $data = [
             'title' => 'Post',
-            'post' => $post->paginate(1, 'post'),
+            'post' => $post->paginate(4, 'post'),
             'pager' => $post->pager,
             'keyword' => $keyword,
             'postterbaru1' => $this->postModel->postTerbaru(1),
-            'postterbaru4' => $this->postModel->postTerbaru(4),
+            'postterbaru3' => $this->postModel->postTerbaru(3),
             'postterbaru5' => $this->postModel->postTerbaru(5),
         ];
 
