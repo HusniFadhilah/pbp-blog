@@ -17,7 +17,8 @@
                     <label for="password" class="col-sm-2 col-form-label">Password</label>
                     <div class="col-sm-10">
                         <input type="password" class="form-control <?= ($validation->hasError('password')) ?
-                            'is-invalid' : ''; ?>" name="password" autofocus>
+                            'is-invalid' : ''; ?>" name="password" <?= ($validation->hasError('password')) ?
+                            'autofocus' : ''; ?> value="<?= old('password') ?>">
                         <div class="invalid-feedback">
                             <?= $validation->getError('password'); ?>
                         </div>
@@ -27,7 +28,8 @@
                     <label for="newpassword" class="col-sm-2 col-form-label">Password Baru</label>
                     <div class="col-sm-10">
                         <input type="password" class="form-control <?= ($validation->hasError('newpassword')) ?
-                            'is-invalid' : ''; ?>" name="newpassword" autofocus>
+                            'is-invalid' : ''; ?>" name="newpassword" <?= ($validation->hasError('newpassword')) ?
+                            'autofocus' : ''; ?> value="<?= old('newpassword') ?>">
                         <div class="invalid-feedback">
                             <?= $validation->getError('newpassword'); ?>
                         </div>
@@ -37,7 +39,8 @@
                     <label for="confirmpassword" class="col-sm-2 col-form-label">Konfirmasi Password Baru</label>
                     <div class="col-sm-10">
                         <input type="password" class="form-control <?= ($validation->hasError('confirmpassword')) ?
-                            'is-invalid' : ''; ?>" name="confirmpassword" autofocus>
+                            'is-invalid' : ''; ?>" name="confirmpassword" <?= ($validation->hasError('confirmpassword')) ?
+                            'autofocus' : ''; ?> value="<?= old('confirmpassword') ?>">
                         <div class="invalid-feedback">
                             <?= $validation->getError('confirmpassword'); ?>
                         </div>
