@@ -13,7 +13,7 @@ class AuthPenulis extends BaseController
 
     public function index()
     {
-        if (session()->has('idpenulis')) {
+        if (session()->get('idpenulis')) {
             return redirect()->to('/penulis');
         }
         $data = [
@@ -193,8 +193,14 @@ class AuthPenulis extends BaseController
                 ];
 
                 session()->set($sessData);
-
-                return redirect()->to('/penulis');
+                $agent = $this->request->getUserAgent();
+                if ($agent->isReferral()) {
+                    // dd($agent->getReferrer());
+                    return redirect()->to($agent->getReferrer());
+                } else {
+                    return redirect()->to($agent->getReferrer());
+                    return redirect()->to('/authpenulis');
+                }
             }
         } else {
             sweetalert('Maaf akun Anda tidak terdaftar', 'error', 'Gagal!');

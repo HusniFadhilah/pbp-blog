@@ -68,8 +68,38 @@
 
 <!-- OPTIONAL SCRIPT -->
 <script src="/assets/js/sweetalert2.all.min.js" type="text/javascript"></script>
+
 <!-- IMPLEMENTATION OF JAVASCRIPT -->
-<script type="text/javascript"></script>
+<script type="text/javascript">
+    // $('#loginForm').on('submit', function(event) {
+    //     // prevent the default submit
+    //     event.preventDefault();
+    //     var form = $(this);
+    //     $.ajax({
+    //         url: "/authpenulis/loginkomentar",
+    //         type: "POST",
+    //         // use the forms data
+    //         data: form.serialize(),
+    //         beforeSend: function() {
+    //             console.log("Processing...");
+    //         },
+    //         success: function(response) {
+    //             // do sth with the response
+    //             if (response === "OK") {
+    //                 // credentials verified
+    //                 // redirect
+    //             } else {
+    //                 // credentials incorrect
+    //                 // append errormessage to modal
+    //                 form.closest('.modal-body').append('<div class="error">' + response + '</div>');
+    //             }
+    //         },
+    //         error: function(response) {
+    //             console.log(response);
+    //         }
+    //     });
+    // });
+</script>
 
 </body>
 

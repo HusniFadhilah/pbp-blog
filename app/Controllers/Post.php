@@ -46,7 +46,8 @@ class Post extends BaseController
             'kategori' => $this->kategoriModel->where(['idkategori' => $post["idkategori"]])->first(),
             'allkategori' => $this->kategoriModel->findAll(),
             'validation' => \Config\Services::validation(),
-            'postterbaru' => $this->postModel->postTerbaru(4)
+            'postterbaru4' => $this->postModel->postTerbaru(4),
+            'postterbaru3' => $this->postModel->postTerbaru(3)
         ];
         return view('public/post/post_detail', $data);
     }

@@ -13,7 +13,7 @@ class AuthAdmin extends BaseController
 
     public function index()
     {
-        if (session()->has('idadmin')) {
+        if (session()->get('idadmin')) {
             return redirect()->to('/admin');
         }
         $data = [
