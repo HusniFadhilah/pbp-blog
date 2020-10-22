@@ -31,7 +31,7 @@
                                     <tr>
                                         <td scope="row"><?= $i++ ?></td>
                                         <td><?= $p["judul"] ?></td>
-                                        <td><?= $p["isi_post"] ?></td>
+                                        <td><?= crop_string($p["isi_post"], 40) ?></td>
                                         <td><img src="/assets/img/post/<?= $p["file_gambar"] ?>" class="img-fluid img-thumbnail" style="max-width:100px"></td>
                                         <td><?= $p["tgl_insert"] ?></td>
                                         <td>

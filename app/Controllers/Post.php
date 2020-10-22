@@ -39,7 +39,7 @@ class Post extends BaseController
 
     public function detail($slug)
     {
-        $post = $this->postModel->where(['slug' => $slug])->first();
+        $post = $this->postModel->getDataPostBySlug($slug);
         $data = [
             'post' => $post,
             'penulis' => $this->penulisModel->where(['idpenulis' => $post["idpenulis"]])->first(),

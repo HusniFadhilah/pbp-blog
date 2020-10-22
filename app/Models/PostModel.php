@@ -29,6 +29,14 @@ class PostModel extends Model
         return $this->postModel->where(['idpost' => $id])->first();
     }
 
+    public function getDataPostBySlug($slug)
+    {
+        return $this->join('penulis', 'post.idpenulis = penulis.idpenulis')
+            ->join('kategori', 'post.idkategori = kategori.idkategori')
+            ->where(['slug' => $slug])
+            ->first();
+    }
+
     public function getDataPostByPenulis($idpenulis)
     {
         return $this->postModel->where(['idpost' => $idpenulis])->first();
