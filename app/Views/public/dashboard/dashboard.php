@@ -46,7 +46,7 @@
                                                     <img src="/assets/img/post/<?= $pt5["file_gambar"] ?>" alt="<?= $pt5["judul"] ?>">
 
                                                     <div class="plr-25 ptb-15">
-                                                        <h5 class="color-ash"><b>ART</b></h5>
+                                                        <h5 class="color-ash"><b><?= ucfirst($pt5["nama"]) ?></b></h5>
                                                         <h4 class="mtb-10">
                                                             <a href="#"><b><?= $pt5["judul"] ?></b></a></h4>
                                                         <ul class="list-li-mr-10 color-lt-black">
@@ -117,7 +117,7 @@
                 <?php endif ?>
 
                 <div class="row">
-                    <?php if (count($post) > 1) : ?>
+                    <?php if (count($post) > 0) : ?>
                         <?php foreach ($post as $p) : ?>
                             <!-- START OF SECOND PARA -->
                             <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-30">
