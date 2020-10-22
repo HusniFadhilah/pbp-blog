@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1 class="h3 mb-2 text-gray-800">Halaman Edit Profile (Admin)</h1>
+            <h1 class="h3 mb-3 text-gray-800">Halaman Edit Profile (Admin)</h1>
         </div>
     </div>
 </div>

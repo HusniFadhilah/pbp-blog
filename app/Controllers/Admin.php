@@ -91,11 +91,11 @@ class Admin extends BaseController
             return redirect()->to('/authadmin');
         }
         $data = [
-            'title' => 'Reset Password Penulis',
+            'title' => 'Password Penulis',
             'validation' => \Config\Services::validation(),
             'penulis' => $this->penulisModel->getDataPenulis(),
             'user' => $this->adminModel->where(['idadmin' => $user_session])->first()
         ];
-        return view('admin/reset_penulis/penulis_data');
+        return view('admin/reset_penulis/penulis_data', $data);
     }
 }

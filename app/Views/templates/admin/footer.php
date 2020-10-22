@@ -101,6 +101,26 @@
             }
         });
     });
+
+    $('.tombol-reset').on('click', function(e) {
+        e.preventDefault();
+        const textflashData = $(this).data('text');
+        const href = $(this).attr('href');
+
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: textflashData + ' ini akan direset',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, reset sekarang!'
+        }).then((result) => {
+            if (result.value) {
+                document.location.href = href;
+            }
+        });
+    });
 </script>
 
 
