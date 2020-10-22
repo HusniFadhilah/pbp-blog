@@ -28,7 +28,7 @@ class Penulis extends BaseController
         }
 
         $data = [
-            'judul' => 'Form Ubah Profile Admin',
+            'judul' => 'Form Ubah Profile Penulis',
             'validation' => \Config\Services::validation(),
             'penulis' => $this->penulisModel->find($id)
         ];
@@ -89,9 +89,9 @@ class Penulis extends BaseController
             return redirect()->back()->withInput()->with('validation', $validation);
         }
 
-        $admin = $this->penulisModel->find($id);
+        $penulis = $this->penulisModel->find($id);
         $npassword = md5($this->request->getVar('password'));
-        $oldpassword = $admin['password'];
+        $oldpassword = $penulis['password'];
 
         if ($npassword == $oldpassword){
             $this->penulisModel->save([
@@ -113,4 +113,74 @@ class Penulis extends BaseController
         }
     }
 
+    public function ubahPassword($id){
+        $user_session = session()->has('idpenulis');
+        if (!($user_session)) {
+            return redirect()->to('/authpenulis');
+        }
+
+        $data = [
+            'judul' => 'Form Ubah Password Penulis',
+            'validation' => \Config\Services::validation(),
+            'penulis' => $this->penulisModel->find($id)
+        ];
+
+        return view('penulis/profile/change_password', $data);
+    }
+
+    public function updatePassword($id){
+        $user_session = session()->has('idpenulis');
+        if (!($user_session)) {
+            return redirect()->to('/authpenulis');
+        }
+
+        if (!$this->validate([
+            'password' => [
+                'rules' => 'required|min_length[8]',
+                'errors' => [
+                    'required' => '{field} harus diisi.',
+                    'min_length' => '{field} minimal 8 karakter'
+                ]
+            ],
+            'newpassword' => [
+                'rules' => 'required|min_length[8]',
+                'errors' => [
+                    'required' => 'Password baru harus diisi.',
+                    'min_length' => 'Password baru minimal 8 karakter'
+                ]
+            ],
+            'confirmpassword' => [
+                'rules' => 'required|min_length[8]|matches[newpassword]',
+                'errors' => [
+                    'required' => 'Konfirmasi password baru harus diisi.',
+                    'min_length' => 'Konfirmasi password baru minimal 8 karakter',
+                    'matches[password]' => 'Konfirmasi password salah, silahkan ulangi.'
+                ]
+            ]
+        ]))
+        {
+            $validation = \Config\Services::validation();
+
+            return redirect()->back()->withInput()->with('validation', $validation);
+        }
+
+        $penulis = $this->penulisModel->find($id);
+        $npassword = md5($this->request->getVar('password'));
+        $oldpassword = $penulis['password'];
+
+        if ($npassword == $oldpassword){
+            $this->penulisModel->save([
+                'idpenulis' => $id,
+                'password' => md5($this->request->getVar('newpassword'))
+            ]);
+
+            sweetalert('Password berhasil diubah', 'success', 'Berhasil!');
+
+            return redirect()->back();
+        } else{
+            sweetalert('Masukkan password dengan benar', 'error', 'Password salah!');
+
+            return redirect()->back()->withInput();
+        }
+    }
 }
