@@ -31,9 +31,7 @@
                                         <td><?= $p["email"] ?></td>
                                         <td><?= $p["tgl_insert"] ?></td>
                                         <td>
-                                            <form action="/admin/process_reset/<?= $p["idpenulis"] ?>" method="post">
-                                                <button type="submit" onclick="return confirm('Apakah Anda yakin akan mereset password penulis ini?')" class="btn btn-danger btn-sm mt-1" data-text="<?= $title ?>" title="Reset Password">Reset Password</button>
-                                            </form>
+                                                <button href="/admin/process_reset/<?= $p["idpenulis"] ?>" type="submit" class="btn btn-danger btn-sm mt-1 tombol-reset" data-text="<?= $title ?>" title="Reset Password">Reset Password</button>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
