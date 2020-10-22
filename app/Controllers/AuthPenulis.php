@@ -59,13 +59,13 @@ class AuthPenulis extends BaseController
 
                 session()->set($sessData);
 
-                if ($agent->isReferral()) {
-                    dd($agent->getReferrer());
-                    // return redirect()->to($agent->getReferrer());
-                } else {
-                    dd($agent->getReferrer());
-                    return redirect()->to('/penulis');
-                }
+                // if ($agent->isReferral()) {
+                //     dd($agent->getReferrer());
+                //     // return redirect()->to($agent->getReferrer());
+                // } else {
+                //     dd($agent->getReferrer());
+                // }
+                return redirect()->to('/penulis');
             }
         } else {
             sweetalert('Maaf akun Anda tidak terdaftar', 'error', 'Gagal!');
