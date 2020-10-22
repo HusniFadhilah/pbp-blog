@@ -9,17 +9,19 @@
 
         <div class="row h-100">
             <div class="col-md-1"></div>
-            <div class="col-sm-12 col-md-5 h-100 h-sm-50">
-                <div class="dplay-tbl">
-                    <div class="dplay-tbl-cell color-white mtb-30">
-                        <div class="mx-w-400x">
-                            <h5><b>ART</b></h5>
-                            <h1 class="mt-20 mb-30"><b>The Shoddy Science Behind most Pregnancy Advice</b></h1>
-                            <h6><a class="plr-20 btn-brdr-grey color-white" href="#"><b>Continue Reading</b></a></h6>
-                        </div><!-- mx-w-200x -->
-                    </div><!-- dplay-tbl-cell -->
-                </div><!-- dplay-tbl -->
-            </div><!-- col-sm-6 -->
+            <?php foreach ($postterbaru1 as $pt1) : ?>
+                <div class="col-sm-12 col-md-5 h-100 h-sm-50">
+                    <div class="dplay-tbl">
+                        <div class="dplay-tbl-cell color-white mtb-30">
+                            <div class="mx-w-400x">
+                                <h5><b><?= ucfirst($pt1["nama"]) ?></b></h5>
+                                <h1 class="mt-20 mb-30"><b><?= $pt1["judul"] ?></b></h1>
+                                <h6><a class="plr-20 btn-brdr-grey color-white" href="/post/detail/<?= $pt1["slug"] ?>"><b>Continue Reading</b></a></h6>
+                            </div><!-- mx-w-200x -->
+                        </div><!-- dplay-tbl-cell -->
+                    </div><!-- dplay-tbl -->
+                </div><!-- col-sm-6 -->
+            <?php endforeach ?>
 
             <div class="col-sm-12 col-md-6 h-sm-50 oflow-hidden swiper-area pos-relative">
 
@@ -31,77 +33,29 @@
 
                             <h5 class="mb-50 color-white"><b>HOT NEWS</b></h5>
 
-                            <div class="swiper-container oflow-visible" data-slide-effect="slide" data-autoheight="false" data-swiper-speed="500" data-swiper-margin="25" data-swiper-slides-per-view="2" data-swiper-breakpoints="true" data-scrollbar="true" data-swiper-loop="true" data-swpr-responsive="[1, 2, 1, 2]">
+                            <div class="swiper-container oflow-visible" data-slide-effect="slide" data-autoheight="false" data-swiper-speed="500" data-swiper-margin="25" data-swiper-slides-per-view="2" data-swiper-breakpoints="true" data-scrollbar="true" data-swiper-loop="false" data-swpr-responsive="[1, 2, 1, 2]">
 
 
 
                                 <div class="swiper-wrapper">
                                     <!-- data-swiper-autoplay="1000"  -->
-                                    <div class="swiper-slide">
-                                        <div class="bg-white">
-                                            <img src="/assets/img/template/hot_news_1_300x150.jpg" alt="">
+                                    <?php foreach ($postterbaru4 as $pt4) : ?>
+                                        <div class="swiper-slide">
+                                            <div class="bg-white">
+                                                <img src="/assets/img/post/<?= $pt4["file_gambar"] ?>" alt="<?= $pt4["judul"] ?>">
 
-                                            <div class="plr-25 ptb-15">
-                                                <h5 class="color-ash"><b>ART</b></h5>
-                                                <h4 class="mtb-10">
-                                                    <a href="#"><b>I Got off Addrall and Xanax Using Psilocybon</b></a></h4>
-                                                <ul class="list-li-mr-10 color-lt-black">
-                                                    <li><i class="mr-5 font-12 ion-android-favorite-outline"></i>15</li>
-                                                    <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
-                                                </ul>
+                                                <div class="plr-25 ptb-15">
+                                                    <h5 class="color-ash"><b>ART</b></h5>
+                                                    <h4 class="mtb-10">
+                                                        <a href="#"><b><?= $pt4["judul"] ?></b></a></h4>
+                                                    <ul class="list-li-mr-10 color-lt-black">
+                                                        <li><i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= time_ago($pt4["tgl_insert"]) ?></li>
+                                                        <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
+                                                    </ul>
+                                                </div><!-- hot-news -->
                                             </div><!-- hot-news -->
-                                        </div><!-- hot-news -->
-                                    </div><!-- swiper-slide -->
-
-                                    <div class="swiper-slide">
-                                        <div class="bg-white">
-                                            <img src="/assets/img/template/hot_news_2_300x150.jpg" alt="">
-
-                                            <div class="plr-25 ptb-15">
-                                                <h5 class="color-ash"><b>ART</b></h5>
-                                                <h4 class="mtb-10">
-                                                    <a href="#"><b>I Got off Addrall and Xanax Using Psilocybon</b></a></h4>
-                                                <ul class="list-li-mr-10 color-lt-black">
-                                                    <li><i class="mr-5 font-12 ion-android-favorite-outline"></i>15</li>
-                                                    <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
-                                                </ul>
-                                            </div><!-- hot-news -->
-                                        </div><!-- hot-news -->
-                                    </div><!-- swiper-slide -->
-
-                                    <div class="swiper-slide">
-                                        <div class="bg-white">
-                                            <img src="/assets/img/template/hot_news_3_300x150.jpg" alt="">
-
-                                            <div class="plr-25 ptb-15">
-                                                <h5 class="color-ash"><b>ART</b></h5>
-                                                <h4 class="mtb-10">
-                                                    <a href="#"><b>I Got off Addrall and Xanax Using Psilocybon</b></a></h4>
-                                                <ul class="list-li-mr-10 color-lt-black">
-                                                    <li><i class="mr-5 font-12 ion-android-favorite-outline"></i>15</li>
-                                                    <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
-                                                </ul>
-                                            </div><!-- hot-news -->
-                                        </div><!-- hot-news -->
-                                    </div><!-- swiper-slide -->
-
-
-                                    <div class="swiper-slide">
-                                        <div class="bg-white">
-                                            <img src="/assets/img/template/hot_news_1_300x150.jpg" alt="">
-
-                                            <div class="plr-25 ptb-15">
-                                                <h5 class="color-ash"><b>ART</b></h5>
-                                                <h4 class="mtb-10">
-                                                    <a href="#"><b>I Got off Addrall and Xanax Using Psilocybon</b></a></h4>
-                                                <ul class="list-li-mr-10 color-lt-black">
-                                                    <li><i class="mr-5 font-12 ion-android-favorite-outline"></i>15</li>
-                                                    <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
-                                                </ul>
-                                            </div><!-- hot-news -->
-                                        </div><!-- hot-news -->
-                                    </div><!-- swiper-slide -->
-
+                                        </div><!-- swiper-slide -->
+                                    <?php endforeach ?>
                                 </div><!-- swiper-wrapper -->
                             </div><!-- swiper-container -->
 
@@ -173,117 +127,46 @@
                 <h4 class="mb-30 mt-20 clearfix"><b>Whats trending</b></h4>
 
                 <div class="row">
+                    <?php foreach ($post as $p) : ?>
+                        <!-- START OF SECOND PARA -->
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-30">
+                            <div class="card h-100 h-xs-500x">
+                                <div class="sided-half sided-xs-half h-100 bg-white">
 
-                    <!-- START OF SECOND PARA -->
-                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mb-30">
-                        <div class="card h-100 h-xs-500x">
-                            <div class="sided-half sided-xs-half h-100 bg-white">
+                                    <!-- SETTING IMAGE WITH bg-2 -->
+                                    <div class="s-left w-50 w-xs-100 h-100 h-xs-50 pos-relative">
+                                        <img src="/assets/img/post/<?= $p["file_gambar"] ?>" style="object-fit:cover; width:100%"></img>
+                                    </div>
 
-                                <!-- SETTING IMAGE WITH bg-2 -->
-                                <div class="s-left w-50 w-xs-100 h-100 h-xs-50 pos-relative">
-                                    <div class="bg-2 abs-tblr"></div>
-                                </div>
+                                    <div class="s-right w-50 w-xs-100 h-xs-50">
+                                        <div class="plr-25 ptb-25 h-100">
+                                            <div class="dplay-tbl">
+                                                <div class="dplay-tbl-cell">
 
-                                <div class="s-right w-50 w-xs-100 h-xs-50">
-                                    <div class="plr-25 ptb-25 h-100">
-                                        <div class="dplay-tbl">
-                                            <div class="dplay-tbl-cell">
-
-                                                <h5 class="color-ash"><b>ART</b></h5>
-                                                <h2 class="mtb-10"><a href="#">
-                                                        <b>As an Alchoholic, Your Company "Parks" are Killing me</b></a></h2>
-                                                <ul class="list-li-mr-10 color-lt-black">
-                                                    <li><i class="mr-5 font-12 ion-android-favorite-outline"></i>15</li>
-                                                    <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
-                                                </ul>
-
-                                            </div><!-- dplay-tbl-cell -->
-                                        </div><!-- dplay-tbl -->
-                                    </div><!-- plr-25 ptb-25 -->
-                                </div><!-- s-right -->
-                            </div><!-- sided-half -->
-                        </div><!-- card -->
-                    </div><!-- col-lg-8 col-md-12 -->
-                    <!-- START OF SECOND PARA -->
-                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 mb-30">
-                        <div class="card h-100 h-xs-500x">
-                            <div class="sided-half sided-xs-half h-100 bg-white">
-
-                                <!-- SETTING IMAGE WITH bg-2 -->
-                                <div class="s-left w-50 w-xs-100 h-100 h-xs-50 pos-relative">
-                                    <div class="bg-2 abs-tblr"></div>
-                                </div>
-
-                                <div class="s-right w-50 w-xs-100 h-xs-50">
-                                    <div class="plr-25 ptb-25 h-100">
-                                        <div class="dplay-tbl">
-                                            <div class="dplay-tbl-cell">
-
-                                                <h5 class="color-ash"><b>ART</b></h5>
-                                                <h2 class="mtb-10"><a href="#">
-                                                        <b>As an Alchoholic, Your Company "Parks" are Killing me</b></a></h2>
-                                                <ul class="list-li-mr-10 color-lt-black">
-                                                    <li><i class="mr-5 font-12 ion-android-favorite-outline"></i>15</li>
-                                                    <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
-                                                </ul>
-
-                                            </div><!-- dplay-tbl-cell -->
-                                        </div><!-- dplay-tbl -->
-                                    </div><!-- plr-25 ptb-25 -->
-                                </div><!-- s-right -->
-                            </div><!-- sided-half -->
-                        </div><!-- card -->
-                    </div><!-- col-lg-8 col-md-12 -->
-
-
-                    <!-- END OF SECOND PARA -->
-
+                                                    <h5 class="color-ash"><b><?= $p["idkategori"] ?></b></h5>
+                                                    <h2 class="mtb-10"><a href="/post/detail/<?= $p["slug"] ?>">
+                                                            <b><?= $p["judul"] ?></b></a></h2>
+                                                    <ul class="list-li-mr-10 color-lt-black">
+                                                        <li><i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= indo_date($p["tgl_insert"]) ?></li>
+                                                        <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
+                                                    </ul>
+                                                </div><!-- dplay-tbl-cell -->
+                                            </div><!-- dplay-tbl -->
+                                        </div><!-- plr-25 ptb-25 -->
+                                    </div><!-- s-right -->
+                                </div><!-- sided-half -->
+                            </div><!-- card -->
+                        </div><!-- col-lg-8 col-md-12 -->
+                        <!-- END OF SECOND PARA -->
+                    <?php endforeach ?>
 
                 </div><!-- row -->
-
-
-
+                <?= $pager->links('post', 'post_pagination') ?>
             </div><!-- s-left -->
         </div><!-- sided-80x -->
-
-
     </div><!-- mb-50 -->
 
 </section>
-<div class="container mt-5">
-    <div class="row">
-        <?= $keyword ? '<strong class="mr-2">Keyword: </strong>' . $keyword : '' ?>
-        <div class="col-12">
-            <div class="input-group mb-3">
-                <form action="" method="get">
-                    <input type="text" class="form-control" placeholder="Cari artikel" aria-label="Cari artikel" name="keyword">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary d-inline" type="submit">Cari</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="row article mb-3">
-        <?php foreach ($post as $p) : ?>
-            <div class="col-lg-3">
-                <article class="item">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/img/article/blog-1.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="/post/detail/<?= $p["slug"] ?>"><?= $p["judul"] ?></a></h5>
-                            <p class="card-text"><?= $p["isi_post"] ?> <?= $p["idkategori"] ?></p>
-                            <a href="/post/detail/<?= $p["slug"] ?>" class="btn btn-primary btn-sm">More<i class="fa fa-arrow-right pl-1"></i></a>
-                            <span class="float-right"><small><i class="far fa-calendar mr-1"></i>Two days
-                                    ago</small></span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        <?php endforeach ?>
-    </div>
-    <?= $pager->links('post', 'post_pagination') ?>
-</div>
 
 <!-- AKHIR ISI KONTEN -->
 

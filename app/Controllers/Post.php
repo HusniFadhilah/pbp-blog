@@ -28,7 +28,10 @@ class Post extends BaseController
             'title' => 'Post',
             'post' => $post->paginate(1, 'post'),
             'pager' => $post->pager,
-            'keyword' => $keyword
+            'keyword' => $keyword,
+            'postterbaru1' => $this->postModel->postTerbaru(1),
+            'postterbaru4' => $this->postModel->postTerbaru(4),
+            'postterbaru5' => $this->postModel->postTerbaru(5),
         ];
 
         return view('public/dashboard/dashboard', $data);
@@ -42,9 +45,8 @@ class Post extends BaseController
             'penulis' => $this->penulisModel->where(['idpenulis' => $post["idpenulis"]])->first(),
             'kategori' => $this->kategoriModel->where(['idkategori' => $post["idkategori"]])->first(),
             'allkategori' => $this->kategoriModel->findAll(),
+            'validation' => \Config\Services::validation(),
             'postterbaru' => $this->postModel->postTerbaru(4)
-            // 'prev' => $this->postModel->prevPost($post["idpost"]),
-            // 'next' => $this->postModel->nextPost($post["idpost"]),
         ];
         return view('public/post/post_detail', $data);
     }

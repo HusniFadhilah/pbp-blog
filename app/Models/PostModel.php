@@ -21,7 +21,9 @@ class PostModel extends Model
     public function getDataPost($id = false)
     {
         if ($id === false) {
-            return $this->findAll();
+            return $this->join('penulis', 'post.idpenulis = penulis.idpenulis')
+                ->join('kategori', 'post.idkategori = kategori.idkategori')
+                ->findAll();
         }
 
         return $this->postModel->where(['idpost' => $id])->first();

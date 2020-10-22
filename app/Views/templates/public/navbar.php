@@ -2,9 +2,9 @@
     <a class="logo" href="#"></a>
 
     <div class="right-area">
-        <form class="src-form">
+        <form action="/post" method="get" class="src-form">
             <button type="submit"><i class="ion-search"></i></a></button>
-            <input type="text" placeholder="Search here">
+            <input type="text" placeholder="Search here" name="keyword">
         </form><!-- src-form -->
     </div><!-- right-area -->
 

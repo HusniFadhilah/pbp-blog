@@ -84,26 +84,17 @@
                             </div>
                             <div class="comment-content">
                                 <div id="comment-1" class="comment clearfix">
-                                    <img src="assets/img/article/comment-1.jpg" class="comment-img  float-left" alt="">
-                                    <h5><a href="">Husni Fadhilah</a> <a href="#" class="reply"><i class="fa fa-reply"></i> Balas</a></h5>
+                                    <img src="/assets/img/user/default.jpg" class="comment-img  float-left" alt="">
+                                    <h5><a href="">Husni Fadhilah</a></h5>
                                     <time datetime="2020-09-15">15 September 2020</time>
                                     <p>
                                         Artikelnya sangat bermanfaat. Terimakasih, semoga sukses selalu
                                     </p>
-                                    <div id="comment-reply-1" class="comment comment-reply clearfix">
-                                        <img src="assets/img/article/comment-1.jpg" class="comment-img  float-left" alt="">
-                                        <h5><a href="">Dhiya Ul Haq</a> <a href="#" class="reply"><i class="fa fa-reply"></i> Balas</a></h5>
-                                        <time datetime="2020-09-15">15 September 2020</time>
-                                        <p>
-                                            Saya izin menjadikan ini sebagai referensi tugas saya ya kak.
-                                        </p>
-                                    </div>
                                 </div>
 
                                 <div id="comment-2" class="comment clearfix">
-                                    <img src="assets/img/article/comment-1.jpg" class="comment-img  float-left" alt="">
-                                    <h5><a href="">Fadhil</a> <a href="#" class="reply"><i class="fa fa-reply"></i>
-                                            Balas</a></h5>
+                                    <img src="/assets/img/user/default.jpg" class="comment-img  float-left" alt="">
+                                    <h5><a href="">Fadhil</a></h5>
                                     <time datetime="2020-09-15">15 September 2020</time>
                                     <p>
                                         Kok masih error ya kak
@@ -113,7 +104,43 @@
                         </div>
                     </div>
                 </div>
-                <div class="card shadow p-0 mb-3">
+                <div class="row text-center">
+                    <div class="col">
+                        <button class="btn btn-lg btn-primary shadow" data-toggle="modal" data-target="#komentarmodal">Beri Komentar</button>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="komentarmodal" tabindex="-1" role="dialog" aria-labelledby="komentarmodallabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Login sebagai Penulis</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="" method="post" class="user">
+                                    <p>
+                                        Silahkan login sebagai penulis untuk memberikan komentar
+                                    </p>
+                                    <!-- <div class="form-group">
+                                        <input type="text" class="form-control form-control-user <?= $validation->hasError('email') ? 'is-invalid' : '' ?>" id="email" placeholder="Email" name="email" value="<?= old('email') ?>" />
+                                        <span class="invalid-feedback ml-2"><?= $validation->getError('email') ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control form-control-user <?= $validation->hasError('password') ? 'is-invalid' : '' ?>" id="password" placeholder="Password" name="password" />
+                                        <span class="invalid-feedback ml-2"><?= $validation->getError('password') ?></span>
+                                    </div> -->
+                                    <a href="/authpenulis" name="komentar" class="btn btn-primary btn-user btn-block">
+                                        Login
+                                    </a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="card shadow p-0 mb-3">
                     <div class="card-body p-0">
                         <div class="container p-4">
                             <div class="comment-title">
@@ -132,11 +159,6 @@
                                     </div>
                                     <div class="row">
                                         <div class="col form-group">
-                                            <input name="website" type="text" class="form-control" placeholder="Your Website">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col form-group">
                                             <textarea name="comment" class="form-control" placeholder="Your Comment*"></textarea>
                                         </div>
                                     </div>
@@ -145,7 +167,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="col-md-4">
                 <div class="card shadow mb-4">
