@@ -40,21 +40,21 @@ class Admin extends BaseController
             'nama' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => '{field} harus diisi.'
+                    'required' => 'Nama harus diisi'
                 ]
             ],
             'email' => [
                 'rules' => 'required|valid_email',
                 'errors' => [
-                    'required' => '{field} harus diisi',
-                    'valid_email' => 'silahkan tulis {field} dengan benar'
+                    'required' => 'Email harus diisi',
+                    'valid_email' => 'Silahkan isi {field} dengan benar'
                 ],
             ],
             'password' => [
                 'rules' => 'required|min_length[8]',
                 'errors' => [
-                    'required' => '{field} harus diisi.',
-                    'min_length' => '{field} minimal 8 karakter'
+                    'required' => 'Password harus diisi',
+                    'min_length' => 'Password minimal 8 karakter'
                 ]
             ]
         ])) {
@@ -141,8 +141,8 @@ class Admin extends BaseController
             'password' => [
                 'rules' => 'required|min_length[8]',
                 'errors' => [
-                    'required' => '{field} harus diisi.',
-                    'min_length' => '{field} minimal 8 karakter'
+                    'required' => 'Password harus diisi.',
+                    'min_length' => 'Password minimal 8 karakter'
                 ]
             ],
             'newpassword' => [
