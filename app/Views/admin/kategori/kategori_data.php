@@ -32,7 +32,7 @@
                                         <td><?= $k['nama']; ?></td>
                                         <td>
                                             <a type="button" class="btn btn-warning" href="/kategori/edit/<?= $k['idkategori']; ?>">Edit</a>
-                                            <a type="button" class="btn btn-danger" href="/kategori/delete/<?= $k['idkategori']; ?>" onclick="return confirm('Apakah Anda yakin?');">
+                                            <a type="button" class="btn btn-danger tombol-hapus" href="/kategori/delete/<?= $k['idkategori']; ?>" data-text="kategori &apos;<?= $k['nama']; ?>&apos;" title="Hapus kategori">
                                                 Delete
                                             </a>
                                         </td>

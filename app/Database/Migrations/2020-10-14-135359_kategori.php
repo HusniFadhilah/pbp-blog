@@ -19,11 +19,11 @@ class Kategori extends Migration
 				'type'           => 'VARCHAR',
 				'constraint'     => '100',
 			],
-			'tgl_insert' => [
+			'created_at' => [
 				'type'           => 'DATETIME',
 				'null'     		 => true,
 			],
-			'tgl_update' => [
+			'updated_at' => [
 				'type'           => 'DATETIME',
 				'null'     		 => true,
 			],
