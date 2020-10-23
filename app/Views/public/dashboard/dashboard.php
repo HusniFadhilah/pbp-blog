@@ -43,12 +43,12 @@
                                         <?php foreach ($postterbaru5 as $pt5) : ?>
                                             <div class="swiper-slide">
                                                 <div class="bg-white">
-                                                    <img src="/assets/img/post/<?= $pt5["file_gambar"] ?>" alt="<?= $pt5["judul"] ?>">
+                                                    <img src="/assets/img/post/<?= $pt5["file_gambar"] ?>" alt="<?= $pt5["judul"] ?>" style="objec-fit:cover;height:170px;">
 
                                                     <div class="plr-25 ptb-15">
                                                         <h5 class="color-ash"><b><?= ucfirst($pt5["nama"]) ?></b></h5>
-                                                        <h4 class="mtb-10">
-                                                            <a href="#"><b><?= $pt5["judul"] ?></b></a></h4>
+                                                        <h4 class="mtb-10" title="<?= $pt5["judul"] ?>">
+                                                            <a href="#"><b><?= crop_string($pt5["judul"], 40) ?></b></a></h4>
                                                         <ul class="list-li-mr-10 color-lt-black">
                                                             <li><i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= time_ago($pt5["tgl_insert"]) ?></li>
                                                             <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>

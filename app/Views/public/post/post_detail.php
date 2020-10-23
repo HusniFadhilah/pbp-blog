@@ -11,11 +11,11 @@
             <div class="dplay-tbl-cell">
                 <div class="row">
                     <div class="col-lg-1"></div>
-                    <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                    <div class="col-12 col-sm-8 col-md-8 col-lg-6 col-xl-6">
 
                         <div class="bg-white p-40 psm-30">
                             <h5 class="color-ash"><b><?= ucfirst($post["nama"]) ?></b></h5>
-                            <h1 class="mt-20 lh-1-2"><b><?= $post["judul"] ?></b></h1>
+                            <h2 class="mt-20 lh-1-2" title="<?= $post["judul"] ?>"><b><?= crop_string($post["judul"], 120) ?></b></h2>
 
                         </div><!-- bg-white -->
                     </div><!-- col-lg-4 -->
@@ -61,10 +61,9 @@
 
 
                 <ul class="tag mtb-50">
-
-                    <li><a href="#"><b>Manual</b></a></li>
-                    <li><a href="#"><b>Liberty</b></a></li>
-                    <li><a href="#"><b>InterPretitaion</b></a></li>
+                    <?php foreach ($allkategori as $ak) : ?>
+                        <li><a href="/post/groupcategory/<?= $ak["idkategori"] ?>"><b><?= $ak["nama"] ?></b></a></li>
+                    <?php endforeach ?>
                 </ul>
 
                 <div class="row">
@@ -108,8 +107,8 @@
                                                 <div class="dplay-tbl-cell">
 
                                                     <h5 class="color-ash"><b><?= ucfirst($pt3["nama"]) ?></b></h5>
-                                                    <h4 class="mtb-10">
-                                                        <a href="/post/detail/<?= $pt3["slug"] ?>"><b><?= ucfirst($pt3["judul"]) ?></b></a></h4>
+                                                    <h4 class="mtb-10" title="<?= $pt3["judul"] ?>">
+                                                        <a href="/post/detail/<?= $pt3["slug"] ?>"><b><?= ucfirst(crop_string($pt3["judul"], 40)) ?></b></a></h4>
                                                     <ul class="list-li-mr-10 color-lt-black">
                                                         <li><i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= tgl_indo($pt3["tgl_insert"]) ?></li>
                                                         <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
@@ -206,8 +205,8 @@
                                         <div class="s-left">
                                             <img src="/assets/img/post/<?= $pt4["file_gambar"] ?>" alt="<?= $pt4["judul"] ?>" alt="<?= $pt4["file_gambar"] ?>">
                                         </div><!-- s-left -->
-                                        <div class="s-right">
-                                            <h5 class="pt-5"><a href="/post/detail/<?= $pt4["slug"] ?>"><b><?= $pt4["judul"] ?></b></a></h5>
+                                        <div class="s-right" title="<?= $pt4["judul"] ?>">
+                                            <h5 class="pt-5"><a href="/post/detail/<?= $pt4["slug"] ?>"><b><?= ucfirst(crop_string($pt4["judul"], 50)) ?></b></a></h5>
                                         </div><!-- s-left -->
                                     </div><!-- sided-80x -->
                                 <?php endforeach ?>
@@ -232,9 +231,9 @@
             </div>
             <div class="modal-body">
                 <form action="/authpenulis/loginkomentar" method="post" class="form-block" id="loginForm">
-                    <!-- <p>
+                    <p class="mb-3">
                         Silahkan login sebagai penulis untuk memberikan komentar
-                    </p> -->
+                    </p>
                     <div class="form-group">
                         <input type="text" class="form-control form-control-user <?= $validation->hasError('email') ? 'is-invalid' : '' ?>" id="email" placeholder="Email" name="email" value="<?= old('email') ?>" />
                         <span class="invalid-feedback ml-2"><?= $validation->getError('email') ?></span>
