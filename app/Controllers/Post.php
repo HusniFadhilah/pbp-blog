@@ -6,6 +6,7 @@ use App\Models\PostModel;
 use App\Models\KategoriModel;
 use App\Models\PenulisModel;
 use App\Models\KomentarModel;
+use \CodeIgniter\I18n\Time;
 
 class Post extends BaseController
 {
