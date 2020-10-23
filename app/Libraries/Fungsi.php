@@ -3,6 +3,7 @@
 namespace App\Libraries;
 
 use App\Models\KomentarModel;
+use App\Models\PostModel;
 
 class Fungsi
 {
@@ -12,5 +13,11 @@ class Fungsi
     {
         $this->komentarModel = new KomentarModel();
         return $this->komentarModel->sumKomentarInOnePost($idpost);
+    }
+
+    public function sumPostByKategori($idkategori)
+    {
+        $this->postModel = new PostModel();
+        return $this->postModel->sumPostByKategori($idkategori);
     }
 }

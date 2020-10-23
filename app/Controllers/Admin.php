@@ -31,7 +31,9 @@ class Admin extends BaseController
             'jmlpenulis' => count($this->penulisModel->findAll()),
             'jmlkomentar' => count($this->komentarModel->findAll()),
             'jmlpost' => count($this->postModel->findAll()),
-            'jmlkategori' => count($this->kategoriModel->findAll())
+            'jmlkategori' => count($this->kategoriModel->findAll()),
+            'postterbaru5' => $this->postModel->postTerbaru(5),
+            'kategori' => $this->kategoriModel->findAll()
         ];
         return view('admin/dashboard/dashboard', $data);
     }

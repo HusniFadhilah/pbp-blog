@@ -3,6 +3,7 @@
 
 <!-- ISI KONTEN -->
 <!-- Taruh konten di bawah sini -->
+<?php $this->fungsi = new App\Libraries\Fungsi(); ?>
 <div class="container">
 
     <div>
@@ -90,7 +91,7 @@
                 <!-- Card Body -->
                 <div class="card-body">
                     <div class="chart-area">
-                        <canvas id="myAreaChart"></canvas>
+                        <canvas id="chartkomentar"></canvas>
                     </div>
                 </div>
             </div>
@@ -106,19 +107,23 @@
                 <!-- Card Body -->
                 <div class="card-body">
                     <div class="chart-pie pt-4 pb-2">
-                        <canvas id="myPieChart"></canvas>
+                        <canvas id="kategorichart"></canvas>
                     </div>
                     <div class="mt-4 text-center small">
                         <!-- Tolong dihubungkan dengan backened -->
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-primary"></i> Direct
-                        </span>
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-success"></i> Social
-                        </span>
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-info"></i> Referral
-                        </span>
+                        <?php
+                        if (count($kategori) > 0) {
+                            $warna = ['#4e73df', '#1cc88a', '#36b9cc', '#8e44ad', '#34495e', '#e67e22'];
+                            $i = 0;
+                            foreach ($kategori as $data) {
+                                $i++; ?>
+                                <span class="mr-2">
+                                    <i class="fas fa-circle" style="color:<?= $warna[$i] ?>"></i> <?= $data["nama"] ?>
+                                </span>
+                        <?php
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -130,6 +135,171 @@
 <script type="text/javascript" src="/assets/vendor/chart.js/Chart.min.js"></script>
 <script type="text/javascript" src="/assets/js/demo/chart-area-demo.js"></script>
 <script type="text/javascript" src="/assets/js/demo/chart-pie-demo.js"></script>
+
+<script>
+    // Area Chart Example
+    var ctx = document.getElementById("chartkomentar");
+    var myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [
+                <?php
+                if (count($postterbaru5) > 0) {
+                    foreach ($postterbaru5 as $data) {
+                        echo "'" . crop_string($data["judul"], 15) . "',";
+                    }
+                }
+                ?>
+            ],
+            datasets: [{
+                label: "Komentar",
+                lineTension: 0.3,
+                backgroundColor: "rgba(78, 115, 223, 0.05)",
+                borderColor: "rgba(78, 115, 223, 1)",
+                pointRadius: 3,
+                pointBackgroundColor: "rgba(78, 115, 223, 1)",
+                pointBorderColor: "rgba(78, 115, 223, 1)",
+                pointHoverRadius: 3,
+                pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+                pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+                pointHitRadius: 10,
+                pointBorderWidth: 2,
+                data: [
+                    <?php
+                    if (count($postterbaru5) > 0) {
+                        foreach ($postterbaru5 as $data) {
+                            echo $this->fungsi->sumKomentarInOnePost($data["idpost"]) . ", ";
+                        }
+                    }
+                    ?>
+                ],
+            }],
+        },
+        options: {
+            maintainAspectRatio: false,
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 25,
+                    top: 25,
+                    bottom: 0
+                }
+            },
+            scales: {
+                xAxes: [{
+                    time: {
+                        unit: 'date'
+                    },
+                    gridLines: {
+                        display: false,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        maxTicksLimit: 7
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        maxTicksLimit: 5,
+                        padding: 10,
+                        // Include a dollar sign in the ticks
+                        callback: function(value, index, values) {
+                            return (value);
+                        }
+                    },
+                    gridLines: {
+                        color: "rgb(234, 236, 244)",
+                        zeroLineColor: "rgb(234, 236, 244)",
+                        drawBorder: false,
+                        borderDash: [2],
+                        zeroLineBorderDash: [2]
+                    }
+                }],
+            },
+            legend: {
+                display: false
+            },
+            tooltips: {
+                backgroundColor: "rgb(255,255,255)",
+                bodyFontColor: "#858796",
+                titleMarginBottom: 10,
+                titleFontColor: '#6e707e',
+                titleFontSize: 14,
+                borderColor: '#dddfeb',
+                borderWidth: 1,
+                xPadding: 15,
+                yPadding: 15,
+                displayColors: false,
+                intersect: false,
+                mode: 'index',
+                caretPadding: 10,
+                callbacks: {
+                    label: function(tooltipItem, chart) {
+                        var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+                        return datasetLabel + ': ' + tooltipItem.yLabel;
+                    }
+                }
+            }
+        }
+    });
+
+    var ctx = document.getElementById("kategorichart");
+    var myPieChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: [
+                <?php
+                if (count($kategori) > 0) {
+                    foreach ($kategori as $data) {
+                        echo "'" . crop_string($data["nama"], 15) . "',";
+                    }
+                }
+                ?>
+            ],
+            datasets: [{
+                data: [
+                    <?php
+                    if (count($kategori) > 0) {
+                        foreach ($kategori as $data) {
+                            echo $this->fungsi->sumPostByKategori($data["idkategori"]) . ", ";
+                        }
+                    }
+                    ?>
+                ],
+                backgroundColor: [
+                    <?php
+                    if (count($kategori) > 0) {
+                        $warna = ['#4e73df', '#1cc88a', '#36b9cc', '#8e44ad', '#34495e', '#e67e22'];
+                        $i = 0;
+                        foreach ($kategori as $data) {
+                            $i++;
+                            echo "'" . $warna[$i] . "',";
+                        }
+                    }
+                    ?>
+                ],
+                hoverBorderColor: "rgba(234, 236, 244, 1)",
+            }],
+        },
+        options: {
+            maintainAspectRatio: false,
+            tooltips: {
+                backgroundColor: "rgb(255,255,255)",
+                bodyFontColor: "#858796",
+                borderColor: '#dddfeb',
+                borderWidth: 1,
+                xPadding: 15,
+                yPadding: 15,
+                displayColors: false,
+                caretPadding: 10,
+            },
+            legend: {
+                display: false
+            },
+            cutoutPercentage: 80,
+        },
+    });
+</script>
 
 <!-- AKHIR ISI KONTEN -->
 

@@ -87,4 +87,16 @@ class PostModel extends Model
             ->orderBy('post.tgl_insert', 'DESC')
             ->find();
     }
+
+    public function postSortByKomentar($limit)
+    {
+        return $this->join('komentar', 'komentar.idpost = post.idpost')
+            ->orderBy('post.tgl_insert', 'DESC')
+            ->find();
+    }
+
+    public function sumPostByKategori($idkategori)
+    {
+        return count($this->groupPost($idkategori)->find());
+    }
 }
