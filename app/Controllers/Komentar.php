@@ -56,6 +56,25 @@ class Komentar extends BaseController
     //--------------------------------------------------------------------
     public function data()
     {
-        return view('penulis/komentar/komentar_data');
+        $data = [
+            'title' => 'Komentar',
+            'komentarbypenulis' => $this->komentarModel->getKomentarInPostBelongsToPenulis(session()->get('idpenulis'))
+        ];
+        return view('penulis/komentar/komentar_data', $data);
+    }
+
+    public function delete($idkomentar)
+    {
+        $user_session = session()->has('idpenulis');
+        if (!($user_session)) {
+            return redirect()->to('/authpenulis');
+        }
+
+        $post = $this->komentarModel->getOneKomentarInPostBelongsToPenulis($idkomentar, session()->get('idpenulis'));
+
+        // dd($post);
+        $this->komentarModel->delete($post["idkomentar"]);
+        sweetalert('Komentar berhasil dihapus', 'success', 'Berhasil!');
+        return redirect()->to('/komentar/data');
     }
 }

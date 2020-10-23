@@ -4,6 +4,9 @@ namespace App\Controllers;
 
 use App\Models\AdminModel;
 use App\Models\PenulisModel;
+use App\Models\KomentarModel;
+use App\Models\PostModel;
+use App\Models\KategoriModel;
 
 class Admin extends BaseController
 {
@@ -12,6 +15,9 @@ class Admin extends BaseController
     {
         $this->adminModel = new AdminModel();
         $this->penulisModel = new PenulisModel();
+        $this->postModel = new PostModel();
+        $this->komentarModel = new KomentarModel();
+        $this->kategoriModel = new KategoriModel();
     }
 
     public function index()
@@ -20,7 +26,14 @@ class Admin extends BaseController
         if (!($user_session)) {
             return redirect()->to('/authadmin');
         }
-        return view('admin/dashboard/dashboard');
+        $data = [
+            'validation' => \Config\Services::validation(),
+            'jmlpenulis' => count($this->penulisModel->findAll()),
+            'jmlkomentar' => count($this->komentarModel->findAll()),
+            'jmlpost' => count($this->postModel->findAll()),
+            'jmlkategori' => count($this->kategoriModel->findAll())
+        ];
+        return view('admin/dashboard/dashboard', $data);
     }
 
     public function edit($id)
