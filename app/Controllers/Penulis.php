@@ -46,40 +46,40 @@ class Penulis extends BaseController
             'nama' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => '{field} harus diisi.'
+                    'required' => 'Nama harus diisi'
                 ]
             ],
             'email' => [
                 'rules' => 'required|valid_email',
                 'errors' => [
-                    'required' => '{field} harus diisi',
-                    'valid_email' => 'silahkan tulis {field} dengan benar'
+                    'required' => 'Email harus diisi',
+                    'valid_email' => 'Silahkan tulis {field} dengan benar'
                 ],
             ],
             'no_telp' => [
                 'rules' => 'required|is_natural',
                 'errors' => [
-                    'required' => '{field} harus diisi.',
-                    'is_natural' => 'silahkan tulis nomor telepon dengan benar'
+                    'required' => 'No telepon harus diisi',
+                    'is_natural' => 'Silahkan tulis nomor telepon dengan benar'
                 ]
             ],
             'kota' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => '{field} harus diisi.'
+                    'required' => 'Kota harus diisi'
                 ]
             ],
             'alamat' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => '{field} harus diisi.'
+                    'required' => 'Alamat harus diisi'
                 ]
             ],
             'password' => [
                 'rules' => 'required|min_length[8]',
                 'errors' => [
-                    'required' => '{field} harus diisi.',
-                    'min_length' => '{field} minimal 8 karakter'
+                    'required' => 'Password harus diisi',
+                    'min_length' => 'Password minimal 8 karakter'
                 ]
             ]
         ]))
@@ -138,14 +138,14 @@ class Penulis extends BaseController
             'password' => [
                 'rules' => 'required|min_length[8]',
                 'errors' => [
-                    'required' => '{field} harus diisi.',
-                    'min_length' => '{field} minimal 8 karakter'
+                    'required' => 'Password harus diisi',
+                    'min_length' => 'Password minimal 8 karakter'
                 ]
             ],
             'newpassword' => [
                 'rules' => 'required|min_length[8]',
                 'errors' => [
-                    'required' => 'Password baru harus diisi.',
+                    'required' => 'Password baru harus diisi',
                     'min_length' => 'Password baru minimal 8 karakter'
                 ]
             ],

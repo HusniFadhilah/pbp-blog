@@ -28,17 +28,19 @@
                                                 <label for="nama" class="col-sm-4 col-form-label">Nama</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control <?= ($validation->hasError('nama')) ?
-                                                                                                'is-invalid' : ''; ?>" name="nama" autofocus value="<?= old('nama') ?? $admin['nama'] ?>">
+                                                                                                'is-invalid' : ''; ?>" name="nama" <?= ($validation->hasError('nama')) ?
+                                                        'autofocus' : ''; ?> value="<?= old('nama') ?? $admin['nama'] ?>">
                                                     <div class="invalid-feedback">
                                                         <?= $validation->getError('nama'); ?>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="email" class="col-sm-4 col-form-label">Email</label>
+                                                <label for="text" class="col-sm-4 col-form-label">Email</label>
                                                 <div class="col-sm-8">
                                                     <input type="email" class="form-control <?= ($validation->hasError('email')) ?
-                                                                                                'is-invalid' : ''; ?>" name="email" autofocus value="<?= old('email') ?? $admin['email'] ?>">
+                                                                                                'is-invalid' : ''; ?>" name="email" <?= ($validation->hasError('email')) ?
+                                                        'autofocus' : ''; ?> value="<?= old('email') ?? $admin['email'] ?>">
                                                     <div class="invalid-feedback">
                                                         <?= $validation->getError('email'); ?>
                                                     </div>
@@ -48,7 +50,8 @@
                                                 <label for="password" class="col-sm-4 col-form-label">Password</label>
                                                 <div class="col-sm-8">
                                                     <input type="password" class="form-control <?= ($validation->hasError('password')) ?
-                                                                                                    'is-invalid' : ''; ?>" name="password" autofocus>
+                                                                                                    'is-invalid' : ''; ?>" name="password" <?= ($validation->hasError('password')) ?
+                                                        'autofocus' : ''; ?>>
                                                     <div class="invalid-feedback">
                                                         <?= $validation->getError('password'); ?>
                                                     </div>
