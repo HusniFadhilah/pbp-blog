@@ -3,17 +3,21 @@
 namespace App\Controllers;
 
 use App\Models\PenulisModel;
+use App\Models\PostModel;
+use App\Models\KomentarModel;
 
 class Penulis extends BaseController
 {
     public function __construct()
     {
         $this->penulisModel = new PenulisModel();
+        $this->komentarModel = new KomentarModel();
+        $this->postModel = new PostModel();
     }
 
     public function index()
     {
-        $user_session = session()->has('idpenulis');
+        $user_session = session()->get('idpenulis');
         if (!($user_session)) {
             return redirect()->to('/authpenulis');
         }
@@ -21,7 +25,8 @@ class Penulis extends BaseController
         return view('penulis/dashboard/dashboard');
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $user_session = session()->has('idpenulis');
         if (!($user_session)) {
             return redirect()->to('/authpenulis');
@@ -36,7 +41,8 @@ class Penulis extends BaseController
         return view('penulis/profile/edit_profile', $data);
     }
 
-    public function update($id){
+    public function update($id)
+    {
         $user_session = session()->has('idpenulis');
         if (!($user_session)) {
             return redirect()->to('/authpenulis');
@@ -82,8 +88,7 @@ class Penulis extends BaseController
                     'min_length' => 'Password minimal 8 karakter'
                 ]
             ]
-        ]))
-        {
+        ])) {
             $validation = \Config\Services::validation();
 
             return redirect()->back()->withInput()->with('validation', $validation);
@@ -93,7 +98,7 @@ class Penulis extends BaseController
         $npassword = md5($this->request->getVar('password'));
         $oldpassword = $penulis['password'];
 
-        if ($npassword == $oldpassword){
+        if ($npassword == $oldpassword) {
             $this->penulisModel->save([
                 'idpenulis' => $id,
                 'nama' => $this->request->getVar('nama'),
@@ -106,14 +111,15 @@ class Penulis extends BaseController
             sweetalert('Data berhasil diubah', 'success', 'Berhasil!');
 
             return redirect()->back();
-        } else{
+        } else {
             sweetalert('Masukkan password dengan benar', 'error', 'Password salah!');
 
             return redirect()->back()->withInput();
         }
     }
 
-    public function ubahPassword($id){
+    public function ubahPassword($id)
+    {
         $user_session = session()->has('idpenulis');
         if (!($user_session)) {
             return redirect()->to('/authpenulis');
@@ -128,7 +134,8 @@ class Penulis extends BaseController
         return view('penulis/profile/change_password', $data);
     }
 
-    public function updatePassword($id){
+    public function updatePassword($id)
+    {
         $user_session = session()->has('idpenulis');
         if (!($user_session)) {
             return redirect()->to('/authpenulis');
@@ -157,8 +164,7 @@ class Penulis extends BaseController
                     'matches' => 'Konfirmasi password salah, silahkan ulangi'
                 ]
             ]
-        ]))
-        {
+        ])) {
             $validation = \Config\Services::validation();
 
             return redirect()->back()->withInput()->with('validation', $validation);
@@ -168,7 +174,7 @@ class Penulis extends BaseController
         $npassword = md5($this->request->getVar('password'));
         $oldpassword = $penulis['password'];
 
-        if ($npassword == $oldpassword){
+        if ($npassword == $oldpassword) {
             $this->penulisModel->save([
                 'idpenulis' => $id,
                 'password' => md5($this->request->getVar('newpassword'))
@@ -177,7 +183,7 @@ class Penulis extends BaseController
             sweetalert('Password berhasil diubah', 'success', 'Berhasil!');
 
             return redirect()->back();
-        } else{
+        } else {
             sweetalert('Masukkan password dengan benar', 'error', 'Password salah!');
 
             return redirect()->back()->withInput();

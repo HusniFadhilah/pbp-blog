@@ -23,7 +23,7 @@ class Post extends BaseController
         if ($keyword) {
             $post = $this->postModel->pencarianPost($keyword);
         } else {
-            $post = $this->postModel->join('kategori', 'post.idkategori = kategori.idkategori');
+            $post = $this->postModel->join('kategori', 'post.idkategori = kategori.idkategori')->orderBy('post.tgl_insert', 'DESC');
         }
 
         $data = [
@@ -78,7 +78,7 @@ class Post extends BaseController
         $data = [
             'title' => 'Post',
             'validation' => \Config\Services::validation(),
-            'post' => $this->postModel->getDataPost(),
+            'post' => $this->postModel->getDataPostByPenulis($user_session),
             'user' => $this->penulisModel->where(['idpenulis' => $user_session])->first()
         ];
 

@@ -18,7 +18,7 @@ class PostModel extends Model
     protected $updatedField  = 'tgl_update';
 
     // FUNCTION & METHOD //
-    public function getDataPost($id = false)
+    public function getDataPost($id = false, $idpenulis = false)
     {
         if ($id === false) {
             return $this->join('penulis', 'post.idpenulis = penulis.idpenulis')
@@ -39,7 +39,8 @@ class PostModel extends Model
 
     public function getDataPostByPenulis($idpenulis)
     {
-        return $this->postModel->where(['idpost' => $idpenulis])->first();
+        return $this->join('kategori', 'post.idkategori = kategori.idkategori')
+            ->where(['idpenulis' => $idpenulis])->find();
     }
 
     public function getOnePostByPenulis($idpost, $idpenulis)
