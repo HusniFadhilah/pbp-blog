@@ -172,6 +172,13 @@ class Post extends BaseController
         if (!($user_session)) {
             return redirect()->to('/authpenulis');
         }
+
+        //mencegah penulis mengedit post milik penulis lain
+        $penulisbyidpost = $this->postModel->where('idpost', $id)->find()[0]["idpenulis"];
+        if ($user_session != $penulisbyidpost) {
+            return redirect()->to('/post/data');
+        }
+
         $kategori = $this->kategoriModel->findAll();
         $data = [
             'judul' => 'Edit Post',
@@ -189,6 +196,12 @@ class Post extends BaseController
         $user_session = session()->has('idpenulis');
         if (!($user_session)) {
             return redirect()->to('/authpenulis');
+        }
+
+        //mencegah penulis mengedit post milik penulis lain
+        $penulisbyidpost = $this->postModel->where('idpost', $id)->find()[0]["idpenulis"];
+        if ($user_session != $penulisbyidpost) {
+            return redirect()->to('/post/data');
         }
         if (!$this->validate([
             'idkategori' => [
@@ -255,6 +268,12 @@ class Post extends BaseController
         $user_session = session()->has('idpenulis');
         if (!($user_session)) {
             return redirect()->to('/authpenulis');
+        }
+
+        //mencegah penulis menghapus post milik penulis lain
+        $penulisbyidpost = $this->postModel->where('idpost', $id)->find()[0]["idpenulis"];
+        if ($user_session != $penulisbyidpost) {
+            return redirect()->to('/post/data');
         }
 
         $post = $this->postModel->find($id);

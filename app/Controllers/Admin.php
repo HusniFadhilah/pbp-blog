@@ -22,7 +22,7 @@ class Admin extends BaseController
 
     public function index()
     {
-        $user_session = session()->has('idadmin');
+        $user_session = session()->get('idadmin');
         if (!($user_session)) {
             return redirect()->to('/authadmin');
         }
@@ -41,6 +41,16 @@ class Admin extends BaseController
 
     public function edit($id)
     {
+        $user_session = session()->get('idadmin');
+        if (!($user_session)) {
+            return redirect()->to('/authadmin');
+        }
+
+        //mencegah admin mengubah password milik admin lain
+        if ($user_session != $id) {
+            return redirect()->to('/admin');
+        }
+
         $data = [
             'judul' => 'Form Ubah Profile Admin',
             'validation' => \Config\Services::validation(),
@@ -52,6 +62,16 @@ class Admin extends BaseController
 
     public function update($id)
     {
+        $user_session = session()->get('idadmin');
+        if (!($user_session)) {
+            return redirect()->to('/authadmin');
+        }
+
+        //mencegah admin mengubah password milik admin lain
+        if ($user_session != $id) {
+            return redirect()->to('/admin');
+        }
+
         if (!$this->validate([
             'nama' => [
                 'rules' => 'required',
@@ -106,6 +126,7 @@ class Admin extends BaseController
         if (!($user_session)) {
             return redirect()->to('/authadmin');
         }
+
         $data = [
             'title' => 'Password Penulis',
             'validation' => \Config\Services::validation(),
@@ -132,9 +153,14 @@ class Admin extends BaseController
 
     public function ubahPassword($id)
     {
-        $user_session = session()->has('idadmin');
+        $user_session = session()->get('idadmin');
         if (!($user_session)) {
             return redirect()->to('/authadmin');
+        }
+
+        //mencegah admin mengubah password milik admin lain
+        if ($user_session != $id) {
+            return redirect()->to('/admin');
         }
 
         $data = [
@@ -148,9 +174,14 @@ class Admin extends BaseController
 
     public function updatePassword($id)
     {
-        $user_session = session()->has('idadmin');
+        $user_session = session()->get('idadmin');
         if (!($user_session)) {
             return redirect()->to('/authadmin');
+        }
+
+        //mencegah admin mengubah password milik admin lain
+        if ($user_session != $id) {
+            return redirect()->to('/admin');
         }
 
         if (!$this->validate([

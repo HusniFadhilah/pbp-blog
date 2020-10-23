@@ -32,6 +32,11 @@ class Penulis extends BaseController
             return redirect()->to('/authpenulis');
         }
 
+        //mencegah penulis mengedit profile milik penulis lain
+        if ($user_session != $id) {
+            return redirect()->to('/penulis');
+        }
+
         $data = [
             'judul' => 'Form Ubah Profile Penulis',
             'validation' => \Config\Services::validation(),
@@ -46,6 +51,11 @@ class Penulis extends BaseController
         $user_session = session()->has('idpenulis');
         if (!($user_session)) {
             return redirect()->to('/authpenulis');
+        }
+
+        //mencegah penulis mengedit profile milik penulis lain
+        if ($user_session != $id) {
+            return redirect()->to('/penulis');
         }
 
         if (!$this->validate([
@@ -125,6 +135,11 @@ class Penulis extends BaseController
             return redirect()->to('/authpenulis');
         }
 
+        //mencegah penulis mengubah password milik penulis lain
+        if ($user_session != $id) {
+            return redirect()->to('/penulis');
+        }
+
         $data = [
             'judul' => 'Form Ubah Password Penulis',
             'validation' => \Config\Services::validation(),
@@ -139,6 +154,11 @@ class Penulis extends BaseController
         $user_session = session()->has('idpenulis');
         if (!($user_session)) {
             return redirect()->to('/authpenulis');
+        }
+
+        //mencegah penulis mengubah password milik penulis lain
+        if ($user_session != $id) {
+            return redirect()->to('/penulis');
         }
 
         if (!$this->validate([
