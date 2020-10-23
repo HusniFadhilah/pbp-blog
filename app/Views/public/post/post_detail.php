@@ -149,6 +149,7 @@
 
                                 <p class="mt-30"><?= $k["isi"] ?></p>
                             </div><!-- p-30-->
+                            <br>
                         </div><!-- col-sm-6-->
                     </div><!-- row-->
                 <?php endforeach ?>
