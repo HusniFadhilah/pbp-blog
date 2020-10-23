@@ -84,31 +84,6 @@
         <div class="row">
             <div class="col-lg-1"></div>
             <div class="col-md-12 col-lg-10 ptb-50 pr-30 pr-md-15">
-                <?php if (!$keyword) : ?>
-                    <h4 class="mb-30 mt-20 clearfix"><b>Kategori Terbanyak</b></h4>
-                    <div class="row">
-
-                        <?php foreach ($postterbaru3 as $pt3) : ?>
-                            <!-- START OF FIRST PARA -->
-                            <div class="col-md-6 col-lg-6 col-xl-4 mb-30">
-                                <div class="card h-100 bg-white">
-                                    <div class="plr-25 ptb-15">
-
-                                        <h5 class="color-ash"><b><?= ucfirst($pt3["nama"]) ?></b></h5>
-                                        <h4 class="mtb-10" title="<?= $pt3["judul"] ?>"><a href="/post/detail/<?= $pt3["slug"] ?>"><b><?= ucfirst(crop_string($pt3["judul"], 70)) ?></b></a></h4>
-                                        <ul class="list-li-mr-10 color-lt-black">
-                                            <li><i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= indo_date($pt3["tgl_insert"]) ?></li>
-                                            <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i><?= $this->fungsi->sumKomentarInOnePost($pt3["idpost"]) ?></li>
-                                        </ul>
-
-                                    </div><!-- hot-news -->
-                                </div><!-- card -->
-                            </div><!-- col-lg-4 col-md-6 -->
-
-                            <!-- END OF FIRST PARA -->
-                        <?php endforeach ?>
-                    </div><!-- row -->
-                <?php endif ?>
 
                 <?php if (!$keyword) : ?>
                     <h4 class="mb-30 mt-20 clearfix"><b>Artikel Terbaru</b></h4>
@@ -136,7 +111,8 @@
                                                 <div class="dplay-tbl">
                                                     <div class="dplay-tbl-cell">
 
-                                                        <h5 class="color-ash"><b><?= ucfirst($pt3["nama"]) ?></b></h5>
+                                                        <h5 class="color-ash"><?= $p["nama"] ?><b>
+                                                            </b></h5>
                                                         <h4 class="mtb-10" title="<?= $p["judul"] ?>"><a href="/post/detail/<?= $p["slug"] ?>">
                                                                 <b><?= crop_string($p["judul"], 40) ?></b></a></h4>
                                                         <ul class="list-li-mr-10 color-lt-black">

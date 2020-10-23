@@ -22,4 +22,9 @@ class KategoriModel extends Model
             'required' => 'Nama kategori harus diisi'
         ]
     ];
+
+    public function getKategoriByPost($idkategori)
+    {
+        return $this->where(['idkategori' => $idkategori])->find();
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Libraries;
 
 use App\Models\KomentarModel;
 use App\Models\PostModel;
+use App\Models\KategoriModel;
 
 class Fungsi
 {
@@ -19,5 +20,11 @@ class Fungsi
     {
         $this->postModel = new PostModel();
         return $this->postModel->sumPostByKategori($idkategori);
+    }
+
+    public function getKategoriByPost($idkategori)
+    {
+        $this->kategoriModel = new KategoriModel();
+        return $this->kategoriModel->getKategoriByPost($idkategori);
     }
 }

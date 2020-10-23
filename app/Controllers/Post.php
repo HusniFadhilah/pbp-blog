@@ -23,7 +23,7 @@ class Post extends BaseController
         if ($keyword) {
             $post = $this->postModel->pencarianPost($keyword);
         } else {
-            $post = $this->postModel;
+            $post = $this->postModel->join('kategori', 'post.idkategori = kategori.idkategori');
         }
 
         $data = [
