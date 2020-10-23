@@ -239,17 +239,23 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/authpenulis/loginkomentar" method="post" class="form-block" id="loginForm">
+                <form action="" method="post" class="form-block needs-validation" id="loginForm" novalidate>
                     <p class="mb-3">
                         Silahkan login sebagai penulis untuk memberikan komentar
                     </p>
                     <div class="form-group">
                         <input type="text" class="form-control form-control-user <?= $validation->hasError('email') ? 'is-invalid' : '' ?>" id="email" placeholder="Email" name="email" value="<?= old('email') ?>" />
-                        <span class="invalid-feedback ml-2"><?= $validation->getError('email') ?></span>
+                        <div class="invalid-feedback" id="erroremail">
+                            Field ini harus diisi
+                        </div>
+                        <!-- <span class="invalid-feedback ml-2"><?= $validation->getError('email') ?></span> -->
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control form-control-user <?= $validation->hasError('password') ? 'is-invalid' : '' ?>" id="password" placeholder="Password" name="password" />
-                        <span class="invalid-feedback ml-2"><?= $validation->getError('password') ?></span>
+                        <div class="invalid-feedback" id="errorpassword">
+                            Field ini harus diisi
+                        </div>
+                        <!-- <span class="invalid-feedback ml-2"><?= $validation->getError('password') ?></span> -->
                     </div>
                     <button type="submit" name="komentar" class="btn btn-primary btn-user btn-block">
                         Login
@@ -260,6 +266,9 @@
     </div>
 </div>
 
+<script>
+
+</script>
 
 <!-- AKHIR ISI KONTEN -->
 

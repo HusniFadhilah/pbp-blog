@@ -59,12 +59,6 @@ class AuthPenulis extends BaseController
 
                 session()->set($sessData);
 
-                // if ($agent->isReferral()) {
-                //     dd($agent->getReferrer());
-                //     // return redirect()->to($agent->getReferrer());
-                // } else {
-                //     dd($agent->getReferrer());
-                // }
                 return redirect()->to('/penulis');
             }
         } else {
@@ -174,7 +168,7 @@ class AuthPenulis extends BaseController
                 ]
             ],
         ])) {
-            return redirect()->to('/post')->withInput();
+            return redirect()->back()->withInput();
         }
 
         $email = $this->request->getVar('email');
@@ -202,7 +196,7 @@ class AuthPenulis extends BaseController
             }
         } else {
             sweetalert('Maaf akun Anda tidak terdaftar', 'error', 'Gagal!');
-            return redirect()->to('/authpenulis')->withInput();
+            return redirect()->back()->withInput();
         }
     }
 }
