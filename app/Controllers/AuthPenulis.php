@@ -168,6 +168,7 @@ class AuthPenulis extends BaseController
                 ]
             ],
         ])) {
+            sweetalert('Email/password harus diisi', 'error', 'Gagal!');
             return redirect()->back()->withInput();
         }
 
@@ -189,6 +190,7 @@ class AuthPenulis extends BaseController
                 session()->set($sessData);
                 $agent = $this->request->getUserAgent();
                 if ($agent->isReferral()) {
+                    sweetalert('Login berhasil, silahkan tambahkan komentar', 'error', 'Gagal!');
                     return redirect()->to('/authpenulis');
                 } else {
                     return redirect()->to($agent->getReferrer());
