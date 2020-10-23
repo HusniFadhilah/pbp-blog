@@ -32,8 +32,9 @@ class Admin extends BaseController
             'jmlkomentar' => count($this->komentarModel->findAll()),
             'jmlpost' => count($this->postModel->findAll()),
             'jmlkategori' => count($this->kategoriModel->findAll()),
-            'postterbaru5' => $this->postModel->postTerbaru(5),
-            'kategori' => $this->kategoriModel->findAll()
+            'jmladmin' => count($this->adminModel->findAll()),
+            'kategori' => $this->kategoriModel->findAll(),
+            'post' => $this->postModel->findAll()
         ];
         return view('admin/dashboard/dashboard', $data);
     }

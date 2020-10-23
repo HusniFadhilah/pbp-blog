@@ -172,7 +172,7 @@
                                     <input type="hidden" value="<?= $post["idpost"] ?>" name="idpost">
                                     <input type="hidden" value="<?= $post["idpenulis"] ?>" name="idpenulis">
                                     <div class="col-sm-6 mb-30">
-                                        <input type="text" placeholder="Nama" value="<?= session()->get('idpenulis') ?>" readonly>
+                                        <input type="text" placeholder="Nama" value="<?= $this->fungsi->getPenulis(session()->get('idpenulis'))["nama"] ?>" readonly>
                                     </div>
 
                                     <div class="col-sm-6 mb-30">

@@ -73,6 +73,7 @@
     $(document).ready(function() {
         $('#kategori').DataTable({});
         $('#penulis').DataTable({});
+        $('#post').DataTable({});
     });
 
     if (textflashData && titleflashData && iconflashData) {
