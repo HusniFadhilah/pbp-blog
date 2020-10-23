@@ -273,9 +273,10 @@ class Post extends BaseController
 
         $data = [
             'title' => 'Group Post Berdasarkan Kategori',
-            'post' => $post->paginate(10, 'post'),
+            'post' => $post->paginate(5, 'post'),
             'pager' => $post->pager,
-            'allkategori' => $this->kategoriModel->findAll()
+            'allkategori' => $this->kategoriModel->findAll(),
+            'kategori' => $this->kategoriModel->find($id)
         ];
 
         return view('public/post/post_group', $data);

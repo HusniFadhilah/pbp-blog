@@ -57,8 +57,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
-                                                <div class="col-auto mr-auto"></div>
+                                            <div class="form-group row justify-content-center">
                                                 <div class="col-auto">
                                                     <button type="submit" class="btn btn-primary">Ubah Data</button>
                                                 </div>
