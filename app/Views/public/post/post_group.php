@@ -7,13 +7,13 @@
     <div class="img-bg bg-1 bg-layer-4"></div>
     <div class="container-fluid h-100 mt-xs-50">
 
-            <div class="dplay-tbl">
-                <div class="dplay-tbl-cell color-white text-center">
+        <div class="dplay-tbl">
+            <div class="dplay-tbl-cell color-white text-center">
 
-                    <h1 class="ptb-50"><b>Kategori <?= ucfirst($kategori['nama']) ?></b></h1>
+                <h1 class="ptb-50"><b>Kategori <?= ucfirst($kategori['nama']) ?></b></h1>
 
-                </div><!-- dplay-tbl-cell -->
-            </div><!-- dplay-tbl -->
+            </div><!-- dplay-tbl-cell -->
+        </div><!-- dplay-tbl -->
     </div><!-- container -->
 </div><!-- slider-main -->
 
@@ -34,8 +34,7 @@
 
                                         <!-- SETTING IMAGE WITH bg-2 -->
                                         <div class="s-left w-50 w-xs-100 h-100 h-xs-50 pos-relative">
-                                            <img src="/assets/img/post/<?= $p["file_gambar"] ?>"
-                                                 style="object-fit:cover; width:100%"></img>
+                                            <img src="/assets/img/post/<?= $p["file_gambar"] ?>" style="object-fit:cover; width:100%; height:100%"></img>
                                         </div>
 
                                         <div class="s-right w-50 w-xs-100 h-xs-50">
@@ -45,7 +44,7 @@
 
                                                         <h5 class="color-ash"><b><?= ucfirst($kategori["nama"]) ?></b></h5>
                                                         <h4 class="mtb-10"><a href="/post/detail/<?= $p["slug"] ?>">
-                                                                <b><?= $p["judul"] ?></b></a></h4>
+                                                                <b><?= ucfirst(crop_string($p["judul"], 40)) ?></b></a></h4>
                                                         <ul class="list-li-mr-10 color-lt-black">
                                                             <li>
                                                                 <i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= indo_date($p["tgl_insert"]) ?>
