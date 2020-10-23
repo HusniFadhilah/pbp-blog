@@ -31,4 +31,22 @@ class KomentarModel extends Model
         return $this->join('penulis', 'komentar.idpenulis = penulis.idpenulis')
             ->where(['idpost' => $idpost])->find();
     }
+
+    public function getKomentarByPenulis($idpenulis)
+    {
+        return $this->join('penulis', 'komentar.idpenulis = penulis.idpenulis')
+            ->where(['idpenulis' => $idpenulis])->find();
+    }
+
+    public function getKomentarInPostBelongsToPenulis($idpenulis)
+    {
+        return $this->join('post', 'komentar.idpost = post.idpost')
+            ->where(['post.idpenulis' => $idpenulis])->find();
+    }
+
+    public function getOneKomentarInPostBelongsToPenulis($idkomentar, $idpenulis)
+    {
+        return $this->join('post', 'komentar.idpost = post.idpost')
+            ->where(['post.idpenulis' => $idpenulis])->find($idkomentar);
+    }
 }
