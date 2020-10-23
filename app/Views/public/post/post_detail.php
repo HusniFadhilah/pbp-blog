@@ -239,20 +239,20 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="" method="post" class="form-block needs-validation" id="loginForm" novalidate>
+                <form action="" method="post" name="loginkomentar" class="form-block" id="loginForm" onsubmit="return validateForm()">
                     <p class="mb-3">
                         Silahkan login sebagai penulis untuk memberikan komentar
                     </p>
                     <div class="form-group">
                         <input type="text" class="form-control form-control-user <?= $validation->hasError('email') ? 'is-invalid' : '' ?>" id="email" placeholder="Email" name="email" value="<?= old('email') ?>" />
-                        <div class="invalid-feedback" id="erroremail">
+                        <div class="text-danger" id="erroremail">
                             Field ini harus diisi
                         </div>
                         <!-- <span class="invalid-feedback ml-2"><?= $validation->getError('email') ?></span> -->
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control form-control-user <?= $validation->hasError('password') ? 'is-invalid' : '' ?>" id="password" placeholder="Password" name="password" />
-                        <div class="invalid-feedback" id="errorpassword">
+                        <div class="text-danger" id="errorpassword">
                             Field ini harus diisi
                         </div>
                         <!-- <span class="invalid-feedback ml-2"><?= $validation->getError('password') ?></span> -->
@@ -266,8 +266,24 @@
     </div>
 </div>
 
+<script src="/assets/js/jquery.min.js"></script>
 <script>
-    $('')
+    $('#erroremail').hide();
+    $('#errorpassword').hide();
+
+    function validateForm(e) {
+        e.preventDefault();
+        var email = document.forms["loginkomentar"]["email"].value;
+        var password = document.forms["loginkomentar"]["password"].value;
+
+        if (email == '') {
+            document.getElementById("erroremail").innerHTML = "Email harus diisi";
+        }
+
+        if (password == '') {
+            document.getElementById("errorpassword").innerHTML = "Password harus diisi";
+        }
+    }
 </script>
 
 <!-- AKHIR ISI KONTEN -->
