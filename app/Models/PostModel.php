@@ -78,15 +78,13 @@ class PostModel extends Model
             ->orderBy('post.tgl_insert', 'DESC');
     }
 
-    // public function prevPost($id)
-    // {
-    //     // return $this->db->query("SELECT * FROM divisi WHERE id_divisi = (SELECT max(id_divisi) FROM divisi WHERE id_divisi < $id)");
-    //     // return $this->where(['idpost' => $this->selectMax('idpost')->where('idpost' < $id)])->find();
-    // }
-
-    // public function nextPost($id)
-    // {
-    //     // return $this->db->query("SELECT * FROM divisi WHERE id_divisi = (SELECT max(id_divisi) FROM divisi WHERE id_divisi < $id)");
-    //     // return $this->where('idpost', $this->selectMax('idpost')->where('idpost' > $id))->find();
-    // }
+    public function groupPostBySimilarCategory($idkategori, $idpost, $limit)
+    {
+        return $this->join('kategori', 'post.idkategori = kategori.idkategori')
+            ->where(['kategori.idkategori' => $idkategori])
+            ->where('post.idpost !=', $idpost)
+            ->limit($limit)
+            ->orderBy('post.tgl_insert', 'DESC')
+            ->find();
+    }
 }

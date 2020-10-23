@@ -16,6 +16,7 @@ namespace App\Controllers;
  */
 
 use CodeIgniter\Controller;
+use App\Libraries\Fungsi;
 
 class BaseController extends Controller
 {
@@ -44,5 +45,6 @@ class BaseController extends Controller
 		// $this->session = \Config\Services::session();
 		session();
 		helper(['fungsi_helper', 'tanggal_helper', 'post_helper']);
+		$this->fungsi = new Fungsi();
 	}
 }

@@ -3,6 +3,7 @@
 
 <!-- ISI KONTEN -->
 <!-- Taruh konten di bawah sini -->
+<?php $this->fungsi = new App\Libraries\Fungsi(); ?>
 <div class="flash-data" data-text="<?= session()->getFlashdata('text'); ?>" data-title="<?= session()->getFlashdata('title'); ?>" data-icon="<?= session()->getFlashdata('icon'); ?>"></div>
 <div class="slider-main h-500x h-sm-auto pos-relative pt-95 pb-25">
     <div class="img-bg bg-1 bg-layer-4"></div>
@@ -40,7 +41,7 @@
                             </div><!-- s-left-->
 
                             <div class="s-right">
-                                <p class="ptb-20 color-ash"><b><?= ucfirst($penulis["nama"]) ?> <br> on  <?= tanggal($post["tgl_insert"]) ?> <?= month($post["tgl_insert"]) ?> <?= tahun($post["tgl_insert"]) ?> at <?= pukul($post["tgl_insert"]) ?> </b></p>
+                                <p class="ptb-20 color-ash"><b><?= ucfirst($penulis["nama"]) ?> <br> on <?= tanggal($post["tgl_insert"]) ?> <?= month($post["tgl_insert"]) ?> <?= tahun($post["tgl_insert"]) ?> at <?= pukul($post["tgl_insert"]) ?> </b></p>
                             </div>
                         </div><!-- sided-80x-->
                     </div><!-- col-md-6-->
@@ -80,7 +81,7 @@
                             </div><!-- s-left-->
 
                             <div class="s-right">
-                                <p class="ptb-20 color-ash"><b><?= ucfirst($penulis["nama"]) ?> <br> on  <?= tanggal($post["tgl_insert"]) ?> <?= month($post["tgl_insert"]) ?> <?= tahun($post["tgl_insert"]) ?> at <?= pukul($post["tgl_insert"]) ?> </b></p>
+                                <p class="ptb-20 color-ash"><b><?= ucfirst($penulis["nama"]) ?> <br> on <?= tanggal($post["tgl_insert"]) ?> <?= month($post["tgl_insert"]) ?> <?= tahun($post["tgl_insert"]) ?> at <?= pukul($post["tgl_insert"]) ?> </b></p>
                             </div>
                         </div><!-- sided-80x-->
                     </div><!-- col-md-6-->
@@ -97,26 +98,27 @@
 
                 <div class="brdr-grey-1 mt-50 mt-sm-20"></div>
 
+
                 <div class="mt-50 mb-20">
                     <div class="row">
-                        <?php foreach ($postterbaru3 as $pt3) : ?>
+                        <?php foreach (count($similarpost) > 0 ? $similarpost : $postterbaru3 as $sp) : ?>
                             <div class=" col-sm-6 col-md-6 col-lg-6 col-xl-4 mb-30">
                                 <div class="card h-100 min-h-350x">
                                     <div class="bg-white h-100">
 
                                         <!-- SETTING IMAGE WITH bg-10 -->
-                                        <div class="h-50 bg-10" style="background-image:url(/assets/img/post/<?= $pt3["file_gambar"] ?>);object-fit:cover"></div>
+                                        <div class="h-50 bg-10" style="background-image:url(/assets/img/post/<?= $sp["file_gambar"] ?>);object-fit:cover"></div>
 
                                         <div class="plr-25 ptb-15 h-50">
                                             <div class="dplay-tbl">
                                                 <div class="dplay-tbl-cell">
 
-                                                    <h5 class="color-ash"><b><?= ucfirst($pt3["nama"]) ?></b></h5>
-                                                    <h4 class="mtb-10" title="<?= $pt3["judul"] ?>">
-                                                        <a href="/post/detail/<?= $pt3["slug"] ?>"><b><?= ucfirst(crop_string($pt3["judul"], 40)) ?></b></a></h4>
+                                                    <h5 class="color-ash"><b><?= ucfirst($sp["nama"]) ?></b></h5>
+                                                    <h4 class="mtb-10" title="<?= $sp["judul"] ?>">
+                                                        <a href="/post/detail/<?= $sp["slug"] ?>"><b><?= ucfirst(crop_string($sp["judul"], 40)) ?></b></a></h4>
                                                     <ul class="list-li-mr-10 color-lt-black">
-                                                        <li><i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= tgl_indo($pt3["tgl_insert"]) ?></li>
-                                                        <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
+                                                        <li><i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= tgl_indo($sp["tgl_insert"]) ?></li>
+                                                        <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i><?= $this->fungsi->sumKomentarInOnePost($sp["idpost"]) ?></li>
                                                     </ul>
 
                                                 </div><!-- dplay-tbl-cell -->
@@ -129,6 +131,7 @@
 
                     </div><!-- row-->
                 </div><!-- mt-50 mb-20-->
+
 
                 <h4 class="mb-30 mt-20 clearfix"><b>Comments(<?= count($komentar) ?>)</b></h4>
 

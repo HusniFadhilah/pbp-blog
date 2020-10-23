@@ -6,7 +6,6 @@ use App\Models\PostModel;
 use App\Models\KategoriModel;
 use App\Models\PenulisModel;
 use App\Models\KomentarModel;
-use \CodeIgniter\I18n\Time;
 
 class Post extends BaseController
 {
@@ -52,7 +51,8 @@ class Post extends BaseController
             'validation' => \Config\Services::validation(),
             'postterbaru4' => $this->postModel->postTerbaru(4),
             'postterbaru3' => $this->postModel->postTerbaru(3),
-            'komentar' => $this->komentarModel->getKomentarByPost($post["idpost"])
+            'komentar' => $this->komentarModel->getKomentarByPost($post["idpost"]),
+            'similarpost' => $this->postModel->groupPostBySimilarCategory($post["idkategori"], $post["idpost"], 3),
         ];
         return view('public/post/post_detail', $data);
     }

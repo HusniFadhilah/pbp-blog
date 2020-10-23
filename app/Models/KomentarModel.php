@@ -49,4 +49,9 @@ class KomentarModel extends Model
         return $this->join('post', 'komentar.idpost = post.idpost')
             ->where(['post.idpenulis' => $idpenulis])->find($idkomentar);
     }
+
+    public function sumKomentarInOnePost($idpost)
+    {
+        return count($this->where(['idpost' => $idpost])->find());
+    }
 }

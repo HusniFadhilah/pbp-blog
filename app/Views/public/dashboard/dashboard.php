@@ -3,6 +3,7 @@
 
 <!-- ISI KONTEN -->
 <!-- Taruh konten di bawah sini -->
+<?php $this->fungsi = new App\Libraries\Fungsi(); ?>
 <div class="slider-main h-<?= $keyword ? '300' : '600' ?>x h-sm-auto pos-relative pt-95 pb-25">
     <div class="img-bg bg-1 bg-layer-4"></div>
     <div class="container-fluid h-100 mt-xs-50">
@@ -51,7 +52,7 @@
                                                             <a href="/post/detail/<?= $pt5["slug"] ?>"><b><?= crop_string($pt5["judul"], 40) ?></b></a></h4>
                                                         <ul class="list-li-mr-10 color-lt-black">
                                                             <li><i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= time_ago($pt5["tgl_insert"]) ?></li>
-                                                            <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
+                                                            <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i><?= $this->fungsi->sumKomentarInOnePost($pt5["idpost"]) ?></li>
                                                         </ul>
                                                     </div><!-- hot-news -->
                                                 </div><!-- hot-news -->
@@ -84,6 +85,7 @@
             <div class="col-lg-1"></div>
             <div class="col-md-12 col-lg-10 ptb-50 pr-30 pr-md-15">
                 <?php if (!$keyword) : ?>
+                    <h4 class="mb-30 mt-20 clearfix"><b>Kategori Terbanyak</b></h4>
                     <div class="row">
 
                         <?php foreach ($postterbaru3 as $pt3) : ?>
@@ -93,10 +95,10 @@
                                     <div class="plr-25 ptb-15">
 
                                         <h5 class="color-ash"><b><?= ucfirst($pt3["nama"]) ?></b></h5>
-                                        <h4 class="mtb-10"><a href="/post/detail/<?= $pt3["slug"] ?>"><b><?= $pt3["judul"] ?></b></a></h4>
+                                        <h4 class="mtb-10" title="<?= $pt3["judul"] ?>"><a href="/post/detail/<?= $pt3["slug"] ?>"><b><?= ucfirst(crop_string($pt3["judul"], 70)) ?></b></a></h4>
                                         <ul class="list-li-mr-10 color-lt-black">
                                             <li><i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= indo_date($pt3["tgl_insert"]) ?></li>
-                                            <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
+                                            <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i><?= $this->fungsi->sumKomentarInOnePost($pt3["idpost"]) ?></li>
                                         </ul>
 
                                     </div><!-- hot-news -->
@@ -139,7 +141,7 @@
                                                                 <b><?= crop_string($p["judul"], 40) ?></b></a></h4>
                                                         <ul class="list-li-mr-10 color-lt-black">
                                                             <li><i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= indo_date($p["tgl_insert"]) ?></li>
-                                                            <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
+                                                            <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i><?= $this->fungsi->sumKomentarInOnePost($p["idpost"]) ?></li>
                                                         </ul>
                                                     </div><!-- dplay-tbl-cell -->
                                                 </div><!-- dplay-tbl -->

@@ -1,19 +1,16 @@
 <?php
 
-use CodeIgniter\Database\ConnectionInterface;
+namespace App\Libraries;
+
 use App\Models\KomentarModel;
 
 class Fungsi
 {
-    protected $db;
+    protected $komentar;
 
-    public function __construct(ConnectionInterface &$db)
+    public function sumKomentarInOnePost($idpost)
     {
-        $this->db = &$db;
-        $this->komentar = new KomentarModel();
-    }
-
-    public function test()
-    {
+        $this->komentarModel = new KomentarModel();
+        return $this->komentarModel->sumKomentarInOnePost($idpost);
     }
 }
