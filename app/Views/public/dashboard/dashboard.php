@@ -48,7 +48,7 @@
                                                     <div class="plr-25 ptb-15">
                                                         <h5 class="color-ash"><b><?= ucfirst($pt5["nama"]) ?></b></h5>
                                                         <h4 class="mtb-10" title="<?= $pt5["judul"] ?>">
-                                                            <a href="#"><b><?= crop_string($pt5["judul"], 40) ?></b></a></h4>
+                                                            <a href="/post/detail/<?= $pt5["slug"] ?>"><b><?= crop_string($pt5["judul"], 40) ?></b></a></h4>
                                                         <ul class="list-li-mr-10 color-lt-black">
                                                             <li><i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= time_ago($pt5["tgl_insert"]) ?></li>
                                                             <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105</li>
@@ -92,7 +92,7 @@
                                 <div class="card h-100 bg-white">
                                     <div class="plr-25 ptb-15">
 
-                                        <h5 class="color-ash"><b><?= $pt3["idkategori"] ?></b></h5>
+                                        <h5 class="color-ash"><b><?= ucfirst($pt3["nama"]) ?></b></h5>
                                         <h4 class="mtb-10"><a href="/post/detail/<?= $pt3["slug"] ?>"><b><?= $pt3["judul"] ?></b></a></h4>
                                         <ul class="list-li-mr-10 color-lt-black">
                                             <li><i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= indo_date($pt3["tgl_insert"]) ?></li>
