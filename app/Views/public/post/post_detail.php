@@ -40,7 +40,7 @@
                             </div><!-- s-left-->
 
                             <div class="s-right">
-                                <p class="ptb-20 color-ash"><b><?= ucfirst($post["nama"]) ?> on <?= month($post["tgl_insert"]) ?> <?= tanggal($post["tgl_insert"]) ?>, <?= tahun($post["tgl_insert"]) ?> at <?= pukul($post["tgl_insert"]) ?></b></p>
+                                <p class="ptb-20 color-ash"><b><?= ucfirst($penulis["nama"]) ?> <br> on  <?= tanggal($post["tgl_insert"]) ?> <?= month($post["tgl_insert"]) ?> <?= tahun($post["tgl_insert"]) ?> at <?= pukul($post["tgl_insert"]) ?> </b></p>
                             </div>
                         </div><!-- sided-80x-->
                     </div><!-- col-md-6-->
@@ -54,6 +54,11 @@
                         </ul>
                     </div><!-- col-md-6-->
                 </div><!-- row-->
+
+                <p class="mt-40 mt-sm-10">
+                    <img src="/assets/img/post/<?= $post["file_gambar"] ?>" alt="<?= $post["judul"] ?>" style="object-fit:cover;">
+
+                </p>
 
                 <p class="mt-40 mt-sm-10">
                     <?= $post["isi_post"] ?>
@@ -75,7 +80,7 @@
                             </div><!-- s-left-->
 
                             <div class="s-right">
-                                <p class="ptb-20 color-ash"><b><?= ucfirst($post["nama"]) ?> on <?= month($post["tgl_insert"]) ?> <?= tanggal($post["tgl_insert"]) ?>, <?= tahun($post["tgl_insert"]) ?> at <?= pukul($post["tgl_insert"]) ?></b></p>
+                                <p class="ptb-20 color-ash"><b><?= ucfirst($penulis["nama"]) ?> <br> on  <?= tanggal($post["tgl_insert"]) ?> <?= month($post["tgl_insert"]) ?> <?= tahun($post["tgl_insert"]) ?> at <?= pukul($post["tgl_insert"]) ?> </b></p>
                             </div>
                         </div><!-- sided-80x-->
                     </div><!-- col-md-6-->
