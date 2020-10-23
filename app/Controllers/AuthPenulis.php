@@ -190,9 +190,9 @@ class AuthPenulis extends BaseController
                 session()->set($sessData);
                 $agent = $this->request->getUserAgent();
                 if ($agent->isReferral()) {
-                    sweetalert('Login berhasil, silahkan tambahkan komentar', 'error', 'Gagal!');
                     return redirect()->to('/authpenulis');
                 } else {
+                    sweetalert('Login berhasil, silahkan tambahkan komentar', 'success', 'Berhasil!');
                     return redirect()->to($agent->getReferrer());
                 }
             }
