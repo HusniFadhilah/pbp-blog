@@ -152,9 +152,9 @@ class Penulis extends BaseController
             'confirmpassword' => [
                 'rules' => 'required|min_length[8]|matches[newpassword]',
                 'errors' => [
-                    'required' => 'Konfirmasi password baru harus diisi.',
+                    'required' => 'Konfirmasi password baru harus diisi',
                     'min_length' => 'Konfirmasi password baru minimal 8 karakter',
-                    'matches' => 'Konfirmasi password salah, silahkan ulangi.'
+                    'matches' => 'Konfirmasi password salah, silahkan ulangi'
                 ]
             ]
         ]))
