@@ -3,6 +3,7 @@
 
 <!-- ISI KONTEN -->
 <!-- Taruh konten di bawah sini -->
+<?php $this->fungsi = new App\Libraries\Fungsi(); ?>
 <div class="slider-main h-sm-auto pos-relative pt-95 pb-25">
     <div class="img-bg bg-1 bg-layer-4"></div>
     <div class="container-fluid h-100 mt-xs-50">
@@ -10,7 +11,7 @@
         <div class="dplay-tbl">
             <div class="dplay-tbl-cell color-white text-center">
 
-                <h1 class="ptb-50"><b>Kategori <?= ucfirst($kategori['nama']) ?></b></h1>
+                <h1 class="ptb-50"><b>Kategori <?= ucfirst($kategori[0]['nama']) ?></b></h1>
 
             </div><!-- dplay-tbl-cell -->
         </div><!-- dplay-tbl -->
@@ -42,7 +43,7 @@
                                                 <div class="dplay-tbl">
                                                     <div class="dplay-tbl-cell">
 
-                                                        <h5 class="color-ash"><b><?= ucfirst($kategori["nama"]) ?></b></h5>
+                                                        <h5 class="color-ash"><b><?= ucfirst($kategori[0]["nama"]) ?></b></h5>
                                                         <h4 class="mtb-10" title="<?= $p["judul"] ?>"><a href="/post/detail/<?= $p["slug"] ?>">
                                                                 <b><?= ucfirst(crop_string($p["judul"], 40)) ?></b></a></h4>
                                                         <ul class="list-li-mr-10 color-lt-black">
@@ -50,7 +51,7 @@
                                                                 <i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= indo_date($p["tgl_insert"]) ?>
                                                             </li>
                                                             <li>
-                                                                <i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>105
+                                                                <i class="mr-5 font-12 ion-ios-chatbubble-outline"></i><?= $this->fungsi->sumKomentarInOnePost($p['idpost']) ?>
                                                             </li>
                                                         </ul>
                                                     </div><!-- dplay-tbl-cell -->

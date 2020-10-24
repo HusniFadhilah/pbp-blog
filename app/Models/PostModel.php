@@ -72,10 +72,10 @@ class PostModel extends Model
             ->orLike('judul', $keyword);
     }
 
-    public function groupPost($id)
+    public function groupPost($nama)
     {
         return $this->join('kategori', 'post.idkategori = kategori.idkategori')
-            ->where(['kategori.idkategori' => $id])
+            ->where(['kategori.nama' => $nama])
             ->orderBy('post.tgl_insert', 'DESC');
     }
 

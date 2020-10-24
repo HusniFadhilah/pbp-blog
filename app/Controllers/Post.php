@@ -286,16 +286,16 @@ class Post extends BaseController
         return redirect()->to('/post/data');
     }
 
-    public function groupCategory($id)
+    public function category($nama)
     {
-        $post = $this->postModel->groupPost($id);
+        $post = $this->postModel->groupPost($nama);
 
         $data = [
             'title' => 'Group Post Berdasarkan Kategori',
             'post' => $post->paginate(5, 'post'),
             'pager' => $post->pager,
             'allkategori' => $this->kategoriModel->findAll(),
-            'kategori' => $this->kategoriModel->find($id)
+            'kategori' => $this->kategoriModel->getPostByCategory($nama)
         ];
 
         return view('public/post/post_group', $data);
