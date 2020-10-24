@@ -13,11 +13,6 @@ class Komentar extends BaseController
     }
 
 
-    public function index()
-    {
-        // return view('penulis/komentar/komentar_data');
-    }
-
     public function save()
     {
         $user_session = session()->has('idpenulis');
@@ -56,6 +51,11 @@ class Komentar extends BaseController
     //--------------------------------------------------------------------
     public function data()
     {
+        $user_session = session()->has('idpenulis');
+        if (!($user_session)) {
+            return redirect()->to('/authpenulis');
+        }
+
         $data = [
             'title' => 'Komentar',
             'komentarbypenulis' => $this->komentarModel->getKomentarInPostBelongsToPenulis(session()->get('idpenulis'))
