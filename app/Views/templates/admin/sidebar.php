@@ -3,7 +3,7 @@
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
-            <div class="sidebar-brand-text mx-2">PBP BLOG (Admin)</b></div>
+            <div class="sidebar-brand-text mx-2">Dipo Journal (Admin)</b></div>
         </a>
 
         <!-- Divider -->
