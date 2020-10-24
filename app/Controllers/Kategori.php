@@ -38,7 +38,7 @@ class Kategori extends BaseController
         }
 
         $data = [
-            'judul' => 'Form Tambah Kategori',
+            'title' => 'Form Tambah Kategori',
             'validation' => \Config\Services::validation()
         ];
 

@@ -3,7 +3,7 @@
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
-            <div class="sidebar-brand-text mx-2">PBP BLOG (Penulis)</b></div>
+            <div class="sidebar-brand-text mx-2">Dipo Journal (Penulis)</b></div>
         </a>
 
         <!-- Divider -->
