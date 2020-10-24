@@ -69,7 +69,7 @@
                                         <span class="invalid-feedback"><?= $validation->getError('alamat') ?></span>
                                     </div>
                                     <button type="submit" class="btn btn-primary btn-user btn-block">
-                                        Login
+                                        Daftar
                                     </button>
                                     <div class="row text-center mt-3">
                                         <div class="col">

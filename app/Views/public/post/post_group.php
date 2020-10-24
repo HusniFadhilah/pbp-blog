@@ -35,8 +35,7 @@
 
                                         <!-- SETTING IMAGE WITH bg-2 -->
                                         <div class="s-left w-50 w-xs-100 h-100 h-xs-50 pos-relative">
-                                            <img src="/assets/img/post/<?= $p["file_gambar"] ?>"
-                                                 style="objec-fit:cover;height:200px;width:100%"></img>
+                                            <img src="/assets/img/post/<?= $p["file_gambar"] ?>" style="object-fit:cover;height:200px;width:100%"></img>
                                         </div>
                                         <div class="s-right w-50 w-xs-100 h-xs-50">
                                             <div class="plr-25 ptb-25 h-100">
@@ -44,8 +43,7 @@
                                                     <div class="dplay-tbl-cell">
                                                         <h5 class="color-ash">
                                                             <b><?= ucfirst($kategori[0]["nama"]) ?></b></h5>
-                                                        <h4 class="mtb-10" title="<?= $p["judul"] ?>"><a
-                                                                    href="/post/detail/<?= $p["slug"] ?>">
+                                                        <h4 class="mtb-10" title="<?= $p["judul"] ?>"><a href="/post/detail/<?= $p["slug"] ?>">
                                                                 <b><?= ucfirst(crop_string($p["judul"], 40)) ?></b></a>
                                                         </h4>
                                                         <ul class="list-li-mr-10 color-lt-black">
@@ -75,8 +73,8 @@
                     <?php endif ?>
                 </div><!-- row -->
                 <?= $pager->links('post', 'post_pagination') ?>
-        </div><!-- sided-80x -->
-    </div><!-- mb-50 -->
+            </div><!-- sided-80x -->
+        </div><!-- mb-50 -->
 </section>
 
 <!-- AKHIR ISI KONTEN -->
