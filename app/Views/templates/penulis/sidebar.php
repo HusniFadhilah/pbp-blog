@@ -2,10 +2,12 @@
     <ul class="navbar-nav bg-gradient-nero sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
-            <div class="sidebar-brand-text mx-2">Dipo Journal (Penulis)</b></div>
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+            <img class="p-0 img-fluid" src="/logo.ico" alt="" height="150" width="150">
         </a>
-
+        <a class="d-flex align-items-center justify-content-center" href="/">
+            <h4 class="h4 text-success">Penulis</h4>
+        </a>
         <!-- Divider -->
         <hr class="sidebar-divider">
 
