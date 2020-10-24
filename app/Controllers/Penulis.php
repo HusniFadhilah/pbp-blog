@@ -22,7 +22,14 @@ class Penulis extends BaseController
             return redirect()->to('/authpenulis');
         }
 
-        return view('penulis/dashboard/dashboard');
+        $data = [
+            'validation' => \Config\Services::validation(),
+            'jmlkomentar' => count($this->komentarModel->getKomentarInPostBelongsToPenulis($user_session)),
+            'jmlpost' => count($this->postModel->getDataPostByPenulis($user_session)),
+            'post' => $this->postModel->getDataPostByPenulis($user_session)
+        ];
+
+        return view('penulis/dashboard/dashboard', $data);
     }
 
     public function edit($id)

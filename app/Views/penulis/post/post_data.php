@@ -3,6 +3,7 @@
 
 <!-- ISI KONTEN -->
 <!-- Taruh konten di bawah sini -->
+<?php $this->fungsi = new App\Libraries\Fungsi(); ?>
 <div class="container">
     <div class="flash-data" data-text="<?= session()->getFlashdata('text'); ?>" data-title="<?= session()->getFlashdata('title'); ?>" data-icon="<?= session()->getFlashdata('icon'); ?>"></div>
     <div class="row">
@@ -18,9 +19,9 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Judul</th>
-                                    <th scope="col">Isi Post</th>
+                                    <th scope="col">Jumlah Komentar</th>
                                     <th scope="col">Thumbnail</th>
-                                    <th scope="col">Created At</th>
+                                    <th scope="col">Posted At</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -31,7 +32,7 @@
                                     <tr>
                                         <td scope="row"><?= $i++ ?></td>
                                         <td><?= $p["judul"] ?></td>
-                                        <td><?= crop_string($p["isi_post"], 40) ?></td>
+                                        <td><?= $this->fungsi->sumKomentarInOnePost($p['idpost']) ?></td>
                                         <td><img src="/assets/img/post/<?= $p["file_gambar"] ?>" class="img-fluid img-thumbnail" style="max-width:100px"></td>
                                         <td><?= $p["tgl_insert"] ?></td>
                                         <td>
