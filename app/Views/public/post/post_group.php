@@ -17,7 +17,7 @@
     </div><!-- container -->
 </div><!-- slider-main -->
 
-<section class="bg-1-white ptb-0">
+<section class="bg-1-white ptb-0" style="<?= (count($post) == 0) ? 'height: 70vh;' : '' ?>overflow: auto;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-1"></div>
@@ -63,8 +63,10 @@
                             <!-- END OF SECOND PARA -->
                         <?php endforeach ?>
                     <?php else : ?>
-                        <div class="alert alert-warning">Maaf, artikel kategori <?= ucfirst($kategori['nama']) ?>
-                            tidak ditemukan
+                        <div class="col-12">
+                            <div class="alert alert-warning w-100">Maaf, artikel kategori <?= ucfirst($kategori['nama']) ?>
+                                tidak ditemukan
+                            </div>
                         </div>
                     <?php endif ?>
 

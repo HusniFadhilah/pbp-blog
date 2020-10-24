@@ -79,11 +79,11 @@
     </div><!-- container -->
 </div><!-- slider-main -->
 
-<section class="bg-1-white ptb-0">
-    <div class="container-fluid">
+<section class="bg-1-white ptb-0" style="<?= $keyword ? 'height: 70vh;' : '' ?>overflow: auto;">
+    <div class="container">
         <div class="row">
-            <div class="col-lg-1"></div>
-            <div class="col-md-12 col-lg-10 ptb-50 pr-30 pr-md-15">
+            <!-- <div class="col-lg-1"></div> -->
+            <div class="col-md-12 col-lg-12 ptb-50 pr-30 pr-md-15">
 
                 <?php if (!$keyword) : ?>
                     <h4 class="mb-30 mt-20 clearfix"><b>Artikel Terbaru</b></h4>
@@ -129,7 +129,9 @@
                             <!-- END OF SECOND PARA -->
                         <?php endforeach ?>
                     <?php else : ?>
-                        <div class="alert alert-warning">Maaf pencarian artikel dengan kata kunci <?= $keyword ?> tidak ditemukan</div>
+                        <div class="col-12">
+                            <div class="alert alert-warning">Maaf pencarian artikel dengan kata kunci <?= $keyword ?> tidak ditemukan</div>
+                        </div>
                     <?php endif ?>
 
                 </div><!-- row -->
