@@ -1,6 +1,6 @@
 <header>
     <a class="logo" href="/">
-        <img class="ml-lg-4 p-0" src="/logo.ico" alt="">
+        <img class="ml-4 p-0" src="/logo.ico" alt="">
     </a>
 
     <div class="right-area">
@@ -12,7 +12,7 @@
 
     <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
 
-    <ul class="main-menu d-flex" id="main-menu">
+    <ul class="main-menu d-lg-flex" id="main-menu">
         <li class="ml-lg-3"><a href="/post" class="mr-2">Home</a></li>
         <li class="drop-down"><a href="#!">Kategori<i class="ion-arrow-down-b"></i></a>
             <ul class="drop-down-menu drop-down-inner">
