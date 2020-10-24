@@ -79,6 +79,13 @@ class PostModel extends Model
             ->orderBy('post.tgl_insert', 'DESC');
     }
 
+    public function groupPostById($idkategori)
+    {
+        return $this->join('kategori', 'post.idkategori = kategori.idkategori')
+            ->where(['kategori.idkategori' => $idkategori])
+            ->orderBy('post.tgl_insert', 'DESC');
+    }
+
     public function groupPostBySimilarCategory($idkategori, $idpost, $limit)
     {
         return $this->join('kategori', 'post.idkategori = kategori.idkategori')
@@ -98,6 +105,6 @@ class PostModel extends Model
 
     public function sumPostByKategori($idkategori)
     {
-        return count($this->groupPost($idkategori)->find());
+        return count($this->groupPostById($idkategori)->find());
     }
 }
