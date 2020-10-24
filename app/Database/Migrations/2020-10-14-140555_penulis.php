@@ -38,11 +38,11 @@ class Penulis extends Migration
 				'type'           => 'VARCHAR',
 				'constraint'     => '15',
 			],
-			'tgl_insert' => [
+			'created_at' => [
 				'type'           => 'DATETIME',
 				'null'     		 => true,
 			],
-			'tgl_update' => [
+			'updated_at' => [
 				'type'           => 'DATETIME',
 				'null'     		 => true,
 			],

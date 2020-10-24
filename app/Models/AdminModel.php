@@ -14,8 +14,8 @@ class AdminModel extends Model
     protected $allowedFields = ['nama', 'email', 'password'];
 
     protected $useTimestamps = true;
-    protected $createdField  = 'tgl_insert';
-    protected $updatedField  = 'tgl_update';
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
 
     // FUNCTION & METHOD //
     public function getDataAdmin($id = false)

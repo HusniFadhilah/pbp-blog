@@ -16,8 +16,8 @@ class PenulisSeeder extends \CodeIgniter\Database\Seeder
                 'kota' => 'Semarang',
                 'email'    => 'penulis@gmail.com',
                 'no_telp' => '0888888888',
-                'tgl_insert' => Time::now(),
-                'tgl_update' => Time::now(),
+                'created_at' => Time::now(),
+                'updated_at' => Time::now(),
             ],
             [
                 'nama' => 'penulis1',
@@ -26,8 +26,8 @@ class PenulisSeeder extends \CodeIgniter\Database\Seeder
                 'kota' => 'Semarang',
                 'email'    => 'penulis1@gmail.com',
                 'no_telp' => '0877777777',
-                'tgl_insert' => Time::parse('May 1, 2020 09:25:30', 'Asia/Jakarta'),
-                'tgl_update' => Time::parse('May 1, 2020 09:35:30', 'Asia/Jakarta'),
+                'created_at' => Time::parse('May 1, 2020 09:25:30', 'Asia/Jakarta'),
+                'updated_at' => Time::parse('May 1, 2020 09:35:30', 'Asia/Jakarta'),
             ],
         ];
 

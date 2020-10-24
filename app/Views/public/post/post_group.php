@@ -43,7 +43,7 @@
                                                     <div class="dplay-tbl-cell">
 
                                                         <h5 class="color-ash"><b><?= ucfirst($kategori["nama"]) ?></b></h5>
-                                                        <h4 class="mtb-10"><a href="/post/detail/<?= $p["slug"] ?>">
+                                                        <h4 class="mtb-10" title="<?= $p["judul"] ?>"><a href="/post/detail/<?= $p["slug"] ?>">
                                                                 <b><?= ucfirst(crop_string($p["judul"], 40)) ?></b></a></h4>
                                                         <ul class="list-li-mr-10 color-lt-black">
                                                             <li>

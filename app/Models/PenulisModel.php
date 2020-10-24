@@ -14,8 +14,8 @@ class PenulisModel extends Model
     protected $allowedFields = ['idpenulis', 'nama', 'password', 'alamat', 'kota', 'email', 'no_telp'];
 
     protected $useTimestamps = true;
-    protected $createdField  = 'tgl_insert';
-    protected $updatedField  = 'tgl_update';
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
 
     // FUNCTION & METHOD //
     public function getDataPenulis($id = false)
