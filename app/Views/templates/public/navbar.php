@@ -17,7 +17,7 @@
         <li class="drop-down"><a href="#!">Kategori<i class="ion-arrow-down-b"></i></a>
             <ul class="drop-down-menu drop-down-inner">
                 <?php foreach ($allkategori as $k) : ?>
-                    <li><a href="/post/groupcategory/<?= $k["idkategori"] ?>"><?= ucfirst($k["nama"]) ?></a></li>
+                    <li><a href="/post/category/<?= strtolower($k["nama"]) ?>"><?= ucfirst($k["nama"]) ?></a></li>
                 <?php endforeach ?>
             </ul>
         </li>

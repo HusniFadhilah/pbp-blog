@@ -27,4 +27,8 @@ class KategoriModel extends Model
     {
         return $this->where(['idkategori' => $idkategori])->find();
     }
+
+    public function getPostByCategory($nama){
+        return $this->where(['nama' => $nama])->find();
+    }
 }
