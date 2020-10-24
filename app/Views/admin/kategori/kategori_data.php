@@ -8,7 +8,7 @@
         <div class="col">
             <h1 class="h3 mb-2 text-gray-800">Tabel Kategori Artikel</h1>
             <div>
-                <a class="btn btn-primary my-3" href="/kategori/create">+ Add Category</a>
+                <a class="btn btn-primary my-3" href="/kategori/create">+ Tambah Kategori</a>
             </div>
             <div class="flash-data" data-text="<?= session()->getFlashdata('text'); ?>"
                  data-title="<?= session()->getFlashdata('title'); ?>"
@@ -20,20 +20,22 @@
                         <table class="table table-hover" id="kategori" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th scope="col" style="width: 15%;">Category ID</th>
+                                    <th scope="col" style="width: 15%;">#</th>
                                     <th scope="col" style="width: 65%;">Nama</th>
-                                    <th scope="col" style="width: 20%;">Operations</th>
+                                    <th scope="col" style="width: 20%;">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($kategori as $k) : ?>
+                                <?php
+                                $i = 1;
+                                foreach ($kategori as $k) : ?>
                                     <tr>
-                                        <td><?= $k['idkategori']; ?></td>
+                                        <td scope="row"><?= $i++ ?></td>
                                         <td><?= $k['nama']; ?></td>
                                         <td>
-                                            <a type="button" class="btn btn-warning" href="/kategori/edit/<?= $k['idkategori']; ?>">Edit</a>
-                                            <a type="button" class="btn btn-danger tombol-hapus" href="/kategori/delete/<?= $k['idkategori']; ?>" data-text="kategori &apos;<?= $k['nama']; ?>&apos;" title="Hapus kategori">
-                                                Delete
+                                            <a type="button" class="btn btn-warning btn-sm mt-1" href="/kategori/edit/<?= $k['idkategori']; ?>" title="Edit kategori""><i class="fa fa-edit"></i></a>
+                                            <a type="button" class="btn btn-danger btn-sm mt-1 tombol-hapus" href="/kategori/delete/<?= $k['idkategori']; ?>" data-text="kategori &apos;<?= $k['nama']; ?>&apos;" title="Hapus kategori">
+                                                <i class="fa fa-trash"></i>
                                             </a>
                                         </td>
                                     </tr>
