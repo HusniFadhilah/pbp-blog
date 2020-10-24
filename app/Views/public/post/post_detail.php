@@ -68,7 +68,7 @@
 
                 <ul class="tag mtb-50">
                     <?php foreach ($allkategori as $ak) : ?>
-                        <li><a href="/post/groupcategory/<?= $ak["idkategori"] ?>"><b><?= $ak["nama"] ?></b></a></li>
+                        <li><a href="/post/category/<?= strtolower($ak["nama"]) ?>"><b><?= $ak["nama"] ?></b></a></li>
                     <?php endforeach ?>
                 </ul>
 
