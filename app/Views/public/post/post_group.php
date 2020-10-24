@@ -18,7 +18,7 @@
     </div><!-- container -->
 </div><!-- slider-main -->
 
-<section class="bg-1-white ptb-0" style="<?= (count($post) == 0) ? 'height: 70vh;' : '' ?>overflow: auto;">
+<section class="bg-1-white ptb-0" style="<?= (count($post) == 0) ? 'height: 80vh;' : '' ?>overflow: auto;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-1"></div>
@@ -65,7 +65,7 @@
                         <?php endforeach ?>
                     <?php else : ?>
                         <div class="col-12">
-                            <div class="alert alert-warning w-100">Maaf, artikel kategori <?= ucfirst($kategori['nama']) ?>
+                            <div class="alert alert-warning w-100">Maaf, artikel kategori <?= ucfirst($kategori[0]['nama']) ?>
                                 tidak ditemukan
                             </div>
                         </div>
