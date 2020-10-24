@@ -3,10 +3,8 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div class="col-lg-1"></div>
-
             <div class="col-12 mb-30">
-                <div class="card h-100">
+                <div class="card">
                     <div class="dplay-tbl">
                         <div class="dplay-tbl-cell">
 
@@ -18,18 +16,6 @@
                                 </script> All rights reserved | Project PBP Website Dinamis Mini Project</a>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </p>
-
-                        </div><!-- dplay-tbl-cell -->
-                    </div><!-- dplay-tbl -->
-                </div><!-- card -->
-            </div><!-- col-lg-4 col-md-6 -->
-
-            <div class="col-md-4 col-lg-2 mb-30">
-                <div class="card h-100">
-                    <div class="dplay-tbl">
-                        <div class="dplay-tbl-cell">
-
-
 
                         </div><!-- dplay-tbl-cell -->
                     </div><!-- dplay-tbl -->
