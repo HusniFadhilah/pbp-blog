@@ -79,7 +79,7 @@
     </div><!-- container -->
 </div><!-- slider-main -->
 
-<section class="bg-1-white ptb-0" style="<?= $keyword ? 'height: 70vh;' : '' ?>overflow: auto;">
+<section class="bg-1-white ptb-0" style="<?= $keyword ? 'min-height: 70vh;' : '' ?>overflow: auto;">
     <div class="container">
         <div class="row">
             <!-- <div class="col-lg-1"></div> -->

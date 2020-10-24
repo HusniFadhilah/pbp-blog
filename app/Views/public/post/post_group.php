@@ -18,7 +18,7 @@
     </div><!-- container -->
 </div><!-- slider-main -->
 
-<section class="bg-1-white ptb-0" style="<?= (count($post) == 0) ? 'height: 80vh;' : '' ?>overflow: auto;">
+<section class="bg-1-white ptb-0" style="<?= (count($post) == 0) ? 'min-height: 80vh;' : '' ?>overflow: auto;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-1"></div>
