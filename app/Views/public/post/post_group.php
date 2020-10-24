@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-lg-1"></div>
             <div class="col-md-12 col-lg-10 ptb-50 pr-30 pr-md-15">
-
+                <h4 class="mb-4"></h4>
 
                 <div class="row">
                     <?php if (count($post) > 0) : ?>
@@ -35,17 +35,19 @@
 
                                         <!-- SETTING IMAGE WITH bg-2 -->
                                         <div class="s-left w-50 w-xs-100 h-100 h-xs-50 pos-relative">
-                                            <img src="/assets/img/post/<?= $p["file_gambar"] ?>" style="object-fit:cover; width:100%; height:100%"></img>
+                                            <img src="/assets/img/post/<?= $p["file_gambar"] ?>"
+                                                 style="objec-fit:cover;height:200px;width:100%"></img>
                                         </div>
-
                                         <div class="s-right w-50 w-xs-100 h-xs-50">
                                             <div class="plr-25 ptb-25 h-100">
                                                 <div class="dplay-tbl">
                                                     <div class="dplay-tbl-cell">
-
-                                                        <h5 class="color-ash"><b><?= ucfirst($kategori[0]["nama"]) ?></b></h5>
-                                                        <h4 class="mtb-10" title="<?= $p["judul"] ?>"><a href="/post/detail/<?= $p["slug"] ?>">
-                                                                <b><?= ucfirst(crop_string($p["judul"], 40)) ?></b></a></h4>
+                                                        <h5 class="color-ash">
+                                                            <b><?= ucfirst($kategori[0]["nama"]) ?></b></h5>
+                                                        <h4 class="mtb-10" title="<?= $p["judul"] ?>"><a
+                                                                    href="/post/detail/<?= $p["slug"] ?>">
+                                                                <b><?= ucfirst(crop_string($p["judul"], 40)) ?></b></a>
+                                                        </h4>
                                                         <ul class="list-li-mr-10 color-lt-black">
                                                             <li>
                                                                 <i class="mr-5 font-12 ion-ios-calendar-outline"></i><?= indo_date($p["tgl_insert"]) ?>
@@ -65,18 +67,16 @@
                         <?php endforeach ?>
                     <?php else : ?>
                         <div class="col-12">
-                            <div class="alert alert-warning w-100">Maaf, artikel kategori <?= ucfirst($kategori[0]['nama']) ?>
+                            <div class="alert alert-warning w-100">Maaf, artikel
+                                kategori <?= ucfirst($kategori[0]['nama']) ?>
                                 tidak ditemukan
                             </div>
                         </div>
                     <?php endif ?>
-
                 </div><!-- row -->
                 <?= $pager->links('post', 'post_pagination') ?>
-            </div><!-- s-left -->
         </div><!-- sided-80x -->
     </div><!-- mb-50 -->
-
 </section>
 
 <!-- AKHIR ISI KONTEN -->
