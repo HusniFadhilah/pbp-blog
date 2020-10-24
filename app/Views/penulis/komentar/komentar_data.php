@@ -33,6 +33,7 @@
                                         <td><?= $k["tgl_insert"] ?></td>
                                         <td>
                                             <a href="/komentar/delete/<?= $k["idkomentar"] ?>/" class="btn btn-danger btn-sm mt-1 tombol-hapus" data-text="<?= $title ?>" title="Hapus komentar"><i class="fa fa-trash"></i></a>
+<!--                                            <a href="/post/detail/--><?//= $postbykomentar[$k["idkomentar"]-1]["slug"] ?><!--" class="btn btn-info btn-sm mt-1" title="Lihat di web"><i class="fa fa-eye"></i></a>-->
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
