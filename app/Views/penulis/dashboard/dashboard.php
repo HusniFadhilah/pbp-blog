@@ -57,7 +57,7 @@
                 <!-- Card Body -->
                 <div class="card-body">
                     <div class="chart-pie pt-4 pb-2">
-                        <canvas id="kategorichart"></canvas>
+                        <canvas id="komentarchart"></canvas>
                     </div>
                     <div class="mt-4 small">
                         <?php
@@ -67,9 +67,9 @@
                             foreach ($post as $data) {
                                 $i++; ?>
                                 <span class="mr-2">
-                                <i class="fas fa-circle" style="color:<?= $warna[$i] ?>"></i> <?= $data["judul"] ?> <br>
-                            </span>
-                                <?php
+                                    <i class="fas fa-circle" style="color:<?= $warna[$i] ?>"></i> <?= $data["judul"] ?> <br>
+                                </span>
+                        <?php
                             }
                         }
                         ?>
@@ -88,7 +88,7 @@
 <script type="text/javascript" src="/assets/js/demo/chart-pie-demo.js"></script>
 
 <script>
-    var ctx = document.getElementById("kategorichart");
+    var ctx = document.getElementById("komentarchart");
     var myPieChart = new Chart(ctx, {
         type: 'doughnut',
         data: {

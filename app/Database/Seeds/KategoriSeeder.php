@@ -24,6 +24,11 @@ class KategoriSeeder extends \CodeIgniter\Database\Seeder
                 'created_at' => Time::parse('December 1, 2019 15:19:46', 'Asia/Jakarta'),
                 'updated_at' => Time::parse('December 1, 2019 15:28:38', 'Asia/Jakarta'),
             ],
+            [
+                'nama' => 'Prestasi',
+                'created_at' => Time::parse('December 5, 2019 15:30:46', 'Asia/Jakarta'),
+                'updated_at' => Time::parse('December 5, 2019 15:45:38', 'Asia/Jakarta'),
+            ],
         ];
 
         // Using Query Builder
