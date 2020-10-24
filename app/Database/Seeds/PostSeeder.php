@@ -200,75 +200,9 @@ class PostSeeder extends \CodeIgniter\Database\Seeder
                 <p>Meskipun lomba diselenggarakan di tengah kondisi pandemi, hal ini tidak menyurutkan semangat Lalaina untuk tetap mengikuti lomba. Video audisi dikirimkan secara online dan telah disaksikan oleh sekitar 2.700 orang. Dalam kompetisi ini, Lalaina mendapatkan juara pertama dengan meraih skor sejumlah 268 poin. Lalaina menyanyikan satu lagu nasional dan satu lagu berbahasa Indonesia pilihan. Kepala&nbsp;<a href="http://io.undip.ac.id/">Kantor Internasional Undip</a>, Kartika Widya Utama, S.H., M.H., dalam jumpa pers yang dilaksanakan pagi ini mengucapkan terima kasih kepada Lalaina. Beliau juga mengungkapkan rasa bangganya terhadap mahasiswa Magister Ilmu Politik asal Madagascar ini karena telah mempelajari bahasa Indonesia dan terlebih mendapatkan juara dalam kompetisi yang menggunakan bahasa Indonesia.</p>
                 
                 <p>Dalam jumpa pers ini Lalaina mengungkapkan rasa terima kasih kepada seluruh pembimbing yang telah membantu selama berada di Undip. &ldquo;Undip adalah bagian dari kehidupan saya di selama di Semarang dan di Indonesia. Saya banyak belajar bukan cuma di kampus tetapi juga belajar ilmu kehidupan dan budaya kehidupan di Jawa. Senang dan bersyukur melewati semuanya dan dapat banyak lesson dari pengalaman selama di sini&rdquo;, tutur mahasiswa KNB Scholarship angkatan 2017 ini. Lalaina mengatakan bahwa hasil yang telah diraih bukan merupakan usaha dari dirinya sendiri, melainkan dari dukungan banyak pihak yaitu dari kolega yang berada di Indonesia maupun di Madagascar.</p>',
-                'file_gambar' => '
-                mahasiswa-asing-undip-sabet-juara-i-lbbi-2020-di-surakarta.jpeg
-                ',
+                'file_gambar' => 'mahasiswa-asing-undip-sabet-juara-i-lbbi-2020-di-surakarta.jpeg',
                 'tgl_insert' => Time::parse('October 24, 2020 17:10:09', 'Asia/Jakarta'),
                 'tgl_update' => Time::parse('October 24, 2020 17:10:09', 'Asia/Jakarta'),
-            ],
-            [
-                'idkategori' => 4,
-                'idpenulis' => 2,
-                'judul' => 'Rehabilitasi Ekosistem Mangrove di Wilayah Terdampak Rob dan Erosi di Pesisir Tambakrejo',
-                'slug' => 'rehabilitasi-ekosistem-mangrove-di-wilayah-terdampak-rob-dan-erosi-di-pesisir-tambakrejo
-                ',
-                'isi_post' => '<p>Semarang &ndash; Tim Pengabdian Masyarakat Iptek Bagi Desa Binaan Undip (IDBU) Departemen Oseanografi FPIK Universitas Diponegoro kembali melakukan kegiatan rehabilitasi ekosistem mengrove di wilayah terdampak Rob dan Erosi di daerah pesisir Tambakrejo, Kelurahan Tanjung Mas Semarang pada hari Senin tanggal 28 September 2020 bersama dengan masyarakat dan kelompok masyarakat pecinta lingkungan.<br />
-                Kegiatan rehabilitasi mengrove ini merupakan lanjutan dari kerjasama antara Pokmaswas (Cinta Alam Mangrove Asri Rimbun) Camar serta dengan Tim Pengabdian Masyarakat Departemen Oseanografi Universitas Diponegoro yang terlaksana melalui Program Iptek Bagi Desa Binaan Undip (IDBU) selama tahun 2018-2020.</p>
-                
-                <p>Menurut ketua Tim IDBU Undip, Prof. Dr. Denny Nugroho Sugianto, ST., MSi., menyampaikan bahwa acara ini bertujuan untuk merehabilitasi lingkungan pesisir di Kelurahan Tanjungmas, Semarang &ndash; Jawa Tengah, akibat bencana banjir pasang (rob) dan semakin hilang nya garis pantai akibat erosi. Seperti kita ketahui bersama, bahwa di pesisir Kota Semarang, tercatat selama 20 tahun terakhir telah terjadi kerusakan (kemunduran) garis pantai sejauh kurang lebih mencapai 1,43 &ndash; 1,74 km. Hal ini tentunya mendorong upaya penyelamatan pantai secara segera dan terintegrasi. Salah satu upaya yang saat ini dilakukan adalah melalui peran perguruan tinggi dalam hal ini Universitas Diponegoro, dalam rangka menerapkan ilmu pengetahuna dan teknologi (iptek) untuk membantu menyelesaikan permasalahan di masyarakat. Melalui program pengabdian masyarakat Iptek Bagi Desa Binaan Undip (IDBU), Universitas Diponegoro mempunyai andil yang cukup besar terhadap penyelamatan lingkungan melalui rehabilitasi di wilayah pesisir. Hal ini juga sejalan dengan pola ilmiah pokok (PIP) Undip yaitu Pengembangan Wilayah Pesisir (Coastal Region Eco-Development).</p>
-                
-                <p>Lebih lanjut disampaikan oleh Prof. Denny Nugroho Sugianto, bahwa hal ini juga sebagai salah satu wujud Universitas Diponegoro dalam rangka implementasi agenda pemerintah yaitu tujuan pembangunan berkelanjutan (SDGs) dengan tujuan goals SDGs 13 (climate action), SDGs 14 (life below water) dan 17 (partnerships for the goals), yaitu mengambil aksi segera untuk memerangi perubahan iklim dan dampaknya, melindungi lingkungan, mengkonservasi dan memanfaatkan secara berkelanjutan sumber daya laut, samudra dan maritim untuk pembangunan yang berkelanjutan, menguatkan ukuran implementasi dan merevitalisasi kemitraan global untuk pembangunan yang berkelanjutan.</p>
-                
-                <p>Seperti kita ketahui bahwa bencana banjir pasang yang dikenal dengan istilah rob disebabkan oleh naiknya muka laut yang berlebihan hingga mengenangi permukaan daratan, dimana salah satu penyebabnya adalah akibat perubahan iklim global (climate change) yang menyebabkan adanya fenomena kenaikan muka air laut (sea level rise) sekitar 6 hingga 10 milimeter per tahun. Seperti dirasakan oleh beberapa warga seperti Bapak Amron di RW 16 Kelurahan Tanjugmas Kota Semarang, bahwa beberapa tahun terakhir ini rob datang kian sering terjadi, dan beberapa wilayah pesisir Semarang sudah hilang akibat erosi, sehingga perlu diselamatkan dengan segera.</p>
-                
-                <p>&nbsp;</p>
-                
-                <p><a href="https://www.undip.ac.id/wp-content/uploads/2020/10/Penanaman-Mangrove-di-desa-binaan-undip.jpg"><img alt="" src="https://www.undip.ac.id/wp-content/uploads/2020/10/Penanaman-Mangrove-di-desa-binaan-undip.jpg" /></a></p>
-                
-                <p>&nbsp;</p>
-                
-                <p>Pada kesempatan ini, Tim IDBU Undip memberikan bantuan sekitar 1000-2000 bibit mangrove yang ditanam di sekitar wilayah yang terdampak Rob dan erosi di wilayah pesisir. Kegiatan penanaman mangrove ini dilakukan bekerjasama dengan Pokmaswas (Cinta Alam Mangrove Asri Rimbun) Camar yang diketuai oleh Bapak Juraimi. Bersama dengan warga setempat secara gotong royong kegiatan penanaman mangrove dilakukan sejak pagi sampai menjelang petang. Warga yang dikoordinatori oleh Bapak Zazid yang dalam hal ini sebagai Sekretaris Pokmaswas Camar juga tampak antusias mengikuti kegiatan ini bersama-sama dengan Tim IDBU Undip. Menurut Prof. Denny Nugroho Sugianto, salah satu tujuan dari dilaksakanan kegiatan ini juga dalam rangka membantu peningkatan kapasitas masyarakat di Kelurahan Tanjungmas Kota Semarang dalam mitigasi bencana di wilayah pesisir.</p>
-                
-                <p>Menurut Ketua RT 04 RW 16 Bapak Suratno yang juga menjabat sebagai Ketua Kelompok Masyarakat Pengawas (Pokmaswas) Manunggal Bahari yang mewakili warga, menyampaikan bahwa adanya kegiatan pengabdian masyarakat IDBU Undip ini sangat bermanfaat dan membantu warga dalam menjaga kelestarian lingkungan dan ekosistem pesisir. Selanjutnya menurut ketua RW 16 Tambakrejo Tanjungmas, Bapak Slamet Riyadi, menyampaikan bahwa peran serta Undip dalam menyelesaikan permasalahan yang terjadi saat ini sudah sangat tepat dan membantu sekali. Tim IDBU Undip sejak tahun 2018-2020 secara konsisten membantu warga dalam menghadapi permasalahan banjir pasang Rob dan juga perbaikan lingkungan pesisir.</p>
-                
-                <p>Selanjutnya ditambahkan oleh anggota tim Dr. Muhammad Helmi, Dr. Kunarso, dan Dr Anindia Wirasatriya, bahwa kegiatan ini juga bertujuan untuk restorasi dan pemulihan ekosistem alamiah pesisir yang terdampak erosi/abrasi, serta mengembalikan fungsi ekologis mangrove sebagai area spowning ground, nursery ground dan kehidupan alamiah biota laut untuk meningkatkan daya dukung kawasan pesisir untuk pemulihan ekonomi masyarakat terdampak. Meskipun di tengah-tengah pandemi Covid-19, Tim IDBU Undip secara konsisten untuk dapat tetap menjalankan kegiatan pengabdian masyarakat ini dengan memperhatikan protokol kesehatan yang ditentukan oleh pemerintah.</p>
-                ',
-                'file_gambar' => 'rehabilitasi-ekosistem-mangrove-di-wilayah-terdampak-rob-dan-erosi-di-pesisir-tambakrejo.jpeg
-                ',
-                'tgl_insert' => Time::parse('October 24, 2020 17:14:10', 'Asia/Jakarta'),
-                'tgl_update' => Time::parse('October 24, 2020 17:14:10', 'Asia/Jakarta'),
-            ],
-            [
-                'idkategori' => 2,
-                'idpenulis' => 2,
-                'judul' => 'Rehabilitasi Ekosistem Mangrove di Wilayah Terdampak Rob dan Erosi di Pesisir Tambakrejo',
-                'slug' => 'rehabilitasi-ekosistem-mangrove-di-wilayah-terdampak-rob-dan-erosi-di-pesisir-tambakrejo
-                ',
-                'isi_post' => '<p>Semarang &ndash; Tim Pengabdian Masyarakat Iptek Bagi Desa Binaan Undip (IDBU) Departemen Oseanografi FPIK Universitas Diponegoro kembali melakukan kegiatan rehabilitasi ekosistem mengrove di wilayah terdampak Rob dan Erosi di daerah pesisir Tambakrejo, Kelurahan Tanjung Mas Semarang pada hari Senin tanggal 28 September 2020 bersama dengan masyarakat dan kelompok masyarakat pecinta lingkungan.<br />
-                Kegiatan rehabilitasi mengrove ini merupakan lanjutan dari kerjasama antara Pokmaswas (Cinta Alam Mangrove Asri Rimbun) Camar serta dengan Tim Pengabdian Masyarakat Departemen Oseanografi Universitas Diponegoro yang terlaksana melalui Program Iptek Bagi Desa Binaan Undip (IDBU) selama tahun 2018-2020.</p>
-                
-                <p>Menurut ketua Tim IDBU Undip, Prof. Dr. Denny Nugroho Sugianto, ST., MSi., menyampaikan bahwa acara ini bertujuan untuk merehabilitasi lingkungan pesisir di Kelurahan Tanjungmas, Semarang &ndash; Jawa Tengah, akibat bencana banjir pasang (rob) dan semakin hilang nya garis pantai akibat erosi. Seperti kita ketahui bersama, bahwa di pesisir Kota Semarang, tercatat selama 20 tahun terakhir telah terjadi kerusakan (kemunduran) garis pantai sejauh kurang lebih mencapai 1,43 &ndash; 1,74 km. Hal ini tentunya mendorong upaya penyelamatan pantai secara segera dan terintegrasi. Salah satu upaya yang saat ini dilakukan adalah melalui peran perguruan tinggi dalam hal ini Universitas Diponegoro, dalam rangka menerapkan ilmu pengetahuna dan teknologi (iptek) untuk membantu menyelesaikan permasalahan di masyarakat. Melalui program pengabdian masyarakat Iptek Bagi Desa Binaan Undip (IDBU), Universitas Diponegoro mempunyai andil yang cukup besar terhadap penyelamatan lingkungan melalui rehabilitasi di wilayah pesisir. Hal ini juga sejalan dengan pola ilmiah pokok (PIP) Undip yaitu Pengembangan Wilayah Pesisir (Coastal Region Eco-Development).</p>
-                
-                <p>Lebih lanjut disampaikan oleh Prof. Denny Nugroho Sugianto, bahwa hal ini juga sebagai salah satu wujud Universitas Diponegoro dalam rangka implementasi agenda pemerintah yaitu tujuan pembangunan berkelanjutan (SDGs) dengan tujuan goals SDGs 13 (climate action), SDGs 14 (life below water) dan 17 (partnerships for the goals), yaitu mengambil aksi segera untuk memerangi perubahan iklim dan dampaknya, melindungi lingkungan, mengkonservasi dan memanfaatkan secara berkelanjutan sumber daya laut, samudra dan maritim untuk pembangunan yang berkelanjutan, menguatkan ukuran implementasi dan merevitalisasi kemitraan global untuk pembangunan yang berkelanjutan.</p>
-                
-                <p>Seperti kita ketahui bahwa bencana banjir pasang yang dikenal dengan istilah rob disebabkan oleh naiknya muka laut yang berlebihan hingga mengenangi permukaan daratan, dimana salah satu penyebabnya adalah akibat perubahan iklim global (climate change) yang menyebabkan adanya fenomena kenaikan muka air laut (sea level rise) sekitar 6 hingga 10 milimeter per tahun. Seperti dirasakan oleh beberapa warga seperti Bapak Amron di RW 16 Kelurahan Tanjugmas Kota Semarang, bahwa beberapa tahun terakhir ini rob datang kian sering terjadi, dan beberapa wilayah pesisir Semarang sudah hilang akibat erosi, sehingga perlu diselamatkan dengan segera.</p>
-                
-                <p>&nbsp;</p>
-                
-                <p><a href="https://www.undip.ac.id/wp-content/uploads/2020/10/Penanaman-Mangrove-di-desa-binaan-undip.jpg"><img alt="" src="https://www.undip.ac.id/wp-content/uploads/2020/10/Penanaman-Mangrove-di-desa-binaan-undip.jpg" /></a></p>
-                
-                <p>&nbsp;</p>
-                
-                <p>Pada kesempatan ini, Tim IDBU Undip memberikan bantuan sekitar 1000-2000 bibit mangrove yang ditanam di sekitar wilayah yang terdampak Rob dan erosi di wilayah pesisir. Kegiatan penanaman mangrove ini dilakukan bekerjasama dengan Pokmaswas (Cinta Alam Mangrove Asri Rimbun) Camar yang diketuai oleh Bapak Juraimi. Bersama dengan warga setempat secara gotong royong kegiatan penanaman mangrove dilakukan sejak pagi sampai menjelang petang. Warga yang dikoordinatori oleh Bapak Zazid yang dalam hal ini sebagai Sekretaris Pokmaswas Camar juga tampak antusias mengikuti kegiatan ini bersama-sama dengan Tim IDBU Undip. Menurut Prof. Denny Nugroho Sugianto, salah satu tujuan dari dilaksakanan kegiatan ini juga dalam rangka membantu peningkatan kapasitas masyarakat di Kelurahan Tanjungmas Kota Semarang dalam mitigasi bencana di wilayah pesisir.</p>
-                
-                <p>Menurut Ketua RT 04 RW 16 Bapak Suratno yang juga menjabat sebagai Ketua Kelompok Masyarakat Pengawas (Pokmaswas) Manunggal Bahari yang mewakili warga, menyampaikan bahwa adanya kegiatan pengabdian masyarakat IDBU Undip ini sangat bermanfaat dan membantu warga dalam menjaga kelestarian lingkungan dan ekosistem pesisir. Selanjutnya menurut ketua RW 16 Tambakrejo Tanjungmas, Bapak Slamet Riyadi, menyampaikan bahwa peran serta Undip dalam menyelesaikan permasalahan yang terjadi saat ini sudah sangat tepat dan membantu sekali. Tim IDBU Undip sejak tahun 2018-2020 secara konsisten membantu warga dalam menghadapi permasalahan banjir pasang Rob dan juga perbaikan lingkungan pesisir.</p>
-                
-                <p>Selanjutnya ditambahkan oleh anggota tim Dr. Muhammad Helmi, Dr. Kunarso, dan Dr Anindia Wirasatriya, bahwa kegiatan ini juga bertujuan untuk restorasi dan pemulihan ekosistem alamiah pesisir yang terdampak erosi/abrasi, serta mengembalikan fungsi ekologis mangrove sebagai area spowning ground, nursery ground dan kehidupan alamiah biota laut untuk meningkatkan daya dukung kawasan pesisir untuk pemulihan ekonomi masyarakat terdampak. Meskipun di tengah-tengah pandemi Covid-19, Tim IDBU Undip secara konsisten untuk dapat tetap menjalankan kegiatan pengabdian masyarakat ini dengan memperhatikan protokol kesehatan yang ditentukan oleh pemerintah.</p>
-                ',
-                'file_gambar' => 'rehabilitasi-ekosistem-mangrove-di-wilayah-terdampak-rob-dan-erosi-di-pesisir-tambakrejo.jpeg
-                ',
-                'tgl_insert' => Time::parse('October 24, 2020 17:14:10', 'Asia/Jakarta'),
-                'tgl_update' => Time::parse('October 24, 2020 17:14:10', 'Asia/Jakarta'),
             ],
             [
                 'idkategori' => 2,
@@ -329,8 +263,7 @@ class PostSeeder extends \CodeIgniter\Database\Seeder
                 <p>Pengembangan teknologi digital banjir pasang berupa kalender rob berbasis android dapat menjadi salah satu alternatif solusi yang efektif bagi masyarakat di area terpapar, aktivitas perdagangan industri dan jasa serta pemerintah daerah untuk melakukan mitigasi. Kalender rob digital dapat memberikan data dan informasi mengenai kapan tanggal dan jam terjadi rob sesuai dengan perhitungan Kalender Masehi dan perhitungan Kalender Jawa. Kalender rob juga memberikan data dan informasi kuantitatif tingginya muka air dan durasi kejadian rob di wilayah tersebut.</p>
                 
                 ',
-                'file_gambar' => 'pengembangan-teknologi-digital-banjir-pasang-rob-dan-peningkatan-masyarakat-tangguh-bencana-pesisir-desa-binaan-undip.jpeg
-                ',
+                'file_gambar' => 'pengembangan-teknologi-digital-banjir-pasang-rob-dan-peningkatan-masyarakat-tangguh-bencana-pesisir-desa-binaan-undip.jpeg',
                 'tgl_insert' => Time::parse('October 24, 2020 17:19:10', 'Asia/Jakarta'),
                 'tgl_update' => Time::parse('October 24, 2020 17:19:10', 'Asia/Jakarta'),
             ],
