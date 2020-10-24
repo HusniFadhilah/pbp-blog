@@ -27,6 +27,7 @@ class Admin extends BaseController
             return redirect()->to('/authadmin');
         }
         $data = [
+            'title' => 'Dashboard Admin',
             'validation' => \Config\Services::validation(),
             'jmlpenulis' => count($this->penulisModel->findAll()),
             'jmlkomentar' => count($this->komentarModel->findAll()),
@@ -52,7 +53,7 @@ class Admin extends BaseController
         }
 
         $data = [
-            'judul' => 'Form Ubah Profile Admin',
+            'title' => 'Form Ubah Profile Admin',
             'validation' => \Config\Services::validation(),
             'admin' => $this->adminModel->find($id)
         ];
@@ -164,7 +165,7 @@ class Admin extends BaseController
         }
 
         $data = [
-            'judul' => 'Form Ubah Password Admin',
+            'title' => 'Form Ubah Password Admin',
             'validation' => \Config\Services::validation(),
             'admin' => $this->adminModel->find($id)
         ];

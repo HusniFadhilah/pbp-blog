@@ -17,6 +17,7 @@ class AuthPenulis extends BaseController
             return redirect()->to('/penulis');
         }
         $data = [
+            'title' => 'Login Penulis',
             'validation' => \Config\Services::validation()
         ];
         return view('penulis/auth/login', $data);
@@ -73,6 +74,7 @@ class AuthPenulis extends BaseController
             return redirect()->to('/penulis');
         }
         $data = [
+            'title' => 'Register Penulis',
             'validation' => \Config\Services::validation()
         ];
         return view('penulis/auth/register', $data);

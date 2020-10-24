@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Penulis</title>
+    <title><?= $title ?></title>
 
     <!-- Font Awesome -->
     <link href="/assets/fonts/fontawesome/css/all.min.css" rel="stylesheet" type="text/css">

@@ -23,6 +23,7 @@ class Penulis extends BaseController
         }
 
         $data = [
+            'title' => 'Dashboard Penulis',
             'validation' => \Config\Services::validation(),
             'jmlkomentar' => count($this->komentarModel->getKomentarInPostBelongsToPenulis($user_session)),
             'jmlpost' => count($this->postModel->getDataPostByPenulis($user_session)),
@@ -45,7 +46,7 @@ class Penulis extends BaseController
         }
 
         $data = [
-            'judul' => 'Form Ubah Profile Penulis',
+            'title' => 'Form Ubah Profile Penulis',
             'validation' => \Config\Services::validation(),
             'penulis' => $this->penulisModel->find($id)
         ];
@@ -148,7 +149,7 @@ class Penulis extends BaseController
         }
 
         $data = [
-            'judul' => 'Form Ubah Password Penulis',
+            'title' => 'Form Ubah Password Penulis',
             'validation' => \Config\Services::validation(),
             'penulis' => $this->penulisModel->find($id)
         ];

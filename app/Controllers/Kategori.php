@@ -23,6 +23,7 @@ class Kategori extends BaseController
         $kategori = $this->kategoriModel->findAll();
 
         $data = [
+            'title' => 'Data Kategori',
             'kategori' => $kategori
         ];
 
@@ -94,7 +95,7 @@ class Kategori extends BaseController
         }
 
         $data = [
-            'judul' => 'Form Ubah Kategori',
+            'title' => 'Form Ubah Kategori',
             'validation' => \Config\Services::validation(),
             'kategori' => $this->kategoriModel->find($id)
         ];

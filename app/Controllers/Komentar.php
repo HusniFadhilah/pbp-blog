@@ -57,7 +57,7 @@ class Komentar extends BaseController
         }
 
         $data = [
-            'title' => 'Komentar',
+            'title' => 'Data Komentar',
             'komentarbypenulis' => $this->komentarModel->getKomentarInPostBelongsToPenulis(session()->get('idpenulis'))
         ];
         return view('penulis/komentar/komentar_data', $data);

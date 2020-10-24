@@ -27,7 +27,7 @@ class Post extends BaseController
         }
 
         $data = [
-            'title' => 'Post',
+            'title' => 'Dipo Journal',
             'post' => $post->paginate(4, 'post'),
             'pager' => $post->pager,
             'keyword' => $keyword,
@@ -44,6 +44,7 @@ class Post extends BaseController
     {
         $post = $this->postModel->getDataPostBySlug($slug);
         $data = [
+            'title' => $post["judul"],
             'post' => $post,
             'penulis' => $this->penulisModel->where(['idpenulis' => $post["idpenulis"]])->first(),
             'kategori' => $this->kategoriModel->where(['idkategori' => $post["idkategori"]])->first(),
@@ -76,7 +77,7 @@ class Post extends BaseController
             return redirect()->to('/authpenulis');
         }
         $data = [
-            'title' => 'Post',
+            'title' => 'Data Post',
             'validation' => \Config\Services::validation(),
             'post' => $this->postModel->getDataPostByPenulis($user_session),
             'user' => $this->penulisModel->where(['idpenulis' => $user_session])->first()
@@ -93,7 +94,7 @@ class Post extends BaseController
         }
         $kategori = $this->kategoriModel->findAll();
         $data = [
-            'title' => 'Tambah Post',
+            'title' => 'Form Tambah Post',
             'validation' => \Config\Services::validation(),
             'kategori' => $kategori,
             'user' => $this->penulisModel->where(['idpenulis' => $user_session])->first()
@@ -181,7 +182,7 @@ class Post extends BaseController
 
         $kategori = $this->kategoriModel->findAll();
         $data = [
-            'judul' => 'Edit Post',
+            'title' => 'Form Edit Post',
             'validation' => \Config\Services::validation(),
             'post' => $this->postModel->find($id),
             'kategori' => $kategori,

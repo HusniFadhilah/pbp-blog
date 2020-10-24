@@ -17,6 +17,7 @@ class AuthAdmin extends BaseController
             return redirect()->to('/admin');
         }
         $data = [
+            'title' => 'Login Admin',
             'validation' => \Config\Services::validation()
         ];
         return view('admin/auth/login', $data);
