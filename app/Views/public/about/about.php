@@ -23,14 +23,17 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="bg-white p-50">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, amet cupiditate voluptate at nulla aliquam maiores veritatis voluptates, quisquam voluptatem, cumque quaerat fugiat ipsam accusamus iusto? Beatae impedit alias exercitationem sit nihil? Dolore odit totam numquam eius alias quis vitae sit iusto explicabo itaque? Laudantium eaque consectetur modi quam tempore? Repellendus nobis illo ab est nam laudantium necessitatibus dignissimos, facilis corporis obcaecati sit sint adipisci aliquam nemo perferendis, eveniet alias.</p>
-
-                    <h3 class="mtb-50 mtb-sm-30"><b>“Dipo Journal”</b></h3>
-
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, distinctio, alias voluptate hic soluta, iusto ab consequuntur pariatur magni eius minus quidem. Sit blanditiis sequi eligendi ipsa, ipsum expedita, quod, iste quibusdam architecto eius beatae aliquid omnis porro ab voluptate tempora ad incidunt eveniet hic! Voluptates necessitatibus obcaecati fugiat quod qui, minima culpa totam aspernatur officia. Possimus facere maiores illo eveniet, cupiditate voluptatem harum corrupti dignissimos tenetur ratione odio minus?</p>
+                    <h3 class="mtb-30 mtb-sm-30"><b>Hai Dips!,
+                            Selamat Datang di Website DIPO JOURNAL!</b></h3>
+                    <p>
+                        Website ini berisi kumpulan jurnal kegiatan kekinian dan berbagai macam aktivitas yang terdapat di Universitas Diponegoro. DIPO JOURNAL juga menjadi wadah yang sesuai untuk civitas akademika UNDIP untuk berkreasi, berbagi artikel dan pengalaman, juga sebagai wadah untuk berbagi dan bertukar ilmu.
+                        DIPO JOURNAL hadir untuk membuat hidupmu makin berilmu!
+                        Selamat Berkreasi di DIPO JOURNAL!
+                    </p>
+                    <h5 class="text-dark mt-2"><strong>#DIPOJOURNAL4ULIFE</strong></h5>
 
                     <h3 class="mtb-50 mtb-sm-30"><b>Anggota Tim</b></h3>
-                    <table class="table table-hover table-responsive">
+                    <table class="table table-hover table-responsive" style="width:100%;word-break: break-all ">
                         <thead>
                             <tr>
                                 <td>No</td>
