@@ -68,7 +68,7 @@
 
                 <ul class="tag mtb-50">
                     <?php foreach ($allkategori as $ak) : ?>
-                        <li><a href="/post/category/<?= strtolower($ak["nama"]) ?>"><b><?= $ak["nama"] ?></b></a></li>
+                        <li class="mb-2"><a href="/post/category/<?= strtolower($ak["nama"]) ?>"><b><?= $ak["nama"] ?></b></a></li>
                     <?php endforeach ?>
                 </ul>
 
@@ -222,9 +222,18 @@
                             </div><!-- mx-w-400 -->
                         </div><!-- col-sm-9 -->
                     </div><!-- row -->
-                </div><!-- col-sm-3 -->
-            </div><!-- row -->
-        </div><!-- container -->
+                    <div class="mb-50">
+                        <h5 class="mb-20"><b>KATEGORI ARTIKEL</b></h5>
+                        <ul class="tag">
+                            <?php foreach ($allkategori as $ak) : ?>
+                                <li class="mb-2"><a href="/post/category/<?= strtolower($ak["nama"]) ?>"><b><?= $ak["nama"] ?></b></a></li>
+                            <?php endforeach ?>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- col-sm-3 -->
+        </div><!-- row -->
+    </div><!-- container -->
     </div>
 </section>
 

@@ -23,7 +23,6 @@
         <div class="row">
             <div class="col-lg-1"></div>
             <div class="col-md-12 col-lg-10 ptb-50 pr-30 pr-md-15">
-                <h4 class="mb-4"></h4>
 
                 <div class="row">
                     <?php if (count($post) > 0) : ?>
@@ -75,6 +74,7 @@
                 <?= $pager->links('post', 'post_pagination') ?>
             </div><!-- sided-80x -->
         </div><!-- mb-50 -->
+    </div>
 </section>
 
 <!-- AKHIR ISI KONTEN -->

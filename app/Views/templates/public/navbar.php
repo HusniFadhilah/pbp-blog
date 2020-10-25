@@ -21,6 +21,7 @@
                 <?php endforeach ?>
             </ul>
         </li>
+        <li class="ml-lg-3"><a href="/about" class="mr-2">Tentang Kami</a></li>
         <li class="ml-auto"><a href="/authpenulis"><button class="btn btn-primary">Masuk</button></a></li>
         <li class=""><a href="/authpenulis/register"><button class="btn btn-success">Daftar</button></a></li>
     </ul>

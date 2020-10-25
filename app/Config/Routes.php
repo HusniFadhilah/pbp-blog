@@ -33,6 +33,9 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Post::index');
 
+//About
+$routes->add('/about', 'About::index');
+
 //Admin
 $routes->add('/admin', 'Admin::index');
 $routes->add('/admin/edit/(:num)', 'Admin::edit/$1');

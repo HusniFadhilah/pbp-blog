@@ -44,7 +44,7 @@
                                         <?php foreach ($postterbaru5 as $pt5) : ?>
                                             <div class="swiper-slide">
                                                 <div class="bg-white">
-                                                    <img src="/assets/img/post/<?= $pt5["file_gambar"] ?>" alt="<?= $pt5["judul"] ?>" style="objec-fit:cover;height:200px;width:100%">
+                                                    <img src="/assets/img/post/<?= $pt5["file_gambar"] ?>" alt="<?= $pt5["judul"] ?>" style="objec-fit:cover;height:180px;width:100%">
 
                                                     <div class="plr-25 ptb-15">
                                                         <h5 class="color-ash"><b><?= ucfirst($pt5["nama"]) ?></b></h5>
