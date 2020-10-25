@@ -146,7 +146,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                    <table class="table table-hover" id="post">
+                    <table class="table table-hover table-responsive" id="post">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>

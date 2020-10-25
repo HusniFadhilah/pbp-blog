@@ -10,14 +10,12 @@
             <div>
                 <a class="btn btn-primary my-3" href="/kategori/create">+ Tambah Kategori</a>
             </div>
-            <div class="flash-data" data-text="<?= session()->getFlashdata('text'); ?>"
-                 data-title="<?= session()->getFlashdata('title'); ?>"
-                 data-icon="<?= session()->getFlashdata('icon'); ?>">
+            <div class="flash-data" data-text="<?= session()->getFlashdata('text'); ?>" data-title="<?= session()->getFlashdata('title'); ?>" data-icon="<?= session()->getFlashdata('icon'); ?>">
             </div>
             <div class="card shadow mb-4">
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-hover" id="kategori" cellspacing="0">
+                        <table class="table table-hover table-responsive" id="kategori" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th scope="col" style="width: 15%;">#</th>
@@ -33,7 +31,7 @@
                                         <td scope="row"><?= $i++ ?></td>
                                         <td><?= $k['nama']; ?></td>
                                         <td>
-                                            <a type="button" class="btn btn-warning btn-sm mt-1" href="/kategori/edit/<?= $k['idkategori']; ?>" title="Edit kategori""><i class="fa fa-edit"></i></a>
+                                            <a type="button" class="btn btn-warning btn-sm mt-1" href="/kategori/edit/<?= $k['idkategori']; ?>" title="Edit kategori""><i class=" fa fa-edit"></i></a>
                                             <a type="button" class="btn btn-danger btn-sm mt-1 tombol-hapus" href="/kategori/delete/<?= $k['idkategori']; ?>" data-text="kategori &apos;<?= $k['nama']; ?>&apos;" title="Hapus kategori">
                                                 <i class="fa fa-trash"></i>
                                             </a>

@@ -14,7 +14,7 @@
             <div class="card shadow mb-4">
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-hover" id="post">
+                        <table class="table table-hover table-responsive" id="post">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
