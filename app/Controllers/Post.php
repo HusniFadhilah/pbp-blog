@@ -292,7 +292,7 @@ class Post extends BaseController
         $post = $this->postModel->groupPost($nama);
 
         $data = [
-            'title' => 'Kategori '. ucwords($nama),
+            'title' => 'Kategori ' . ucwords($nama),
             'post' => $post->paginate(5, 'post'),
             'pager' => $post->pager,
             'allkategori' => $this->kategoriModel->findAll(),
