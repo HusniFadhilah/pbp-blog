@@ -111,8 +111,7 @@
                                                 <div class="dplay-tbl">
                                                     <div class="dplay-tbl-cell">
 
-                                                        <h5 class="color-ash"><?= $p["nama"] ?><b>
-                                                            </b></h5>
+                                                        <h5 class="color-ash"><b><?= $p["nama"] ?></b></h5>
                                                         <h4 class="mtb-10" title="<?= $p["judul"] ?>"><a href="/post/detail/<?= $p["slug"] ?>">
                                                                 <b><?= crop_string($p["judul"], 40) ?></b></a></h4>
                                                         <ul class="list-li-mr-10 color-lt-black">
