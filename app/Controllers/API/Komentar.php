@@ -15,6 +15,9 @@ class Komentar extends ResourceController
     public function index()
     {
         $idpost = $this->request->getVar('idpost');
-        return $this->respond($this->komentarModel->getKomentarByPost($idpost), 200);
+        $data = [
+            'komentar' => $this->komentarModel->getKomentarByPost($idpost),
+        ];
+        return $this->respond($data, 200);
     }
 }

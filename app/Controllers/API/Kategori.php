@@ -14,6 +14,9 @@ class Kategori extends ResourceController
 
     public function index()
     {
-        return $this->respond($this->kategoriModel->findAll(), 200);
+        $data = [
+            'kategori' => $this->kategoriModel->findAll(),
+        ];
+        return $this->respond($data, 200);
     }
 }

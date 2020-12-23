@@ -25,7 +25,6 @@ class Post extends ResourceController
             'post' => $post,
         ];
 
-        // return $this->respond($data, 200);
         return $this->respond($data, 200);
     }
 }
