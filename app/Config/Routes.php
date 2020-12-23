@@ -89,7 +89,10 @@ $routes->add('/post/update/(:num)', 'Post::update/$1');
 $routes->add('/post/delete/(:num)', 'Post::delete/$1');
 $routes->add('/post/category/(:segment)', 'Post::category/$1');
 
-
+//// API ROUTES ////
+$routes->get('/api/post', 'API/Post::index');
+$routes->get('/api/komentar', 'API/Komentar::index');
+$routes->get('/api/kategori', 'API/Kategori::index');
 
 /**
  * --------------------------------------------------------------------
