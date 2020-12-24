@@ -19,6 +19,10 @@ class Kategori extends Migration
 				'type'           => 'VARCHAR',
 				'constraint'     => '100',
 			],
+			'icon'       => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '120',
+			],
 			'created_at' => [
 				'type'           => 'DATETIME',
 				'null'     		 => true,
