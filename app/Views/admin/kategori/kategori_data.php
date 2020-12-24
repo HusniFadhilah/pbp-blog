@@ -20,7 +20,8 @@
                                 <tr>
                                     <th scope="col" style="width: 10%;">#</th>
                                     <th scope="col" style="width: 40%;">Nama</th>
-                                    <th scope="col" style="width: 30%;">Icon</th>
+                                    <th scope="col" style="width: 20%;">Icon</th>
+                                    <th scope="col" style="width: 10%;">Icon Color</th>
                                     <th scope="col" style="width: 20%;">Action</th>
                                 </tr>
                             </thead>
@@ -32,6 +33,7 @@
                                         <td scope="row"><?= $i++ ?></td>
                                         <td><?= $k['nama']; ?></td>
                                         <td><?= $k['icon']; ?></td>
+                                        <td><?= $k['icon_color']; ?></td>
                                         <td>
                                             <a type="button" class="btn btn-warning btn-sm mt-1" href="/kategori/edit/<?= $k['idkategori']; ?>" title="Edit kategori""><i class=" fa fa-edit"></i></a>
                                             <a type="button" class="btn btn-danger btn-sm mt-1 tombol-hapus" href="/kategori/delete/<?= $k['idkategori']; ?>" data-text="kategori &apos;<?= $k['nama']; ?>&apos;" title="Hapus kategori">
