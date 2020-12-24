@@ -17,7 +17,7 @@
                             <div class="dplay-tbl-cell color-white mtb-30">
                                 <div class="mx-w-400x">
                                     <h5><b><?= ucfirst($pt1["nama"]) ?></b></h5>
-                                    <h1 class="mt-20 mb-30"><b><?= $pt1["judul"] ?></b></h1>
+                                    <h1 class="mt-20 mb-30"><b><?= crop_string($pt1["judul"], 50) ?></b></h1>
                                     <h6><a class="plr-20 btn-brdr-grey color-white" href="/post/detail/<?= $pt1["slug"] ?>"><b>Continue Reading</b></a></h6>
                                 </div><!-- mx-w-200x -->
                             </div><!-- dplay-tbl-cell -->
