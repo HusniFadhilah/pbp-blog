@@ -132,6 +132,9 @@ class Kategori extends BaseController
             ],
             'icon' => [
                 'rules' => 'required',
+            ],
+            'icon_color' => [
+                'rules' => 'required',
             ]
         ])) {
             $validation = \Config\Services::validation();
@@ -142,7 +145,8 @@ class Kategori extends BaseController
         $this->kategoriModel->save([
             'idkategori' => $id,
             'nama' => $this->request->getVar('nama'),
-            'icon' => $this->request->getVar('icon')
+            'icon' => $this->request->getVar('icon'),
+            'icon_color' => $this->request->getVar('icon_color'),
         ]);
 
         sweetalert('Data berhasil diubah', 'success', 'Berhasil!');
