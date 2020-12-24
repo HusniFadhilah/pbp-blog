@@ -42,7 +42,7 @@ class Post extends BaseController
 
     public function detail($slug)
     {
-        $post = $this->postModel->getDataPostBySlug($slug);
+        $post = $this->postModel->getDataPostBySlug(trim($slug));
         $data = [
             'title' => $post["judul"],
             'post' => $post,
