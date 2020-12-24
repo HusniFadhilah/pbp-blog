@@ -122,7 +122,7 @@
                             foreach ($kategori as $data) {
                                 $i++; ?>
                                 <span class="mr-2">
-                                    <i class="fas fa-circle" style="color:<?= $warna[$i] ?>"></i> <?= $data["nama"] ?>
+                                    <i class="fas fa-circle" style="color:<?= $data['icon_color'] ?>"></i> <?= $data["nama"] ?>
                                 </span>
                         <?php
                             }
@@ -215,7 +215,7 @@
                         $i = 0;
                         foreach ($kategori as $data) {
                             $i++;
-                            echo "'" . $warna[$i] . "',";
+                            echo "'" . $data['icon_color'] . "',";
                         }
                     }
                     ?>

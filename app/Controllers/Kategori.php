@@ -72,7 +72,7 @@ class Kategori extends BaseController
             return redirect()->back()->withInput()->with('validation', $validation);
         }
 
-        $icon = 'material://Icons.'.$this->request->getVar('icon');
+        $icon = 'material://Icons.' . $this->request->getVar('icon');
 
         $this->kategoriModel->save([
             'nama' => $this->request->getVar('nama'),
