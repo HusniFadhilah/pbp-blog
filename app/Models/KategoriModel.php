@@ -9,7 +9,7 @@ class KategoriModel extends Model
     protected $table = 'kategori';
     protected $primaryKey = 'idkategori';
 
-    protected $allowedFields = ['nama', 'icon'];
+    protected $allowedFields = ['nama', 'icon', 'icon_color'];
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';

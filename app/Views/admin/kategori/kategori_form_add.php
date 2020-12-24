@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="icon" class="col-sm-2 col-form-label">Warna icon (hex RGB 6 digit)</label>
+                    <label for="icon_color" class="col-sm-2 col-form-label">Warna icon (hex RGB 6 digit)</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control <?= ($validation->hasError('icon_color')) ?
                                                                     'is-invalid' : ''; ?>" name="icon_color" autofocus value="<?= old('icon_color') ?? '#'; ?>">
