@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="icon" class="col-sm-2 col-form-label">Icon kategori</label>
+                    <label for="icon" class="col-sm-2 col-form-label">Icon kategori (material icon)</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control <?= ($validation->hasError('icon')) ?
                                                                     'is-invalid' : ''; ?>" name="icon" autofocus value="<?= old('icon'); ?>">
