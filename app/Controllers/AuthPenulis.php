@@ -104,10 +104,11 @@ class AuthPenulis extends BaseController
                 ]
             ],
             'email' => [
-                'rules' => 'required|valid_email',
+                'rules' => 'required|valid_email|is_unique[penulis.email]',
                 'errors' => [
                     'required' => '{field} harus diisi.',
-                    'valid_email' => 'harus diisi dengan email valid'
+                    'valid_email' => 'harus diisi dengan email valid',
+                    'is_unique' => 'Email sudah pernah digunakan'
                 ]
             ],
             'no_telp' => [

@@ -9,17 +9,21 @@ class KategoriModel extends Model
     protected $table = 'kategori';
     protected $primaryKey = 'idkategori';
 
-    protected $allowedFields = ['nama'];
+    protected $allowedFields = ['nama', 'icon'];
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
 
     protected $validationRules    = [
-        'nama'     => 'required'
+        'nama'     => 'required',
+        'icon'     => 'required'
     ];
     protected $validationMessages = [
         'nama'        => [
             'required' => 'Nama kategori harus diisi'
+        ],
+        'icon'        => [
+            'required' => 'Icon kategori harus diisi'
         ]
     ];
 
@@ -28,7 +32,8 @@ class KategoriModel extends Model
         return $this->where(['idkategori' => $idkategori])->find();
     }
 
-    public function getPostByCategory($nama){
+    public function getPostByCategory($nama)
+    {
         return $this->where(['nama' => $nama])->find();
     }
 }

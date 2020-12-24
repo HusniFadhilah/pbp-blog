@@ -110,12 +110,14 @@ class PostModel extends Model
 
 
     //// ADDITION FOR API ////
-    public function all($keyword = null)
+    public function all($keyword = null, $idkategori = null)
     {
         if ($keyword != null) {
-            return $this->db->query("SELECT post.idpost, post.judul, post.slug, post.isi_post, post.file_gambar, post.tgl_insert, post.tgl_update, kategori.idkategori as idkategori, penulis.idpenulis as idpenulis, kategori.nama as namakategori, penulis.nama as namapenulis FROM post JOIN kategori ON kategori.idkategori = post.idkategori JOIN penulis ON penulis.idpenulis = post.idpenulis WHERE post.judul LIKE '%" . $keyword . "%' ORDER BY post.tgl_insert DESC")->getResult();
+            return $this->db->query("SELECT post.idpost, post.judul, post.slug, post.isi_post, post.file_gambar, post.tgl_insert, post.tgl_update, kategori.idkategori as idkategori, penulis.idpenulis as idpenulis, kategori.nama as namakategori, penulis.nama as namapenulis, (SELECT COUNT(*) FROM komentar WHERE idpost=post.idpost) AS jmlhkomentar FROM post JOIN kategori ON kategori.idkategori = post.idkategori JOIN penulis ON penulis.idpenulis = post.idpenulis WHERE post.judul LIKE '%" . $keyword . "%' ORDER BY post.tgl_insert DESC")->getResult();
+        } else if ($idkategori != null) {
+            return $this->db->query("SELECT post.idpost, post.judul, post.slug, post.isi_post, post.file_gambar, post.tgl_insert, post.tgl_update, kategori.idkategori as idkategori, penulis.idpenulis as idpenulis,kategori.nama as namakategori, penulis.nama as namapenulis, (SELECT COUNT(*) FROM komentar WHERE idpost=post.idpost) AS jmlhkomentar FROM post JOIN kategori ON kategori.idkategori = post.idkategori JOIN penulis ON penulis.idpenulis = post.idpenulis WHERE post.idkategori = $idkategori ORDER BY post.tgl_insert DESC")->getResult();
         } else {
-            return $this->db->query("SELECT post.idpost, post.judul, post.slug, post.isi_post, post.file_gambar, post.tgl_insert, post.tgl_update, kategori.idkategori as idkategori, penulis.idpenulis as idpenulis,kategori.nama as namakategori, penulis.nama as namapenulis FROM post JOIN kategori ON kategori.idkategori = post.idkategori JOIN penulis ON penulis.idpenulis = post.idpenulis ORDER BY post.tgl_insert DESC")->getResult();
+            return $this->db->query("SELECT post.idpost, post.judul, post.slug, post.isi_post, post.file_gambar, post.tgl_insert, post.tgl_update, kategori.idkategori as idkategori, penulis.idpenulis as idpenulis,kategori.nama as namakategori, penulis.nama as namapenulis, (SELECT COUNT(*) FROM komentar WHERE idpost=post.idpost) AS jmlhkomentar FROM post JOIN kategori ON kategori.idkategori = post.idkategori JOIN penulis ON penulis.idpenulis = post.idpenulis ORDER BY post.tgl_insert DESC")->getResult();
         }
     }
 }

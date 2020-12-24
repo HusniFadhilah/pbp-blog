@@ -15,11 +15,12 @@
             <div class="card shadow mb-4">
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-hover table-responsive" id="kategori" cellspacing="0">
+                        <table class="table table-hover" id="kategori" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th scope="col" style="width: 15%;">#</th>
-                                    <th scope="col" style="width: 65%;">Nama</th>
+                                    <th scope="col" style="width: 10%;">#</th>
+                                    <th scope="col" style="width: 40%;">Nama</th>
+                                    <th scope="col" style="width: 30%;">Icon</th>
                                     <th scope="col" style="width: 20%;">Action</th>
                                 </tr>
                             </thead>
@@ -30,6 +31,7 @@
                                     <tr>
                                         <td scope="row"><?= $i++ ?></td>
                                         <td><?= $k['nama']; ?></td>
+                                        <td><?= $k['icon']; ?></td>
                                         <td>
                                             <a type="button" class="btn btn-warning btn-sm mt-1" href="/kategori/edit/<?= $k['idkategori']; ?>" title="Edit kategori""><i class=" fa fa-edit"></i></a>
                                             <a type="button" class="btn btn-danger btn-sm mt-1 tombol-hapus" href="/kategori/delete/<?= $k['idkategori']; ?>" data-text="kategori &apos;<?= $k['nama']; ?>&apos;" title="Hapus kategori">

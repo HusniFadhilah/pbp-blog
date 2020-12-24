@@ -74,10 +74,11 @@ class Penulis extends BaseController
                 ]
             ],
             'email' => [
-                'rules' => 'required|valid_email',
+                'rules' => 'required|valid_email|is_unique[penulis.email,idpenulis,' . $id . ']',
                 'errors' => [
                     'required' => 'Email harus diisi',
-                    'valid_email' => 'Silahkan tulis {field} dengan benar'
+                    'valid_email' => 'Silahkan tulis {field} dengan benar',
+                    'is_unique' => 'Email sudah pernah digunakan'
                 ],
             ],
             'no_telp' => [

@@ -13,9 +13,19 @@
                     <label for="nama" class="col-sm-2 col-form-label">Nama kategori</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control <?= ($validation->hasError('nama')) ?
-                            'is-invalid' : ''; ?>" name="nama" autofocus value="<?= $kategori['nama'] ?>">
+                                                                    'is-invalid' : ''; ?>" name="nama" autofocus value="<?= $kategori['nama'] ?>">
                         <div class="invalid-feedback">
                             <?= $validation->getError('nama'); ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="icon" class="col-sm-2 col-form-label">Icon kategori</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control <?= ($validation->hasError('icon')) ?
+                                                                    'is-invalid' : ''; ?>" name="icon" autofocus value="<?= $kategori['icon'] ?>">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('icon'); ?>
                         </div>
                     </div>
                 </div>

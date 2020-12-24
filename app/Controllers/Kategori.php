@@ -59,23 +59,28 @@ class Kategori extends BaseController
                     'required' => '{field} kategori harus diisi.',
                     'is_unique' => '{field} kategori sudah ada.'
                 ]
+            ],
+            'icon' => [
+                'rules' => 'required',
             ]
-        ])){
+        ])) {
             $validation = \Config\Services::validation();
 
             return redirect()->back()->withInput()->with('validation', $validation);
         }
 
         $this->kategoriModel->save([
-            'nama' => $this->request->getVar('nama')
+            'nama' => $this->request->getVar('nama'),
+            'icon' => $this->request->getVar('icon')
         ]);
 
         sweetalert('Data berhasil ditambahkan', 'success', 'Berhasil!');
-        
+
         return redirect()->to('/kategori');
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $user_session = session()->has('idadmin');
         if (!($user_session)) {
             return redirect()->to('/authadmin');
@@ -88,7 +93,8 @@ class Kategori extends BaseController
         return redirect()->to('/kategori');
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $user_session = session()->has('idadmin');
         if (!($user_session)) {
             return redirect()->to('/authadmin');
@@ -103,7 +109,8 @@ class Kategori extends BaseController
         return view('admin/kategori/kategori_form_edit', $data);
     }
 
-    public function update($id){
+    public function update($id)
+    {
         $user_session = session()->has('idadmin');
         if (!($user_session)) {
             return redirect()->to('/authadmin');
@@ -111,14 +118,16 @@ class Kategori extends BaseController
 
         if (!$this->validate([
             'nama' => [
-                'rules' => 'required|is_unique[kategori.nama]',
+                'rules' => 'required|is_unique[kategori.nama,idkategori,' . $id . ']',
                 'errors' => [
                     'required' => '{field} kategori harus diisi.',
-                    'is_unique' => '{field} kateori sudah ada.'
+                    'is_unique' => '{field} kategori sudah ada.'
                 ]
+            ],
+            'icon' => [
+                'rules' => 'required',
             ]
-        ]))
-        {
+        ])) {
             $validation = \Config\Services::validation();
 
             return redirect()->back()->withInput()->with('validation', $validation);
@@ -126,7 +135,8 @@ class Kategori extends BaseController
 
         $this->kategoriModel->save([
             'idkategori' => $id,
-            'nama' => $this->request->getVar('nama')
+            'nama' => $this->request->getVar('nama'),
+            'icon' => $this->request->getVar('icon')
         ]);
 
         sweetalert('Data berhasil diubah', 'success', 'Berhasil!');
