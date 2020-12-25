@@ -65,9 +65,10 @@
                             $warna = ['#4e73df', '#1cc88a', '#36b9cc', '#8e44ad', '#34495e', '#e67e22'];
                             $i = 0;
                             foreach ($post as $data) {
+                                $random = random_color();
                                 $i++; ?>
                                 <span class="mr-2">
-                                    <i class="fas fa-circle" style="color:<?= $warna[$i] ?>"></i> <?= $data["judul"] ?> <br>
+                                    <i class="fas fa-circle" style="color:<?= random_color() ?>"></i> <?= $data["judul"] ?> <br>
                                 </span>
                         <?php
                             }
@@ -118,7 +119,7 @@
                         $i = 0;
                         foreach ($post as $data) {
                             $i++;
-                            echo "'" . $warna[$i] . "',";
+                            echo "'" . random_color() . "',";
                         }
                     }
                     ?>

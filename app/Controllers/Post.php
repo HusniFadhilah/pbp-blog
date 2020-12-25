@@ -141,7 +141,7 @@ class Post extends BaseController
             return redirect()->to('/post/add')->withInput();
         }
 
-        $slug = url_title($this->request->getVar('judul'), '-', true);
+        $slug = url_title(trim($this->request->getVar('judul')), '-', true);
 
         $file_gambar = $this->request->getFile('file_gambar');
         if ($file_gambar->getError() == 4) {
@@ -236,7 +236,7 @@ class Post extends BaseController
             return redirect()->to('/post/edit/' . $id)->withInput();
         }
 
-        $slug = url_title($this->request->getVar('judul'), '-', true);
+        $slug = url_title(trim($this->request->getVar('judul')), '-', true);
 
         $file_gambar = $this->request->getFile('file_gambar');
         $file_gambar_lama = $this->request->getVar('file_gambar_lama');

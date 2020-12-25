@@ -8,3 +8,8 @@ function sweetalert($text, $icon, $title, $href = null)
     session()->setFlashdata('icon', $icon);
     session()->setFlashdata('title', $title);
 }
+
+function random_color()
+{
+    return sprintf('#%06X', mt_rand(0, 0xFFFFFF));
+}
